@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RoutesEnum from "./routes";
 import { Home } from "../screens/Home/Home";
 import { Login } from "../screens/Login/Login";
-import { RootStackParamList } from "../types/types";
+import { RootStackParamList } from "../types/navigation.types";
 
 //mainnavigator
 export const MainNavigator = () => {
