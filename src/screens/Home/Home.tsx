@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "react-native";
 import Prueba from "../../components/Prueba/Prueba";
 import RoutesEnum from "../../navigation/routes";
-import type { LoginScreenNavigationProp } from "../../types/types";
+import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
 export const Home = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();

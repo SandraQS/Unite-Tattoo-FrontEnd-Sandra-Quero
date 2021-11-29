@@ -16,3 +16,13 @@ export type LoginScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   RoutesEnum.login
 >;
+
+export type HomeScreenRouteProp = RouteProp<
+  RootStackParamList,
+  RoutesEnum.home
+>;
+
+export type HomeScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  RoutesEnum.home
+>;
