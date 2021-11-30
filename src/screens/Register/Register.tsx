@@ -6,12 +6,9 @@ import {
   StatusBar,
   Text,
   View,
-  StyleSheet,
-  Button,
-  TouchableOpacity,
   Image,
-  FlatList,
   TextInput,
+  CheckBox,
 } from "react-native";
 import GeneralButton from "../../components/Button/GeneralButton";
 import RoutesEnum from "../../navigation/routes";
@@ -43,7 +40,8 @@ const Register = () => {
       contactEmail: "",
       openingHours: "",
       direction: "",
-      tattooStyles: false,
+      tattooStyles: "",
+      colaboration: false,
     },
     imagesTattoArtist: {
       imageAmbient: "",
@@ -90,6 +88,20 @@ const Register = () => {
       [testID]: text,
     });
     return userDataTattoArtist;
+  };
+
+  const onChangeDataProfessional = (event: any) => {
+    event.persist();
+
+    const { text } = event.nativeEvent;
+    const { testID } =
+      event.target._internalFiberInstanceHandleDEV.return.child.pendingProps;
+
+    setProfessionalDataTattooArtist({
+      ...professionalDataTattooArtist,
+      [testID]: text,
+    });
+    return professionalDataTattooArtist;
   };
 
   const onSubmit = () => {
@@ -225,10 +237,111 @@ const Register = () => {
               </View>
             </View>
           </View>
-          <GeneralButton
-            textButton="REGISTRARME COMO TATUADOR"
-            functionOnPress={onSubmit}
-          />
+
+          <View style={styles.forms}>
+            <Text style={styles.tittleH2}>Datos profesionales</Text>
+            <View>
+              <View>
+                <TextInput
+                  style={styles.input}
+                  value={professionalDataTattooArtist.studioName}
+                  // onFocus={}
+                  placeholder="Nombre Estudio (opcional)"
+                  onChange={onChangeDataProfessional}
+                  testID="studioName"
+                  maxLength={20}
+                />
+              </View>
+
+              <View>
+                <TextInput
+                  style={styles.input}
+                  value={professionalDataTattooArtist.professionalName}
+                  // onFocus={}
+                  placeholder="Nombre profesional *"
+                  onChange={onChangeDataProfessional}
+                  testID="professionalName"
+                  maxLength={20}
+                />
+              </View>
+
+              <View>
+                <TextInput
+                  keyboardType="numeric"
+                  style={styles.input}
+                  value={professionalDataTattooArtist.phone}
+                  // onFocus={}
+                  placeholder="Telefono de contacto *"
+                  onChange={onChangeDataProfessional}
+                  testID="phone"
+                  maxLength={20}
+                />
+              </View>
+
+              <View>
+                <TextInput
+                  keyboardType="email-address"
+                  style={styles.input}
+                  value={professionalDataTattooArtist.contactEmail}
+                  // onFocus={}
+                  placeholder="Email de contacto *"
+                  onChange={onChangeDataProfessional}
+                  testID="contactEmail"
+                  maxLength={20}
+                />
+              </View>
+            </View>
+
+            <View>
+              <TextInput
+                style={styles.input}
+                value={professionalDataTattooArtist.openingHours}
+                // onFocus={}
+                placeholder="Horario *"
+                onChange={onChangeDataProfessional}
+                testID="openingHours"
+                maxLength={20}
+              />
+            </View>
+
+            <View>
+              <TextInput
+                style={styles.input}
+                value={professionalDataTattooArtist.direction}
+                // onFocus={}
+                placeholder="Dirección *"
+                onChange={onChangeDataProfessional}
+                testID="direction"
+                maxLength={20}
+              />
+            </View>
+
+            <View>
+              <TextInput
+                style={styles.input}
+                value={professionalDataTattooArtist.tattooStyles}
+                // onFocus={}
+                placeholder="Estilos *"
+                onChange={onChangeDataProfessional}
+                testID="tattooStyles"
+                maxLength={20}
+              />
+            </View>
+          </View>
+          <View>
+            <CheckBox
+              value={professionalDataTattooArtist.colaboration}
+              onValueChange={onChangeDataProfessional}
+              style={styles.checkbox}
+            />
+            <Text style={styles.text}>
+              Colaboración con otros estudios / tatuadores?
+            </Text>
+            <GeneralButton
+              textButton="REGISTRARME COMO TATUADOR"
+              functionOnPress={onSubmit}
+            />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
