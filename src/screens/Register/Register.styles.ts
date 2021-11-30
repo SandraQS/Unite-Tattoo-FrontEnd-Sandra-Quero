@@ -3,8 +3,6 @@ import { uniteTattoo } from "../../styles/uniteTatto.styles";
 
 const { color, fontSize } = uniteTattoo;
 export default StyleSheet.create({
-  checkbox: {},
-
   forms: {
     marginTop: 30,
   },
