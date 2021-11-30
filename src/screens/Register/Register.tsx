@@ -1,5 +1,7 @@
 import { useNavigation } from "@react-navigation/core";
 import React, { useState } from "react";
+import { uniteTattoo } from "../../styles/uniteTatto.styles";
+
 import {
   SafeAreaView,
   ScrollView,
@@ -15,6 +17,7 @@ import RoutesEnum from "../../navigation/routes";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
 import styles from "./Register.styles";
+const { color } = uniteTattoo;
 
 const Register = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
@@ -40,12 +43,8 @@ const Register = () => {
       contactEmail: "",
       openingHours: "",
       direction: "",
-      tattooStyles: "",
+      tattooStyles: "g",
       colaboration: false,
-    },
-    imagesTattoArtist: {
-      imageAmbient: "",
-      profileImage: "",
     },
   });
   const [personalDataTattoArtist, setPersonalDataTattoArtist] = useState(
@@ -56,9 +55,6 @@ const Register = () => {
   );
   const [professionalDataTattooArtist, setProfessionalDataTattooArtist] =
     useState(initTatooArtisData.professionalDataTattooArtist);
-  const [imagesTattoArtist, setImagesTattoArtist] = useState(
-    initTatooArtisData.imagesTattoArtist
-  );
 
   const [isSelected, setSelection] = useState(false);
   const [newTattooArtist, setNewTattooArtist] = useState(initTatooArtisData);
@@ -126,13 +122,10 @@ const Register = () => {
       professionalDataTattooArtist: {
         ...professionalDataTattooArtist,
       },
-      imagesTattoArtist: {
-        ...imagesTattoArtist,
-      },
     });
     return newTattooArtist;
   };
-  console.log(newTattooArtist);
+
   return (
     <SafeAreaView>
       <StatusBar />
@@ -342,9 +335,11 @@ const Register = () => {
               disabled={false}
               value={professionalDataTattooArtist.colaboration}
               onValueChange={selectCheckBox}
-              style={styles.checkbox}
               boxType="square"
               testID="colaboration"
+              onTintColor={color.darkBrown}
+              onCheckColor={color.darkBrown}
+              tintColor={color.black}
             />
             <Text style={styles.text}>
               Colaboración con otros estudios / tatuadores?
