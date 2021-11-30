@@ -35,7 +35,7 @@ module.exports = {
     "react-native/split-platform-components": ["warn"],
     "react-native/no-color-literals": ["warn"],
     "react-native/no-unused-styles": ["warn"],
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": ["error", "only-multiline"],
     quotes: ["error", "double", { allowTemplateLiterals: true }],
   },
   settings: {
