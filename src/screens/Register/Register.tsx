@@ -22,7 +22,7 @@ import styles from "./Register.styles";
 const Register = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
 
-  const [tatooArtisData, setTatooArtisData] = useState({
+  const [initTatooArtisData, setInitTatooArtisData] = useState({
     personalDataTattoArtist: {
       name: "",
       surname1: "",
@@ -48,23 +48,23 @@ const Register = () => {
     imageAmbient: "",
     profileImage: "",
   });
-  const [personalDataTattoArtist, setPersonalDataTattoArtist] = useState({
-    name: "",
-    surname1: "",
-    surname2: "",
-  });
+  const [personalDataTattoArtist, setPersonalDataTattoArtist] = useState(
+    initTatooArtisData.personalDataTattoArtist
+  );
 
-  const onChangeData2 = (event: any) => {
+  const onChangeData = (event: any) => {
     event.persist();
+
     const { text } = event.nativeEvent;
     const { testID } =
       event.target._internalFiberInstanceHandleDEV.return.child.pendingProps;
+
     setPersonalDataTattoArtist({
       ...personalDataTattoArtist,
-      [event.target._internalFiberInstanceHandleDEV.return.child.pendingProps
-        .testID]: text,
+      [testID]: text,
     });
   };
+
   console.log(personalDataTattoArtist);
 
   return (
@@ -93,7 +93,7 @@ const Register = () => {
                   value={personalDataTattoArtist.name}
                   // onFocus={}
                   placeholder="Nombre *"
-                  onChange={onChangeData2}
+                  onChange={onChangeData}
                   testID="name"
                   key="name"
                   maxLength={20}
@@ -104,7 +104,7 @@ const Register = () => {
                 <TextInput
                   style={styles.input}
                   value={personalDataTattoArtist.surname1}
-                  onChange={onChangeData2}
+                  onChange={onChangeData}
                   // onFocus={}
                   placeholder="Primer apellido *"
                   testID="surname1"
@@ -115,7 +115,7 @@ const Register = () => {
                 <TextInput
                   style={styles.input}
                   value={personalDataTattoArtist.surname2}
-                  onChange={onChangeData2}
+                  onChange={onChangeData}
                   // onFocus={}
                   placeholder="Segundo apellido *"
                   testID="surname2"
