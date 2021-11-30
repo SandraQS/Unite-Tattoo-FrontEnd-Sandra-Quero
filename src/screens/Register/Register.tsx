@@ -24,9 +24,9 @@ const Register = () => {
 
   const [tatooArtisData, setTatooArtisData] = useState({
     personalDataTattoArtist: {
-      name: "AAAA",
-      surname1: "BBB",
-      surname2: "CCCC",
+      name: "",
+      surname1: "",
+      surname2: "",
     },
 
     userDataTattoArtist: {
@@ -48,40 +48,24 @@ const Register = () => {
     imageAmbient: "",
     profileImage: "",
   });
-  const [newTatooArtisData, setNewTatooArtisData] = useState(tatooArtisData);
-  const [name, setName] = useState("");
+  const [personalDataTattoArtist, setPersonalDataTattoArtist] = useState({
+    name: "",
+    surname1: "",
+    surname2: "",
+  });
 
-  const onChangeData = (text: string) => {
-    setName(text);
-  };
   const onChangeData2 = (event: any) => {
-    setNewTatooArtisData({
-      personalDataTattoArtist: {
-        name: event.text,
-        surname1: event.text,
-        surname2: event.text,
-      },
-
-      userDataTattoArtist: {
-        userName: event.text,
-        password: event.text,
-        repeatPassword: event.text,
-        email: event.text,
-      },
-
-      professionalDataTattooArtist: {
-        studioName: "",
-        professionalName: "",
-        phone: "",
-        contactEmail: "",
-        openingHours: "",
-        direction: "",
-        tattooStyles: false,
-      },
-      imageAmbient: "",
-      profileImage: "",
+    event.persist();
+    const { text } = event.nativeEvent;
+    const { testID } =
+      event.target._internalFiberInstanceHandleDEV.return.child.pendingProps;
+    setPersonalDataTattoArtist({
+      ...personalDataTattoArtist,
+      [event.target._internalFiberInstanceHandleDEV.return.child.pendingProps
+        .testID]: text,
     });
   };
+  console.log(personalDataTattoArtist);
 
   return (
     <SafeAreaView>
@@ -106,13 +90,12 @@ const Register = () => {
               <View>
                 <TextInput
                   style={styles.input}
-                  value={newTatooArtisData.personalDataTattoArtist.name}
-                  onChange={(event) => {
-                    onChangeData2(event);
-                  }}
+                  value={personalDataTattoArtist.name}
                   // onFocus={}
                   placeholder="Nombre *"
+                  onChange={onChangeData2}
                   testID="name"
+                  key="name"
                   maxLength={20}
                 />
               </View>
@@ -120,26 +103,22 @@ const Register = () => {
               <View>
                 <TextInput
                   style={styles.input}
-                  value={newTatooArtisData.personalDataTattoArtist.surname1}
-                  onChange={(event) => {
-                    onChangeData2(event);
-                  }}
+                  value={personalDataTattoArtist.surname1}
+                  onChange={onChangeData2}
                   // onFocus={}
                   placeholder="Primer apellido *"
-                  testID="username1"
+                  testID="surname1"
                   maxLength={20}
                 />
               </View>
               <View>
                 <TextInput
                   style={styles.input}
-                  value={newTatooArtisData.personalDataTattoArtist.surname2}
-                  onChange={(event) => {
-                    onChangeData2(event);
-                  }}
+                  value={personalDataTattoArtist.surname2}
+                  onChange={onChangeData2}
                   // onFocus={}
                   placeholder="Segundo apellido *"
-                  testID="username1"
+                  testID="surname2"
                   maxLength={20}
                 />
               </View>
