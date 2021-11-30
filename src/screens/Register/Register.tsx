@@ -9,6 +9,7 @@ import {
   Image,
   TextInput,
 } from "react-native";
+import CheckBox from "@react-native-community/checkbox";
 import GeneralButton from "../../components/Button/GeneralButton";
 import RoutesEnum from "../../navigation/routes";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
@@ -59,6 +60,7 @@ const Register = () => {
     initTatooArtisData.imagesTattoArtist
   );
 
+  const [isSelected, setSelection] = useState(false);
   const [newTattooArtist, setNewTattooArtist] = useState(initTatooArtisData);
 
   const onChangeDataPersonal = (event: any) => {
@@ -103,6 +105,14 @@ const Register = () => {
     return professionalDataTattooArtist;
   };
 
+  const selectCheckBox = () => {
+    setSelection(!isSelected);
+    setProfessionalDataTattooArtist({
+      ...professionalDataTattooArtist,
+      colaboration: isSelected,
+    });
+  };
+
   const onSubmit = () => {
     setNewTattooArtist({
       personalDataTattoArtist: {
@@ -122,7 +132,7 @@ const Register = () => {
     });
     return newTattooArtist;
   };
-
+  console.log(newTattooArtist);
   return (
     <SafeAreaView>
       <StatusBar />
@@ -326,15 +336,19 @@ const Register = () => {
               />
             </View>
           </View>
+
           <View>
-            {/* <CheckBox
+            <CheckBox
+              disabled={false}
               value={professionalDataTattooArtist.colaboration}
-              onValueChange={onChangeDataProfessional}
+              onValueChange={selectCheckBox}
               style={styles.checkbox}
+              boxType="square"
+              testID="colaboration"
             />
             <Text style={styles.text}>
               Colaboración con otros estudios / tatuadores?
-            </Text> */}
+            </Text>
 
             <GeneralButton
               textButton="REGISTRARME COMO TATUADOR"
