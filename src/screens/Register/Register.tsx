@@ -8,7 +8,6 @@ import {
   View,
   Image,
   TextInput,
-  CheckBox,
 } from "react-native";
 import GeneralButton from "../../components/Button/GeneralButton";
 import RoutesEnum from "../../navigation/routes";
@@ -123,7 +122,6 @@ const Register = () => {
     });
     return newTattooArtist;
   };
-  console.log(newTattooArtist);
 
   return (
     <SafeAreaView>
@@ -329,14 +327,15 @@ const Register = () => {
             </View>
           </View>
           <View>
-            <CheckBox
+            {/* <CheckBox
               value={professionalDataTattooArtist.colaboration}
               onValueChange={onChangeDataProfessional}
               style={styles.checkbox}
             />
             <Text style={styles.text}>
               Colaboración con otros estudios / tatuadores?
-            </Text>
+            </Text> */}
+
             <GeneralButton
               textButton="REGISTRARME COMO TATUADOR"
               functionOnPress={onSubmit}
