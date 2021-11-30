@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/core";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { uniteTattoo } from "../../styles/uniteTatto.styles";
 
 import {
@@ -17,12 +17,14 @@ import RoutesEnum from "../../navigation/routes";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
 import styles from "./Register.styles";
+import { useTattooArtist } from "../../hooks/useTattooArtist";
 const { color } = uniteTattoo;
 
 const Register = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
+  const { tattooArtistCreate } = useTattooArtist();
 
-  const [initTatooArtisData, setInitTatooArtisData] = useState({
+  const initTatooArtisData = {
     personalDataTattoArtist: {
       name: "",
       surname1: "",
@@ -43,10 +45,11 @@ const Register = () => {
       contactEmail: "",
       openingHours: "",
       direction: "",
-      tattooStyles: "g",
+      tattooStyles: "",
       colaboration: false,
     },
-  });
+  };
+
   const [personalDataTattoArtist, setPersonalDataTattoArtist] = useState(
     initTatooArtisData.personalDataTattoArtist
   );
@@ -109,7 +112,7 @@ const Register = () => {
     });
   };
 
-  const onSubmit = () => {
+  useEffect(() => {
     setNewTattooArtist({
       personalDataTattoArtist: {
         ...personalDataTattoArtist,
@@ -123,7 +126,21 @@ const Register = () => {
         ...professionalDataTattooArtist,
       },
     });
-    return newTattooArtist;
+  }, [
+    personalDataTattoArtist,
+    userDataTattoArtist,
+    professionalDataTattooArtist,
+  ]);
+
+  const onSubmit = () => {
+    tattooArtistCreate(newTattooArtist);
+    setPersonalDataTattoArtist(initTatooArtisData.personalDataTattoArtist);
+    setUserDataTattoArtist(initTatooArtisData.userDataTattoArtist);
+    setProfessionalDataTattooArtist(
+      initTatooArtisData.professionalDataTattooArtist
+    );
+    setSelection(false);
+    setNewTattooArtist(initTatooArtisData);
   };
 
   return (
@@ -131,6 +148,10 @@ const Register = () => {
       <StatusBar />
       <ScrollView>
         <View style={styles.mainContainer}>
+          <Image
+            source={require("../../assets/Uttoo-logo.svg")}
+            style={styles.logo}
+          />
           <View style={styles.welcomeContainer}>
             <Text style={styles.tittleH2}>Bienvenid@</Text>
             <View>
