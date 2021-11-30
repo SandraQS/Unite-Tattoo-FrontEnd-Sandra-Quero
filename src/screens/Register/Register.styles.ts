@@ -12,19 +12,23 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     padding: 20,
   },
+  logo: {
+    width: 200,
+  },
   mainContainer: {
     backgroundColor: color.mediumBrown,
     padding: 20,
   },
+
   text: {
     fontSize: fontSize.text,
     textAlign: "center",
   },
-
   tittleH2: {
     fontSize: fontSize.tittleH2,
     textAlign: "center",
   },
+
   welcomeContainer: {
     alignContent: "center",
     backgroundColor: color.lightBrown,
