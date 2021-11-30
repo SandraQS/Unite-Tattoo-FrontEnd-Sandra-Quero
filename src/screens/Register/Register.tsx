@@ -45,14 +45,26 @@ const Register = () => {
       direction: "",
       tattooStyles: false,
     },
-    imageAmbient: "",
-    profileImage: "",
+    imagesTattoArtist: {
+      imageAmbient: "",
+      profileImage: "",
+    },
   });
   const [personalDataTattoArtist, setPersonalDataTattoArtist] = useState(
     initTatooArtisData.personalDataTattoArtist
   );
+  const [userDataTattoArtist, setUserDataTattoArtist] = useState(
+    initTatooArtisData.userDataTattoArtist
+  );
+  const [professionalDataTattooArtist, setProfessionalDataTattooArtist] =
+    useState(initTatooArtisData.professionalDataTattooArtist);
+  const [imagesTattoArtist, setImagesTattoArtist] = useState(
+    initTatooArtisData.imagesTattoArtist
+  );
 
-  const onChangeData = (event: any) => {
+  const [newTattooArtist, setNewTattooArtist] = useState(initTatooArtisData);
+
+  const onChangeDataPersonal = (event: any) => {
     event.persist();
 
     const { text } = event.nativeEvent;
@@ -63,9 +75,43 @@ const Register = () => {
       ...personalDataTattoArtist,
       [testID]: text,
     });
+    return personalDataTattoArtist;
   };
 
-  console.log(personalDataTattoArtist);
+  const onChangeDataUser = (event: any) => {
+    event.persist();
+
+    const { text } = event.nativeEvent;
+    const { testID } =
+      event.target._internalFiberInstanceHandleDEV.return.child.pendingProps;
+
+    setUserDataTattoArtist({
+      ...userDataTattoArtist,
+      [testID]: text,
+    });
+    return userDataTattoArtist;
+  };
+
+  const onSubmit = () => {
+    setNewTattooArtist({
+      personalDataTattoArtist: {
+        ...personalDataTattoArtist,
+      },
+
+      userDataTattoArtist: {
+        ...userDataTattoArtist,
+      },
+
+      professionalDataTattooArtist: {
+        ...professionalDataTattooArtist,
+      },
+      imagesTattoArtist: {
+        ...imagesTattoArtist,
+      },
+    });
+    return newTattooArtist;
+  };
+  console.log(newTattooArtist);
 
   return (
     <SafeAreaView>
@@ -84,7 +130,8 @@ const Register = () => {
               </Text>
             </View>
           </View>
-          <View style={styles.personalDataContainer}>
+
+          <View style={styles.forms}>
             <Text style={styles.tittleH2}>Datos personales</Text>
             <View>
               <View>
@@ -93,9 +140,8 @@ const Register = () => {
                   value={personalDataTattoArtist.name}
                   // onFocus={}
                   placeholder="Nombre *"
-                  onChange={onChangeData}
+                  onChange={onChangeDataPersonal}
                   testID="name"
-                  key="name"
                   maxLength={20}
                 />
               </View>
@@ -104,7 +150,7 @@ const Register = () => {
                 <TextInput
                   style={styles.input}
                   value={personalDataTattoArtist.surname1}
-                  onChange={onChangeData}
+                  onChange={onChangeDataPersonal}
                   // onFocus={}
                   placeholder="Primer apellido *"
                   testID="surname1"
@@ -115,7 +161,7 @@ const Register = () => {
                 <TextInput
                   style={styles.input}
                   value={personalDataTattoArtist.surname2}
-                  onChange={onChangeData}
+                  onChange={onChangeDataPersonal}
                   // onFocus={}
                   placeholder="Segundo apellido *"
                   testID="surname2"
@@ -124,11 +170,64 @@ const Register = () => {
               </View>
             </View>
           </View>
+
+          <View style={styles.forms}>
+            <Text style={styles.tittleH2}>Datos de usuario</Text>
+            <View>
+              <View>
+                <TextInput
+                  style={styles.input}
+                  value={userDataTattoArtist.userName}
+                  // onFocus={}
+                  placeholder="Nombre de usuario *"
+                  onChange={onChangeDataUser}
+                  testID="userName"
+                  maxLength={20}
+                />
+              </View>
+
+              <View>
+                <TextInput
+                  style={styles.input}
+                  value={userDataTattoArtist.password}
+                  onChange={onChangeDataUser}
+                  // onFocus={}
+                  placeholder="Contraseña *"
+                  testID="password"
+                  secureTextEntry={true}
+                  maxLength={20}
+                />
+              </View>
+              <View>
+                <TextInput
+                  style={styles.input}
+                  value={userDataTattoArtist.repeatPassword}
+                  onChange={onChangeDataUser}
+                  // onFocus={}
+                  placeholder="Repetir la contraseña *"
+                  secureTextEntry={true}
+                  testID="repeatPassword"
+                  maxLength={20}
+                />
+              </View>
+
+              <View>
+                <TextInput
+                  keyboardType="email-address"
+                  style={styles.input}
+                  value={userDataTattoArtist.email}
+                  onChange={onChangeDataUser}
+                  // onFocus={}
+                  placeholder="Email *"
+                  testID="email"
+                  maxLength={20}
+                />
+              </View>
+            </View>
+          </View>
           <GeneralButton
             textButton="REGISTRARME COMO TATUADOR"
-            functionOnPress={() => {
-              navigation.navigate(RoutesEnum.login);
-            }}
+            functionOnPress={onSubmit}
           />
         </View>
       </ScrollView>
