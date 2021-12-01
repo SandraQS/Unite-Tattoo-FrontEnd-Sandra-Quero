@@ -20,7 +20,6 @@ const AllWorks = () => {
     loadAllWorks();
   }, [loadAllWorks]);
 
-  console.log(works);
   return (
     <SafeAreaView>
       <StatusBar />
