@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { ITalentCard } from "../../types/components.types";
+import { TalentCardProps } from "../../types/components.types";
 
 import style from "./TalentCard.styles";
 
@@ -9,7 +9,7 @@ const TalentCard = ({
   tattooArtist,
   styleWork,
   functionOnPress,
-}: ITalentCard) => {
+}: TalentCardProps) => {
   return (
     <View style={style.mainContainerCard}>
       <View style={style.talentCard}>

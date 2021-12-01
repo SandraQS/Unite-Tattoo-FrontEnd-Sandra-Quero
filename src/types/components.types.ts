@@ -3,9 +3,14 @@ export type GeneralButtonProps = {
   functionOnPress: () => void;
 };
 
-export type ITalentCard = {
+export type TalentCardProps = {
   imageWork: string;
   tattooArtist: string;
   styleWork: string;
   functionOnPress?: () => void;
+};
+
+export type TitleProps = {
+  text: string;
+  textBold?: string;
 };
