@@ -4,26 +4,16 @@ import { TalentCardProps } from "../../types/components.types";
 
 import style from "./TalentCard.styles";
 
-const TalentCard = ({
-  imageWork,
-  tattooArtist,
-  styleWork,
-  functionOnPress,
-}: TalentCardProps) => {
+const TalentCard = ({ work }: TalentCardProps) => {
   return (
     <View style={style.mainContainerCard}>
       <View style={style.talentCard}>
         <View style={style.imageContainer}>
-          <Image
-            source={{
-              uri: "https://logiabarcelona.com/wp-content/uploads/photo-gallery/Bruno%20Almeida/tatuaje_brazo_flores_plantas_logia_barcelona_bruno_almeida.jpg",
-            }}
-            style={style.imageWork}
-          />
+          <Image source={{ uri: work.image }} style={style.imageWork} />
 
           <View style={style.textContainer}>
-            <Text style={style.tattooArtistTitle}>{tattooArtist}</Text>
-            <Text style={style.styleSubtitle}>{styleWork}</Text>
+            <Text style={style.tattooArtistTitle}>{work.tattooArtist}</Text>
+            <Text style={style.styleSubtitle}>{work.tattooStyles}</Text>
           </View>
         </View>
       </View>

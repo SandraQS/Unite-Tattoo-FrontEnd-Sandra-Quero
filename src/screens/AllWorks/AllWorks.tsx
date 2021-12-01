@@ -14,6 +14,8 @@ import {
 import Title from "../../components/Title/Title";
 import TalentCard from "../../components/TalentCard/TalentCard";
 import { useWorks } from "../../hooks/useWorks";
+import { TalentCardProps } from "../../types/components.types";
+import { IWork } from "../../types/interfacesComponent";
 
 const AllWorks = () => {
   const { loadAllWorks, works } = useWorks();
@@ -40,7 +42,7 @@ const AllWorks = () => {
         <Title text={textTitle} textBold={textTitleBold} />
         {works.length ? (
           <View>
-            {works.map((work: any) => (
+            {works.map((work: IWork) => (
               <TalentCard key={work.id} work={work} />
             ))}
           </View>
