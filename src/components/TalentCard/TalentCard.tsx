@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { TalentCardProps } from "../../types/components.types";
 
 import style from "./TalentCard.styles";
