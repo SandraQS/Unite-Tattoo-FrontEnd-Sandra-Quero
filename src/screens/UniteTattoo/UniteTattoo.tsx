@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/core";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import {
   SafeAreaView,
@@ -8,23 +8,61 @@ import {
   Text,
   View,
   Image,
+  TouchableOpacity,
+  Button,
 } from "react-native";
 
-import { LoginScreenNavigationProp } from "../../types/navigation.types";
 import styles from "./UniteTattoo.styles";
 import { mainContainer } from "../../styles/containers.styles";
+import RoutesEnum from "../../navigation/routes";
+import { UniteTattooScreenNavigationProp } from "../../types/navigation.types";
 
 const UniteTattoo = () => {
-  const navigation = useNavigation<LoginScreenNavigationProp>();
+  const navigation = useNavigation<UniteTattooScreenNavigationProp>();
 
   return (
     <SafeAreaView>
       <StatusBar />
       <ScrollView>
         <View style={mainContainer}>
+          <View>
+            <Button
+              title="Vamos a HOME"
+              onPress={() => {
+                navigation.navigate(RoutesEnum.home);
+              }}
+            />
+          </View>
+
           <Image source={require("../../assets/Uttoo-logo.svg")} />
 
-          <Text style={styles.text}>UNNITE TATTOO SCREEN</Text>
+          <TouchableOpacity
+            style={styles.buttonUniteTattoo}
+            activeOpacity={0.7}
+            onPress={() => {
+              navigation.navigate(RoutesEnum.home);
+            }}
+          >
+            <Text style={styles.text}> Tatuador </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.buttonUniteTattoo}
+            activeOpacity={0.7}
+            onPress={() => {
+              navigation.navigate(RoutesEnum.login);
+            }}
+          >
+            <Text style={styles.text}> Cliente </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.buttonUniteTattoo}
+            activeOpacity={0.7}
+            onPress={() => navigation.navigate(RoutesEnum.home)}
+          >
+            <Text style={styles.text}> Entrar como invitado </Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
