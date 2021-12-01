@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import tattooArtistReducer from "./tattooArtistReducer";
-import worksReducer from "./worksREducer";
+import worksReducer from "./worksReducer";
 
 const rootReducer = combineReducers({
   tattooArtist: tattooArtistReducer,
-  work: worksReducer,
+  works: worksReducer,
 });
 
 export default rootReducer;

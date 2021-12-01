@@ -12,7 +12,6 @@ const worksReducer = (works = [], action: ItattooWorksActions) => {
     default:
       newWorks = works;
   }
-
   return newWorks;
 };
 

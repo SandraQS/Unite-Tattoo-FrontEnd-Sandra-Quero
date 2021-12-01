@@ -7,6 +7,6 @@ export const loadAllWorksThunk = () => async (dispatch: any) => {
   );
 
   if (response.status === 200) {
-    dispatch(loadAllWorksAction(response.data));
+    dispatch(loadAllWorksAction(response.data.works));
   }
 };
