@@ -1,22 +1,22 @@
 import { StyleSheet } from "react-native";
-import { uniteTattoo } from "../../styles/uniteTatto.styles";
+import { colors, fontSize } from "../../styles/uniteTatto.styles";
 
-const { color, fontSize } = uniteTattoo;
 export default StyleSheet.create({
   forms: {
     marginTop: 30,
   },
 
   input: {
-    borderBottomColor: color.black,
+    borderBottomColor: colors.black,
     borderBottomWidth: 1,
     padding: 20,
   },
+
   logo: {
     width: 200,
   },
   mainContainer: {
-    backgroundColor: color.mediumBrown,
+    backgroundColor: colors.mediumBrown,
     padding: 20,
   },
 
@@ -31,7 +31,7 @@ export default StyleSheet.create({
 
   welcomeContainer: {
     alignContent: "center",
-    backgroundColor: color.lightBrown,
+    backgroundColor: colors.lightBrown,
     flex: 1,
     padding: 30,
   },

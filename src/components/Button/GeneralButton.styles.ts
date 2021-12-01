@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { uniteTattoo } from "../../styles/uniteTatto.styles";
+import { fontSize } from "../../styles/uniteTatto.styles";
 
 export default StyleSheet.create({
   button: {
@@ -11,7 +11,7 @@ export default StyleSheet.create({
   },
   buttonText: {
     color: "black",
-    fontSize: uniteTattoo.fontSize.textButton,
+    fontSize: fontSize.textButton,
     fontWeight: "900",
     textAlign: "center",
   },
