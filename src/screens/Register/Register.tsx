@@ -13,7 +13,6 @@ import {
 } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
 import GeneralButton from "../../components/Button/GeneralButton";
-import RoutesEnum from "../../navigation/routes";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
 import styles from "./Register.styles";
