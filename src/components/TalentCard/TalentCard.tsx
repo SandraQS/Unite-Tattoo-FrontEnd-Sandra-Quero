@@ -1,13 +1,13 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { TalentCard } from "../../types/components.types";
+import { ITalentCard } from "../../types/components.types";
 
 const TalentCard = ({
   imageWork,
-  titleWork,
-  subtitleWork,
+  tattooArtist,
+  styleWork,
   functionOnPress,
-}: TalentCard) => {
+}: ITalentCard) => {
   return (
     <View>
       <View>
@@ -18,8 +18,8 @@ const TalentCard = ({
         />
 
         <View>
-          <Text>{titleWork}</Text>
-          <Text>{subtitleWork}</Text>
+          <Text>{tattooArtist}</Text>
+          <Text>{styleWork}</Text>
         </View>
       </View>
     </View>
