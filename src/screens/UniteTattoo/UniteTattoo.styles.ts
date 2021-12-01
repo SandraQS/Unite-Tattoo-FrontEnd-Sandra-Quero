@@ -1,9 +1,11 @@
 import { StyleSheet } from "react-native";
-import { colors, fontSize } from "../../styles/uniteTatto.styles";
+import { fontSize } from "../../styles/uniteTatto.styles";
 
 export default StyleSheet.create({
+  buttonUniteTattoo: {
+    padding: 20,
+  },
   text: {
-    fontSize: fontSize.text,
-    textAlign: "center",
+    fontSize: fontSize.tittleH2,
   },
 });

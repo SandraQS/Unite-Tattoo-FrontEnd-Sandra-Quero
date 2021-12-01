@@ -1,7 +1,7 @@
 import React from "react";
 
-import Register from "../Register/Register";
+import UniteTattoo from "../UniteTattoo/UniteTattoo";
 
 export const Home = () => {
-  return <Register />;
+  return <UniteTattoo />;
 };
