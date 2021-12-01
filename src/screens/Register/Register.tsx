@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/core";
 import React, { useEffect, useState } from "react";
-import { uniteTattoo } from "../../styles/uniteTatto.styles";
+import { colors } from "../../styles/uniteTatto.styles";
 
 import {
   SafeAreaView,
@@ -18,7 +18,6 @@ import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
 import styles from "./Register.styles";
 import { useTattooArtist } from "../../hooks/useTattooArtist";
-const { color } = uniteTattoo;
 
 const Register = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
@@ -358,9 +357,9 @@ const Register = () => {
               onValueChange={selectCheckBox}
               boxType="square"
               testID="colaboration"
-              onTintColor={color.darkBrown}
-              onCheckColor={color.darkBrown}
-              tintColor={color.black}
+              onTintColor={colors.darkBrown}
+              onCheckColor={colors.darkBrown}
+              tintColor={colors.black}
             />
             <Text style={styles.text}>
               Colaboración con otros estudios / tatuadores?
