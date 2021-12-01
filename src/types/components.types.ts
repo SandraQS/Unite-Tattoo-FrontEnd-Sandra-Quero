@@ -1,13 +1,12 @@
+import { IWork } from "./interfacesComponent";
+
 export type GeneralButtonProps = {
   textButton: string;
   functionOnPress: () => void;
 };
 
 export type TalentCardProps = {
-  imageWork: string;
-  tattooArtist: string;
-  styleWork: string;
-  functionOnPress?: () => void;
+  work: IWork;
 };
 
 export type TitlleProps = {
