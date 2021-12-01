@@ -12,7 +12,7 @@ import {
   TextInput,
 } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
-import GeneralButton from "../../components/Button/GeneralButton";
+import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
 import styles from "./Register.styles";
