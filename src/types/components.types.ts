@@ -10,7 +10,7 @@ export type TalentCardProps = {
   functionOnPress?: () => void;
 };
 
-export type TitlleProps = {
+export type TitleProps = {
   text: string;
   textBold?: string;
 };
