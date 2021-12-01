@@ -1,6 +1,4 @@
-import { useNavigation } from "@react-navigation/core";
-import React, { useEffect, useState } from "react";
-import { colors } from "../../styles/uniteTatto.styles";
+import React, { useEffect } from "react";
 
 import {
   SafeAreaView,
@@ -8,11 +6,12 @@ import {
   StatusBar,
   Text,
   View,
-  Image,
+  // FlatList,
 } from "react-native";
 import Title from "../../components/Title/Title";
 import TalentCard from "../../components/TalentCard/TalentCard";
 import { useWorks } from "../../hooks/useWorks";
+import { IWork } from "../../types/interfacesComponent";
 
 const AllWorks = () => {
   const { loadAllWorks, works } = useWorks();
@@ -20,20 +19,32 @@ const AllWorks = () => {
     loadAllWorks();
   }, [loadAllWorks]);
 
+  // const renderWork = ({ work }: any) => <TalentCard work={work} />;
+  const textTitle = "TALENTOS";
+  const textTitleBold = " DESTACADOS";
   return (
+    // <SafeAreaView>
+    //   <FlatList
+    //     data={works}
+    //     renderItem={renderWork}
+    //     keyExtractor={(work) => work.id}
+    //     // ListFooterComponent={}
+    //   />
+    // </SafeAreaView>
+
     <SafeAreaView>
       <StatusBar />
       <ScrollView>
-        <View>
-          <Title text="TALENTOS " textBold="DESTACADOS" />
-
-          <TalentCard
-            imageWork={works[0].tattooArtist}
-            tattooArtist={works[0].tattooArtist}
-            styleWork={works[0].tattooStyles}
-            functionOnPress={() => {}}
-          />
-        </View>
+        <Title text={textTitle} textBold={textTitleBold} />
+        {works.length ? (
+          <View>
+            {works.map((work: IWork) => (
+              <TalentCard key={work.id} work={work} />
+            ))}
+          </View>
+        ) : (
+          <Text>Loading...</Text>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
