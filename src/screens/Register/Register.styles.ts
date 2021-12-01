@@ -11,9 +11,12 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     padding: 20,
   },
-
   logo: {
-    width: 200,
+    margin: 20,
+  },
+  logoContainter: {
+    alignItems: "center",
+    justifyContent: "center",
   },
   mainContainer: {
     backgroundColor: colors.mediumBrown,

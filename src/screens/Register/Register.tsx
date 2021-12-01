@@ -8,7 +8,6 @@ import {
   StatusBar,
   Text,
   View,
-  Image,
   TextInput,
 } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
@@ -17,6 +16,7 @@ import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
 import styles from "./Register.styles";
 import { useTattooArtist } from "../../hooks/useTattooArtist";
+import AutoHeightImage from "react-native-auto-height-image";
 
 const Register = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
@@ -146,10 +146,13 @@ const Register = () => {
       <StatusBar />
       <ScrollView>
         <View style={styles.mainContainer}>
-          <Image
-            source={require("../../assets/Uttoo-logo.svg")}
-            style={styles.logo}
-          />
+          <View style={styles.logoContainter}>
+            <AutoHeightImage
+              width={150}
+              source={require("../../assets/utoo-logo.png")}
+              style={styles.logo}
+            />
+          </View>
           <View style={styles.welcomeContainer}>
             <Text style={styles.tittleH2}>Bienvenid@</Text>
             <View>
