@@ -22,8 +22,6 @@ const CollectionsTattooArtist = () => {
       <StatusBar />
       <ScrollView>
         <View style={mainContainer}>
-          <Image source={require("../../assets/Uttoo-logo.svg")} />
-
           <Text style={styles.text}>COLECCIONES TATUADOR SCREEN</Text>
         </View>
       </ScrollView>

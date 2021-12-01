@@ -34,8 +34,6 @@ const UniteTattoo = () => {
             />
           </View>
 
-          <Image source={require("../../assets/Uttoo-logo.svg")} />
-
           <TouchableOpacity
             style={styles.buttonUniteTattoo}
             activeOpacity={0.7}
