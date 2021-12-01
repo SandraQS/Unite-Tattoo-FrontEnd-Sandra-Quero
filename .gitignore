@@ -64,3 +64,9 @@ buck-out/
 coverage
 coverage/
 .coverage
+
+#sonar
+.scannerwork
+
+
+.env
