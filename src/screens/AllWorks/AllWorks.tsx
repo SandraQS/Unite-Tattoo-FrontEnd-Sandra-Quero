@@ -12,8 +12,14 @@ import {
 } from "react-native";
 import Title from "../../components/Title/Title";
 import TalentCard from "../../components/TalentCard/TalentCard";
+import { useWorks } from "../../hooks/useWorks";
 
 const AllWorks = () => {
+  const { loadAllWorks, works } = useWorks();
+  useEffect(() => {
+    loadAllWorks();
+  }, [loadAllWorks]);
+
   return (
     <SafeAreaView>
       <StatusBar />
@@ -22,9 +28,9 @@ const AllWorks = () => {
           <Title text="TALENTOS " textBold="DESTACADOS" />
 
           <TalentCard
-            imageWork="imagen"
-            tattooArtist="Bruno"
-            styleWork="fine line"
+            imageWork={works[0].tattooArtist}
+            tattooArtist={works[0].tattooArtist}
+            styleWork={works[0].tattooStyles}
             functionOnPress={() => {}}
           />
         </View>
