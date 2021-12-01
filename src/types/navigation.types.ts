@@ -5,7 +5,18 @@ import RoutesEnum from "../navigation/routes";
 export type RootStackParamList = {
   [RoutesEnum.home]: undefined;
   [RoutesEnum.login]: undefined;
+  [RoutesEnum.uniteTatto]: undefined;
 };
+
+export type UniteTattooScreenRouteProp = RouteProp<
+  RootStackParamList,
+  RoutesEnum.uniteTatto
+>;
+
+export type UniteTattooScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  RoutesEnum.uniteTatto
+>;
 
 export type LoginScreenRouteProp = RouteProp<
   RootStackParamList,
