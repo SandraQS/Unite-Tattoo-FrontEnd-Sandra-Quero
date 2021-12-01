@@ -2,13 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import createTattooArtistThunk from "../redux/thunks/tattooArtistThunk";
 
 export const useTattooArtist = () => {
-  const { tattooArtist } = useSelector(({ tattooArtist }: any) => ({
-    tattooArtist,
+  const tattooArtist: any = useSelector(({ store: tattooArtist }: any) => ({
+    store: tattooArtist,
   }));
   const dispatch = useDispatch();
 
-  const tattooArtistCreate = (tattooArtist: any) => {
-    dispatch(createTattooArtistThunk(tattooArtist));
+  const tattooArtistCreate = (userTattooArtist: any) => {
+    dispatch(createTattooArtistThunk(userTattooArtist));
   };
   return {
     tattooArtist,
