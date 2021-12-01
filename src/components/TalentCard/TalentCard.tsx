@@ -13,7 +13,7 @@ const TalentCard = ({
       <View>
         <Image
           source={{
-            uri: "",
+            uri: "https://logiabarcelona.com/wp-content/uploads/photo-gallery/Bruno%20Almeida/tatuaje_brazo_flores_plantas_logia_barcelona_bruno_almeida.jpg",
           }}
         />
 
