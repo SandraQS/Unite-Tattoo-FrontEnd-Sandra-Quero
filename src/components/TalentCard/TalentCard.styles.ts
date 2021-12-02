@@ -20,7 +20,7 @@ export default StyleSheet.create({
   },
   mainContainerCard: {
     height: 300,
-    width: 150,
+    width: 170,
   },
   styleSubtitle: {
     color: colors.mediumBrown,
