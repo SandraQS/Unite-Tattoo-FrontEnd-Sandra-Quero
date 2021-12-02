@@ -1,7 +1,10 @@
 enum RoutesEnum {
-  home = "Home",
-  login = "Login",
   uniteTatto = "UniteTattoo",
+  login = "Login",
+  register = "Register",
+  allworks = "AllWorks",
+
+  collections = "CollectionsTattooArtist",
 }
 
 export default RoutesEnum;
