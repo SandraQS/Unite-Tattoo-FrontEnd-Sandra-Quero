@@ -9,3 +9,13 @@ export const loadAllWorksAction = (works: Array<object>) => ({
   type: actionTypes.loadAllWorks,
   works,
 });
+
+export const tattooArtistLoginAction = (tattooArtist: object) => ({
+  type: actionTypes.tattooArtistLogin,
+  tattooArtist,
+});
+
+export const tattooArtistRegisteredAction = (tattooArtist: object) => ({
+  type: actionTypes.tattooArtistRegistered,
+  tattooArtist,
+});
