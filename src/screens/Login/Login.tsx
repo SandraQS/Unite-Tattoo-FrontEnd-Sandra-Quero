@@ -25,7 +25,7 @@ export const Login = () => {
   return (
     <SafeAreaView style={generalStyles.screenMediumBrown}>
       <ScrollView>
-        <View style={styles.mainContainer}>
+        <View style={generalStyles.mainContainerGeneral}>
           <View style={styles.logoContainter}>
             <AutoHeightImage
               width={150}
