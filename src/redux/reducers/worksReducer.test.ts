@@ -41,4 +41,15 @@ describe("Given worksReducer reducer", () => {
       expect(newWorks).toEqual(arrayWorks);
     });
   });
+
+  describe("When it receives an array and action inexistent", () => {
+    test("Then it should return the same array", () => {
+      const action: any = "This action does not exist";
+      const works: any = [];
+
+      const newWorks = worksReducer(works, action);
+
+      expect(newWorks).toEqual(works);
+    });
+  });
 });
