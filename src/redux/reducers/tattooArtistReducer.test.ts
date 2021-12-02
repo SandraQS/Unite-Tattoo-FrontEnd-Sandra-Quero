@@ -59,4 +59,14 @@ describe("Given tattooArtistReducer reducer", () => {
       expect(newTattooArtist).toEqual(expectnewTattooArtist);
     });
   });
+
+  describe("When it receives an onbect and action inexistent", () => {
+    test("Then it should return the same onject", () => {
+      const action: any = "This action does not exist";
+      const tattooArtist: any = {};
+      const newTattooArtist = tattooArtistReducer(tattooArtist, action);
+
+      expect(newTattooArtist).toEqual(tattooArtist);
+    });
+  });
 });
