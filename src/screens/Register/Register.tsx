@@ -145,12 +145,10 @@ const Register = () => {
   };
 
   return (
-    <SafeAreaView style={generalStyles.screen}>
+    <SafeAreaView style={generalStyles.screenMediumBrown}>
       <StatusBar />
       <ScrollView>
-        <View
-          style={[generalStyles.mainContainerGeneral, styles.mainContainer]}
-        >
+        <View style={generalStyles.mainContainerGeneral}>
           <View style={styles.logoContainter}>
             <AutoHeightImage
               width={150}
