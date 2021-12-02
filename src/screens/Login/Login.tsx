@@ -21,8 +21,11 @@ import AutoHeightImage from "react-native-auto-height-image";
 export const Login = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
 
-  const initialUserData = { email: "", password: "", repeatPassword: "" };
+  const initialUserData = { email: "", password: "" };
   const [userData, setUserData] = useState(initialUserData);
+  const isComplete =
+    userData.email === "" ||
+    userData.password === "";
 
   const onChangeDataUser = (text: string, nameValue: string) => {
     setUserData({
@@ -38,9 +41,9 @@ export const Login = () => {
     navigation.navigate(RoutesEnum.collections);
   };
 
-  const goRegister= ()=>{
+  const goRegister = () => {
     navigation.navigate(RoutesEnum.register);
-  }
+  };
 
   return (
     <SafeAreaView style={generalStyles.screenMediumBrown}>
@@ -84,22 +87,13 @@ export const Login = () => {
                   maxLength={20}
                 />
               </View>
-              <View>
-                <TextInput
-                  style={styles.input}
-                  value={userData.repeatPassword}
-                  onChangeText={(text) => {
-                    onChangeDataUser(text, "repeatPassword");
-                  }}
-                  // onFocus={}
-                  placeholder="Repetir la contraseña *"
-                  secureTextEntry={true}
-                  accessibilityLabel="repeatPassword"
-                  maxLength={20}
+              
+              {!isComplete && (
+                <GeneralButton
+                  textButton="LOGIN"
+                  functionOnPress={loginClick}
                 />
-              </View>
-
-              <GeneralButton textButton="LOGIN" functionOnPress={loginClick} />
+              )}
 
               <Button
                 title="Registrarme"
