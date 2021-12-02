@@ -14,13 +14,33 @@ import styles from "./Login.styles";
 import { generalStyles, colors } from "../../styles/uniteTatto.styles";
 
 import RoutesEnum from "../../navigation/routes";
+
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import AutoHeightImage from "react-native-auto-height-image";
 
 export const Login = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
-  const initialUserData = { email: "", password: "" };
+
+  const initialUserData = { email: "", password: "", repeatPassword: "" };
   const [userData, setUserData] = useState(initialUserData);
+
+  const onChangeDataUser = (text: string, nameValue: string) => {
+    setUserData({
+      ...userData,
+      [nameValue]: text,
+    });
+
+    return userData;
+  };
+
+  const loginClick = () => {
+    setUserData(initialUserData);
+    navigation.navigate(RoutesEnum.collections);
+  };
+
+  const goRegister= ()=>{
+    navigation.navigate(RoutesEnum.register);
+  }
 
   return (
     <SafeAreaView style={generalStyles.screenMediumBrown}>
@@ -42,7 +62,9 @@ export const Login = () => {
                   value={userData.email}
                   keyboardType="email-address"
                   placeholder="Email *"
-                  onChange={() => {}}
+                  onChangeText={(text) => {
+                    onChangeDataUser(text, "email");
+                  }}
                   accessibilityLabel="email"
                   maxLength={20}
                 />
@@ -52,7 +74,9 @@ export const Login = () => {
                 <TextInput
                   style={styles.input}
                   value={userData.password}
-                  onChange={() => {}}
+                  onChangeText={(text) => {
+                    onChangeDataUser(text, "password");
+                  }}
                   // onFocus={}
                   placeholder="Contraseña *"
                   accessibilityLabel="password"
@@ -63,8 +87,10 @@ export const Login = () => {
               <View>
                 <TextInput
                   style={styles.input}
-                  value={userData.password}
-                  onChange={() => {}}
+                  value={userData.repeatPassword}
+                  onChangeText={(text) => {
+                    onChangeDataUser(text, "repeatPassword");
+                  }}
                   // onFocus={}
                   placeholder="Repetir la contraseña *"
                   secureTextEntry={true}
@@ -73,12 +99,11 @@ export const Login = () => {
                 />
               </View>
 
-              <GeneralButton textButton="LOGIN" functionOnPress={() => {}} />
+              <GeneralButton textButton="LOGIN" functionOnPress={loginClick} />
+
               <Button
                 title="Registrarme"
-                onPress={() => {
-                  navigation.navigate(RoutesEnum.register);
-                }}
+                onPress={goRegister}
                 color={colors.darkBrown}
               />
             </View>
