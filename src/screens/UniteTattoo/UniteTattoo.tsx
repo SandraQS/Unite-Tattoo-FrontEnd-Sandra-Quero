@@ -43,7 +43,7 @@ const UniteTattoo = () => {
                 style={[styles.buttonUniteTattoo, styles.separator]}
                 activeOpacity={0.7}
                 onPress={() => {
-                  navigation.navigate(RoutesEnum.home);
+                  navigation.navigate(RoutesEnum.register);
                 }}
               >
                 <Text style={styles.text}> Tatuador </Text>
@@ -63,7 +63,7 @@ const UniteTattoo = () => {
               <TouchableOpacity
                 style={[styles.buttonUniteTattoo, styles.buttonInvited]}
                 activeOpacity={0.7}
-                onPress={() => navigation.navigate(RoutesEnum.home)}
+                onPress={() => navigation.navigate(RoutesEnum.allworks)}
               >
                 <Text style={styles.invited}> Entrar como invitado </Text>
               </TouchableOpacity>

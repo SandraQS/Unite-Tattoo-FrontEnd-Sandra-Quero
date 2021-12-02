@@ -3,9 +3,11 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import RoutesEnum from "../navigation/routes";
 
 export type RootStackParamList = {
-  [RoutesEnum.home]: undefined;
-  [RoutesEnum.login]: undefined;
   [RoutesEnum.uniteTatto]: undefined;
+  [RoutesEnum.login]: undefined;
+  [RoutesEnum.register]: undefined;
+  [RoutesEnum.allworks]: undefined;
+  [RoutesEnum.collections]: undefined;
 };
 
 export type UniteTattooScreenRouteProp = RouteProp<
@@ -28,12 +30,29 @@ export type LoginScreenNavigationProp = NativeStackNavigationProp<
   RoutesEnum.login
 >;
 
-export type HomeScreenRouteProp = RouteProp<
+export type RegisterScreenRouteProp = RouteProp<
   RootStackParamList,
-  RoutesEnum.home
+  RoutesEnum.register
 >;
 
-export type HomeScreenNavigationProp = NativeStackNavigationProp<
+export type RegisterScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  RoutesEnum.home
+  RoutesEnum.register
 >;
+
+export type AllWorksScreenRouteProp = RouteProp<
+  RootStackParamList,
+  RoutesEnum.allworks
+>;
+
+export type AllWorksScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  RoutesEnum.allworks
+>;
+export type CollectionsTattooArtistScreenRouteProp = RouteProp<
+  RootStackParamList,
+  RoutesEnum.collections
+>;
+
+export type CollectionsTattooArtistScreenNavigationProp =
+  NativeStackNavigationProp<RootStackParamList, RoutesEnum.collections>;
