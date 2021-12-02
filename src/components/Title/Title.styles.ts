@@ -9,10 +9,6 @@ export default StyleSheet.create({
     marginVertical: 50,
   },
 
-  logo: {
-    margin: 20,
-  },
-
   logoContainter: {
     alignItems: "center",
     justifyContent: "center",
@@ -31,7 +27,7 @@ export default StyleSheet.create({
 
   titleContainter: {
     flex: 3,
-    left: 50,
+    left: 30,
     position: "absolute",
   },
 });
