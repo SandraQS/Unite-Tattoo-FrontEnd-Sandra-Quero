@@ -12,7 +12,6 @@ const Title = ({ text, textBold }: TitlleProps) => {
         <AutoHeightImage
           width={50}
           source={require("../../assets/icono-rombo-titulo.png")}
-          style={styles.logo}
         />
       </View>
       <View style={styles.titleContainter}>
