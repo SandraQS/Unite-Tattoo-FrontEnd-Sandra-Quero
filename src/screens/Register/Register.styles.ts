@@ -32,15 +32,17 @@ export default StyleSheet.create({
 
   mainContainer: {
     backgroundColor: colors.mediumBrown,
-    padding: 20,
   },
+
   text: {
     fontSize: fontSize.text,
     textAlign: "center",
   },
+
   textBold: {
     fontWeight: "800",
   },
+
   textCancel: {
     marginLeft: 5,
   },

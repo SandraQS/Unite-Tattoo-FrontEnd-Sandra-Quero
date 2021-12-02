@@ -16,6 +16,7 @@ import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
 import styles from "./Register.styles";
+import { generalStyles } from "../../styles/uniteTatto.styles";
 import { useTattooArtist } from "../../hooks/useTattooArtist";
 import AutoHeightImage from "react-native-auto-height-image";
 import Title from "../../components/Title/Title";
@@ -144,10 +145,12 @@ const Register = () => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={generalStyles.screen}>
       <StatusBar />
       <ScrollView>
-        <View style={styles.mainContainer}>
+        <View
+          style={[generalStyles.mainContainerGeneral, styles.mainContainer]}
+        >
           <View style={styles.logoContainter}>
             <AutoHeightImage
               width={150}
