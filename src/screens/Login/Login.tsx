@@ -1,22 +1,72 @@
 import { useNavigation } from "@react-navigation/core";
-import React from "react";
-import { Button } from "react-native";
+import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
-import Prueba2 from "../../components/Prueba2/Prueba2";
+import React from "react";
+import {
+  Button,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  Text,
+  View,
+  Image,
+  TextInput,
+} from "react-native";
+
+import styles from "./Login.styles";
+
 import RoutesEnum from "../../navigation/routes";
-import { HomeScreenNavigationProp } from "../../types/navigation.types";
+import GeneralButton from "../../components/GeneralButton/GeneralButton";
+import AutoHeightImage from "react-native-auto-height-image";
 
 export const Login = () => {
-  const navigation = useNavigation<HomeScreenNavigationProp>();
+  const navigation = useNavigation<LoginScreenNavigationProp>();
+
   return (
     <>
-      <Prueba2 />
       <Button
-        title="Vamos a HOME"
+        title="Registrarme"
         onPress={() => {
-          navigation.navigate(RoutesEnum.home);
+          navigation.navigate(RoutesEnum.register);
         }}
       />
+      <SafeAreaView>
+        <StatusBar />
+        <ScrollView>
+          <View style={styles.mainContainer}>
+            <View style={styles.logoContainter}>
+              <AutoHeightImage
+                width={150}
+                source={require("../../assets/utoo-logo.png")}
+                style={styles.logo}
+              />
+            </View>
+            <View>
+              <Text style={styles.tittleH2}>Login</Text>
+            </View>
+
+            <View style={styles.forms}>
+              <View>
+                <View>
+                  <TextInput
+                    style={styles.input}
+                    value={"hola"}
+                    placeholder="Nombre *"
+                    onChange={() => {}}
+                    testID="name"
+                    maxLength={20}
+                  />
+                </View>
+
+                <GeneralButton
+                  textButton="REGISTRARME COMO TATUADOR"
+                  functionOnPress={() => {}}
+                />
+              </View>
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     </>
   );
 };
