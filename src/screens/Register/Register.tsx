@@ -9,6 +9,7 @@ import {
   Text,
   View,
   TextInput,
+  TouchableOpacity,
 } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
@@ -17,6 +18,7 @@ import { LoginScreenNavigationProp } from "../../types/navigation.types";
 import styles from "./Register.styles";
 import { useTattooArtist } from "../../hooks/useTattooArtist";
 import AutoHeightImage from "react-native-auto-height-image";
+import Title from "../../components/Title/Title";
 
 const Register = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
@@ -154,20 +156,34 @@ const Register = () => {
             />
           </View>
           <View style={styles.welcomeContainer}>
-            <Text style={styles.tittleH2}>Bienvenid@</Text>
+            <Text style={styles.tittleH2}>Bienvenid@!</Text>
             <View>
               <Text style={styles.text}>
-                Has escogido la opción “tatuador”, a continuación deberás
-                rellenar un formulario para registrarte y así poder formar parte
-                de nuestra comunidad. Después de eso, podrás entrar en tu perfil
-                como tatuador directamente. Esperamos que tengas una buena
-                experiencia!
+                Has escogido la opción
+                <Text style={styles.textBold}> “tatuador”,</Text> a continuación
+                deberás rellenar un formulario para registrarte y así poder
+                formar parte de nuestra comunidad. Después de eso, podrás entrar
+                en tu perfil como tatuador directamente. Esperamos que tengas
+                una buena experiencia!
               </Text>
+            </View>
+            <View>
+              <TouchableOpacity
+                onPress={() => {}}
+                activeOpacity={0.6}
+                style={styles.buttonCancel}
+              >
+                <AutoHeightImage
+                  width={30}
+                  source={require("../../assets/icono-rombo-titulo.png")}
+                />
+                <Text style={[styles.text, styles.textCancel]}>Cancelar</Text>
+              </TouchableOpacity>
             </View>
           </View>
 
           <View style={styles.forms}>
-            <Text style={styles.tittleH2}>Datos personales</Text>
+            <Title text="DATOS PERSONALES" />
             <View>
               <View>
                 <TextInput
@@ -207,7 +223,7 @@ const Register = () => {
           </View>
 
           <View style={styles.forms}>
-            <Text style={styles.tittleH2}>Datos de usuario</Text>
+            <Title text="DATOS DE USUARIO" />
             <View>
               <View>
                 <TextInput
@@ -262,7 +278,7 @@ const Register = () => {
           </View>
 
           <View style={styles.forms}>
-            <Text style={styles.tittleH2}>Datos profesionales</Text>
+            <Title text="DATOS PROFESIONALES" />
             <View>
               <View>
                 <TextInput
