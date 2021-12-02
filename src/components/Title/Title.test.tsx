@@ -12,10 +12,8 @@ describe("Given Title component", () => {
         <Title text={textTitle} textBold={textTitleBold} />
       );
 
-      // const textExpected = screen.getByText(textTitle);
       const titleExpected = screen.getByText("Titulo en negrita");
 
-      // expect(textExpected).not.toBeNull();
       expect(titleExpected).not.toBeNull();
     });
   });
