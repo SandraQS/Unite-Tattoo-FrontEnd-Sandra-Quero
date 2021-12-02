@@ -4,16 +4,15 @@ import React from "react";
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
   Text,
   View,
   TouchableOpacity,
-  Button,
-  Image,
   ImageBackground,
 } from "react-native";
 
 import styles from "./UniteTattoo.styles";
+import { generalStyles } from "../../styles/uniteTatto.styles";
+
 import RoutesEnum from "../../navigation/routes";
 import { UniteTattooScreenNavigationProp } from "../../types/navigation.types";
 import AutoHeightImage from "react-native-auto-height-image";
@@ -22,8 +21,7 @@ const UniteTattoo = () => {
   const navigation = useNavigation<UniteTattooScreenNavigationProp>();
 
   return (
-    <SafeAreaView>
-      <StatusBar />
+    <SafeAreaView style={generalStyles.screenMediumBrown}>
       <ScrollView>
         <View style={styles.mainContainer}>
           <View style={styles.logoContainter}>
