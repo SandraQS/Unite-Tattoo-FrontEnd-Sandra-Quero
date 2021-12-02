@@ -1,16 +1,26 @@
 import React from "react";
 import { Text, View } from "react-native";
+import AutoHeightImage from "react-native-auto-height-image";
 import { TitlleProps } from "../../types/components.types";
 
-import style from "./Title.styles";
+import styles from "./Title.styles";
 
 const Title = ({ text, textBold }: TitlleProps) => {
   return (
-    <View>
-      <Text style={style.title}>
-        {text}
-        <Text style={style.titleBold}>{textBold}</Text>
-      </Text>
+    <View style={styles.headerContainter}>
+      <View style={styles.logoContainter}>
+        <AutoHeightImage
+          width={50}
+          source={require("../../assets/icono-rombo-titulo.png")}
+          style={styles.logo}
+        />
+      </View>
+      <View style={styles.titleContainter}>
+        <Text style={styles.title}>
+          {text}
+          <Text style={styles.titleBold}>{textBold}</Text>
+        </Text>
+      </View>
     </View>
   );
 };
