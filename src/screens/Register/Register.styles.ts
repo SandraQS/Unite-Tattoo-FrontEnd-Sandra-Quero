@@ -2,6 +2,15 @@ import { StyleSheet } from "react-native";
 import { colors, fontSize } from "../../styles/uniteTatto.styles";
 
 export default StyleSheet.create({
+  buttonCancel: {
+    alignItems: "center",
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    opacity: 0.5,
+    paddingTop: 10,
+  },
+
   forms: {
     marginTop: 30,
   },
@@ -11,22 +20,33 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     padding: 20,
   },
+
   logo: {
     margin: 20,
   },
+
   logoContainter: {
     alignItems: "center",
     justifyContent: "center",
   },
+
   mainContainer: {
     backgroundColor: colors.mediumBrown,
-    padding: 20,
   },
 
   text: {
     fontSize: fontSize.text,
     textAlign: "center",
   },
+
+  textBold: {
+    fontWeight: "800",
+  },
+
+  textCancel: {
+    marginLeft: 5,
+  },
+
   tittleH2: {
     fontSize: fontSize.tittleH2,
     textAlign: "center",
