@@ -9,6 +9,8 @@ export default StyleSheet.create({
     padding: 20,
   },
   containerInvited: {
+    alignItems: "flex-end",
+    flexDirection: "row",
     flex: 1,
   },
   containerUsers: {
@@ -32,8 +34,8 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   mainContainer: {
-    backgroundColor: colors.mediumBrown,
     flex: 1,
+    minHeight: "100%",
     padding: 20,
   },
   separator: {
