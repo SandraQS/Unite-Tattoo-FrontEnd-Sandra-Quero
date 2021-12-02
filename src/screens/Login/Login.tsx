@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/core";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   SafeAreaView,
@@ -17,15 +17,16 @@ import RoutesEnum from "../../navigation/routes";
 
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import AutoHeightImage from "react-native-auto-height-image";
+import { useUserTattooArtist } from "../../hooks/useUserTattooArtist";
 
 export const Login = () => {
+  const { tattooArtistLogin, stateUserTattooArtist } = useUserTattooArtist();
+
   const navigation = useNavigation<LoginScreenNavigationProp>();
 
   const initialUserData = { email: "", password: "" };
   const [userData, setUserData] = useState(initialUserData);
-  const isComplete =
-    userData.email === "" ||
-    userData.password === "";
+  const isComplete = userData.email === "" || userData.password === "";
 
   const onChangeDataUser = (text: string, nameValue: string) => {
     setUserData({
@@ -37,6 +38,7 @@ export const Login = () => {
   };
 
   const loginClick = () => {
+    tattooArtistLogin(userData);
     setUserData(initialUserData);
     navigation.navigate(RoutesEnum.collections);
   };
@@ -87,7 +89,7 @@ export const Login = () => {
                   maxLength={20}
                 />
               </View>
-              
+
               {!isComplete && (
                 <GeneralButton
                   textButton="LOGIN"
