@@ -7,4 +7,5 @@ export const colors = {
   mediumBrown: "#A19178",
   mediumGrey: "#EEEFF1",
   secondary: "#792334",
+  white: "#FFF",
 };

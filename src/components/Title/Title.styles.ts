@@ -4,7 +4,6 @@ import { fontSize, colors } from "../../styles/uniteTatto.styles";
 export default StyleSheet.create({
   headerContainter: {
     alignItems: "center",
-    flex: 1,
     flexDirection: "row",
     justifyContent: "center",
     marginVertical: 50,

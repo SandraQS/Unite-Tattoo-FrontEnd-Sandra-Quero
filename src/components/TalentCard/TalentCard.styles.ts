@@ -31,6 +31,7 @@ export default StyleSheet.create({
     borderRadius: 20,
     flex: 1,
     flexDirection: "column",
+    margin: 5,
   },
   tattooArtistTitle: {
     color: colors.darkBrown,
