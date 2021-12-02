@@ -30,10 +30,6 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
 
-  mainContainer: {
-    backgroundColor: colors.mediumBrown,
-  },
-
   text: {
     fontSize: fontSize.text,
     textAlign: "center",

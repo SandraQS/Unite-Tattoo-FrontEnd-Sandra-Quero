@@ -34,7 +34,6 @@ export default StyleSheet.create({
   mainContainer: {
     backgroundColor: colors.mediumBrown,
     flex: 1,
-    height: 700,
     padding: 20,
   },
   separator: {
