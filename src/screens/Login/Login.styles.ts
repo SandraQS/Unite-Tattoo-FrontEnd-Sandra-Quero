@@ -21,7 +21,6 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   mainContainer: {
-    backgroundColor: colors.mediumBrown,
     padding: 20,
   },
 
@@ -32,11 +31,5 @@ export default StyleSheet.create({
   tittleH2: {
     fontSize: fontSize.tittleH2,
     textAlign: "center",
-  },
-  welcomeContainer: {
-    alignContent: "center",
-    backgroundColor: colors.lightBrown,
-    flex: 1,
-    padding: 30,
   },
 });
