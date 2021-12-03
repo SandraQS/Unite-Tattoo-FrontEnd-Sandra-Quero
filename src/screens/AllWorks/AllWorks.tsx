@@ -25,12 +25,13 @@ const AllWorks = () => {
   const textTitle = "TALENTOS";
   const textTitleBold = " DESTACADOS";
   return (
-    <SafeAreaView style={generalStyles.screen}>
+    <SafeAreaView style={generalStyles.screenWhite}>
       <ScrollView>
-        <View
-          style={[generalStyles.mainContainerGeneral, styles.mainContainer]}
-        >
+        <View style={generalStyles.mainContainerGeneral}>
+          <View>
+
           <Title text={textTitle} textBold={textTitleBold} />
+          </View>
           {works.length ? (
             <View style={styles.allWorkList}>
               {works.map((work: IWork) => (
