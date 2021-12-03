@@ -35,8 +35,9 @@ export default StyleSheet.create({
   },
   mainContainer: {
     flex: 1,
-    minHeight: "100%",
+    minHeight: "90%",
     padding: 20,
+    
   },
   separator: {
     borderBottomWidth: 2,
