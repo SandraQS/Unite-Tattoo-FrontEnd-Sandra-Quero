@@ -1,6 +1,9 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { collectionsThunk } from "../redux/thunks/collectionsThunk";
+import {
+  collectionsThunk,
+  createCollectionThunk,
+} from "../redux/thunks/collectionsThunk";
 
 export const useCollections = () => {
   const { collections } = useSelector(({ collections }: any) => ({
@@ -13,8 +16,12 @@ export const useCollections = () => {
     dispatch(collectionsThunk());
   }, [dispatch]);
 
+  const createCollection = (collection: object) => {
+    dispatch(createCollectionThunk(collection));
+  };
   return {
     collections,
     loadCollections,
+    createCollection,
   };
 };
