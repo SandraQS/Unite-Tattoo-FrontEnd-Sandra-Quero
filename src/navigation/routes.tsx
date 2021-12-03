@@ -7,6 +7,7 @@ enum RoutesEnum {
   collections = "CollectionsTattooArtist",
 
   bottomnav = "BottomNavigator",
+  tattooartistnav = "TattooArtistNavigator",
 
   create = "CreateCollection",
 }
