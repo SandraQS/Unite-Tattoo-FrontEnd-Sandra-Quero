@@ -1,32 +1,36 @@
 import { rest } from "msw";
 
+const works = [
+  {
+    tittle: "Pajaritos",
+    tattooArtist: "Javi Wolf",
+    description: "LoremmAfdsfas",
+    tattooStyles: "Acuarela",
+    likes: 0,
+    image:
+      "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638124122682-.png",
+    collectionWork: "61a09756fe38230f0ba12827",
+    id: "61a3b755afd97834ed4aca6e",
+  },
+  {
+    tittle: "Lobo",
+    tattooArtist: "Javi Wolff",
+    description: "Loremm",
+    tattooStyles: "Acuarela",
+    likes: 0,
+    image:
+      "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638119881947-.png",
+    collectionWork: "61a37f78b0e47a2b50e4635b",
+    id: "61a3b9ca4cc19250ca826626",
+  },
+];
+
 export const handlers = [
-  rest.post("/login", (req, res, ctx) => {
-    // Persist user's authentication in the session
-    sessionStorage.setItem("is-authenticated", "true");
-    return res(
-      // Respond with a 200 status code
-      ctx.status(200)
-    );
-  }),
-  rest.get("/user", (req, res, ctx) => {
-    // Check if the user is authenticated in this session
-    const isAuthenticated = sessionStorage.getItem("is-authenticated");
-    if (!isAuthenticated) {
-      // If not authenticated, respond with a 403 error
-      return res(
-        ctx.status(403),
-        ctx.json({
-          errorMessage: "Not authorized",
-        })
-      );
+  rest.get(
+    "https://proyecto-final-sandra-back.herokuapp.com/uniteTattoo/client/home",
+    async (req, res, ctx) => {
+      const response = res(ctx.status(200), ctx.json(works));
+      return response;
     }
-    // If authenticated, return a mocked user details
-    return res(
-      ctx.status(200),
-      ctx.json({
-        username: "admin",
-      })
-    );
-  }),
+  ),
 ];
