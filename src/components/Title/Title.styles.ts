@@ -6,7 +6,7 @@ export default StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "center",
-    marginVertical: 50,
+    marginVertical: 20,
   },
 
   logoContainter: {
