@@ -11,3 +11,8 @@ export interface IUserDataTattooArtistActions {
   type: string;
   tattooArtist: object;
 }
+
+export interface IcollectionsActions {
+  type: string;
+  collections: Array<object>;
+}
