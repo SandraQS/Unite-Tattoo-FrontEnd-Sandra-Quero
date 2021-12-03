@@ -63,7 +63,7 @@ export const CreateCollection = () => {
                     onChangeDataCollection(text, "tattooStyles");
                   }}
                   accessibilityLabel="tattooStyles"
-                  maxLength={20}
+                  maxLength={12}
                 />
               </View>
 
