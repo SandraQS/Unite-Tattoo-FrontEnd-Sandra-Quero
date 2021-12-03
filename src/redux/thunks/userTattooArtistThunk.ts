@@ -1,5 +1,7 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
+import { REACT_APP_URL_API_UNITETATTOO } from "@env";
+
 import { tattooArtistLoginAction } from "../actions/actionCreators";
 
 import { tokenStorage } from "../../storage/asyncStorage";
@@ -8,7 +10,7 @@ export const tattooArtistLoginTunk =
   (userTattooArtist: object) => async (dispatch: any) => {
     try {
       const response = await axios.post(
-        "https://proyecto-final-sandra-back.herokuapp.com/uniteTattoo/tattooArtist/login",
+        `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/login`,
         userTattooArtist
       );
 
