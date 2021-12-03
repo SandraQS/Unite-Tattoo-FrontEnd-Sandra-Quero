@@ -6,7 +6,6 @@ import { SafeAreaView, ScrollView, Text, View, Image } from "react-native";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
 import styles from "./CollectionsTattooArtist.styles";
-import { mainContainer } from "../../styles/containers.styles";
 import { generalStyles } from "../../styles/uniteTatto.styles";
 
 import CollectionCard from "../../components/CollectionCard/CollectionCard";
@@ -19,6 +18,10 @@ const CollectionsTattooArtist = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
   const { collections, loadCollections } = useCollections();
 
+  useEffect(() => {
+    loadCollections();
+  }, []);
+
   const textTitle = "MIS COLECCIONES";
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
@@ -28,7 +31,7 @@ const CollectionsTattooArtist = () => {
           <Title text={textTitle} />
         </View>
 
-        {collections ? (
+        {collections.length ? (
           <View>
             {collections.map((collection: ICollection) => (
               <CollectionCard key={collection.id} collection={collection} />
