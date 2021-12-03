@@ -6,7 +6,9 @@ enum RoutesEnum {
 
   collections = "CollectionsTattooArtist",
 
-  bottomnav = "BottomNavigator"
+  bottomnav = "BottomNavigator",
+
+  create = "CreateCollection",
 }
 
 export default RoutesEnum;
