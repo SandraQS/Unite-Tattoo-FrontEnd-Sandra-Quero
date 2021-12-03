@@ -16,11 +16,13 @@ import styles from "./CreateCollection.styles";
 
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import Title from "../../components/Title/Title";
+import { useCollections } from "../../hooks/useCollections";
 
 export const CreateCollection = () => {
+  const { createCollection, collections } = useCollections();
   // const navigation = useNavigation<LoginScreenNavigationProp>();
 
-  const initialCollectionData = { tattooStyles: "", image: "" };
+  const initialCollectionData = { tattooStyles: "" };
   const [collectionData, setCollectionDataData] = useState(
     initialCollectionData
   );
@@ -38,7 +40,7 @@ export const CreateCollection = () => {
   };
 
   const CreateClick = () => {
-    //Crear
+    createCollection(collectionData);
     setCollectionDataData(initialCollectionData);
   };
 
