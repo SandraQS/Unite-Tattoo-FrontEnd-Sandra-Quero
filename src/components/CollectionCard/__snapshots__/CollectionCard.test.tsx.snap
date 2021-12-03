@@ -2,69 +2,88 @@
 
 exports[`Given a CollectionCard component When it is rendered Then it should show match the last snapshot 1`] = `
 <View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "height": 300,
-      "width": 170,
+      "opacity": 1,
     }
   }
 >
   <View
     style={
       Object {
-        "backgroundColor": "#DFD8D2",
-        "borderRadius": 20,
-        "flex": 1,
-        "flexDirection": "column",
-        "margin": 5,
-        "padding": 10,
+        "height": 300,
+        "width": 170,
       }
     }
   >
     <View
       style={
         Object {
-          "alignContent": "center",
+          "backgroundColor": "#DFD8D2",
           "borderRadius": 20,
-          "flex": 5,
-          "height": 200,
-          "justifyContent": "center",
+          "flex": 1,
+          "flexDirection": "column",
+          "margin": 5,
+          "padding": 10,
         }
       }
     >
-      <Image
-        source={
-          Object {
-            "uri": "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
-          }
-        }
+      <View
         style={
           Object {
+            "alignContent": "center",
             "borderRadius": 20,
             "flex": 5,
-          }
-        }
-      />
-    </View>
-    <View
-      style={
-        Object {
-          "flex": 1,
-          "justifyContent": "flex-end",
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "color": "#7C6B53",
-            "fontSize": 20,
-            "fontWeight": "800",
+            "height": 200,
+            "justifyContent": "center",
           }
         }
       >
-        Acuarela
-      </Text>
+        <Image
+          source={
+            Object {
+              "uri": "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 20,
+              "flex": 5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#7C6B53",
+              "fontSize": 20,
+              "fontWeight": "800",
+            }
+          }
+        >
+          Acuarela
+        </Text>
+      </View>
     </View>
   </View>
 </View>
