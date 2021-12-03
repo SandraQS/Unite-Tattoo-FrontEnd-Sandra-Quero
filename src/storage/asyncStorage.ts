@@ -6,15 +6,13 @@ export const tokenStorage = async (keyToken: string, token: string) => {
   try {
     const jsonToken = await JSON.stringify(token);
     if (jsonToken !== null) {
-      await AsyncStorage.setItem(keyToken, jsonToken);
+      await AsyncStorage.setItem("hola", "mamii");
       return jsonToken;
     }
     // const tokensito = await AsyncStorage.setItem(
     //   keyToken,
     //   JSON.stringify(token)
     // );
-    return await jsonToken;
-    // console.log("Y AQUI QUE", jsonToken);
   } catch ({ message }) {
     return message;
   }
