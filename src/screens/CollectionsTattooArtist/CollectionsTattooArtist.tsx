@@ -13,6 +13,7 @@ import Title from "../../components/Title/Title";
 import NavHeader from "../../components/NavHeader/NavHeader";
 import { useCollections } from "../../hooks/useCollections";
 import { ICollection } from "../../types/interfacesComponent";
+import CreateButton from "../../components/CreateButton/CreateButton";
 
 const CollectionsTattooArtist = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
@@ -37,6 +38,7 @@ const CollectionsTattooArtist = () => {
               {collections.map((collection: ICollection) => (
                 <CollectionCard key={collection.id} collection={collection} />
               ))}
+              <CreateButton/>
             </View>
           ) : (
             <Text>Loading...</Text>
