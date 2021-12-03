@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a CollectionCard component When it is rendered Then it should show match the last snapshot 1`] = `
+<View
+  style={
+    Object {
+      "height": 300,
+      "width": 170,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#DFD8D2",
+        "borderRadius": 20,
+        "flex": 1,
+        "flexDirection": "column",
+        "margin": 5,
+        "padding": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignContent": "center",
+          "borderRadius": 20,
+          "flex": 5,
+          "height": 200,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 20,
+            "flex": 5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#7C6B53",
+            "fontSize": 20,
+            "fontWeight": "800",
+          }
+        }
+      >
+        Acuarela
+      </Text>
+    </View>
+  </View>
+</View>
+`;
