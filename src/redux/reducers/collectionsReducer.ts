@@ -9,6 +9,10 @@ const collectionsReducer = (collections = [], action: IcollectionsActions) => {
       newCollections = [...action.collections];
       break;
 
+    case actionTypes.createCollection:
+      newCollections = [...collections, action.collection];
+      break;
+
     default:
       newCollections = collections;
   }

@@ -25,3 +25,7 @@ export const loadCollectionsAction = (collections: Array<object>) => ({
   collections,
 });
 
+export const createCollectionAction = (collection: object) => ({
+  type: actionTypes.createCollection,
+  collection,
+});
