@@ -5,6 +5,8 @@ enum RoutesEnum {
   allworks = "AllWorks",
 
   collections = "CollectionsTattooArtist",
+
+  bottomnav = "BottomNavigator"
 }
 
 export default RoutesEnum;
