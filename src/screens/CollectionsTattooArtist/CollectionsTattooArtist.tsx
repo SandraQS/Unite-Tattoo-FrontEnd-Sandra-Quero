@@ -28,18 +28,20 @@ const CollectionsTattooArtist = () => {
       <ScrollView>
         <NavHeader nameUser="Sandra" />
         <View style={generalStyles.mainContainerGeneral}>
-          <Title text={textTitle} />
-        </View>
-
-        {collections.length ? (
           <View>
-            {collections.map((collection: ICollection) => (
-              <CollectionCard key={collection.id} collection={collection} />
-            ))}
+            <Title text={textTitle} />
           </View>
-        ) : (
-          <Text>Loading...</Text>
-        )}
+
+          {collections.length ? (
+            <View style={styles.collections}>
+              {collections.map((collection: ICollection) => (
+                <CollectionCard key={collection.id} collection={collection} />
+              ))}
+            </View>
+          ) : (
+            <Text>Loading...</Text>
+          )}
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

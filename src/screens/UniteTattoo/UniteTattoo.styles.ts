@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { fontSize, colors } from "../../styles/uniteTatto.styles";
+import { colors } from "../../styles/uniteTatto.styles";
 
 export default StyleSheet.create({
   buttonInvited: {
@@ -14,7 +14,7 @@ export default StyleSheet.create({
     flex: 1,
   },
   containerUsers: {
-    flex: 4,
+    flex: 2,
     justifyContent: "center",
   },
   imageBackground: {
