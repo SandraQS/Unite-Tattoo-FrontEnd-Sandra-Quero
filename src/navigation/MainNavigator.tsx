@@ -7,8 +7,8 @@ import UniteTattoo from "../screens/UniteTattoo/UniteTattoo";
 import Register from "../screens/Register/Register";
 import AllWorks from "../screens/AllWorks/AllWorks";
 import { BottomNavigator } from "./BottomNavigator";
+import CollectionsTattooArtist from "../screens/CollectionsTattooArtist/CollectionsTattooArtist";
 
-//mainnavigator
 export const MainNavigator = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
   return (
@@ -19,7 +19,7 @@ export const MainNavigator = () => {
       <Stack.Screen name={RoutesEnum.register} component={Register} />
       <Stack.Screen name={RoutesEnum.allworks} component={AllWorks} />
 
-      <Stack.Screen name={RoutesEnum.collections} component={BottomNavigator} />
+      <Stack.Screen name={RoutesEnum.bottomnav} component={BottomNavigator} />
     </Stack.Navigator>
   );
 };
