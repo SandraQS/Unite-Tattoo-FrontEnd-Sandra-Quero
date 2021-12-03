@@ -40,3 +40,9 @@ export interface IWork {
   collectionWork: Array<string>;
   id: string;
 }
+export interface ICollection {
+  tattooStyles: string;
+  image: string;
+  works: Array<string>;
+  id: string;
+}

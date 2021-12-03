@@ -15,12 +15,11 @@ export const tattooArtistLoginTunk =
       if (response.status === 200) {
         const token = response.data.token;
         const userRegistered: any = jwtDecode(token);
+        const newToken = { token: token };
 
-        dispatch(tattooArtistLoginAction(userRegistered));
+        dispatch(tattooArtistLoginAction(userRegistered.idUser));
 
-        const localStorage = await tokenStorage("userRegistered", token);
-
-        // console.log(localStorage);
+        await tokenStorage("userTattooArtist", newToken);
       }
     } catch (error: any) {
       return error.message;

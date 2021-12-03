@@ -4,7 +4,9 @@ const actionTypes = {
   loadAllWorks: "LOAD_ALL_WORKS",
 
   tattooArtistLogin: "LOGIN_TATTOOARTIST",
-  tattooArtistRegistered: "REGISTERED_TATTOOARTIST"
+  tattooArtistRegistered: "REGISTERED_TATTOOARTIST",
+
+  loadCollections: "LOAD_COLLECTIONS",
   
 };
 
