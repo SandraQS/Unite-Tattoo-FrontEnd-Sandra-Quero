@@ -13,3 +13,7 @@ export type TitlleProps = {
   text: string;
   textBold?: string;
 };
+
+export type NavHeaderProps = {
+  nameUser: string;
+};

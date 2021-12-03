@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a NavHeader component When it is rendered Then it should show match the last snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFF",
+      "borderBottomColor": "#7C6B53",
+      "borderBottomWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "marginHorizontal": 20,
+      "paddingVertical": 10,
+    }
+  }
+>
+  <View
+    style={Object {}}
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <Image
+        onError={[Function]}
+        source={
+          Object {
+            "testUri": "../../../src/assets/utoo-logo.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 0,
+              "width": 100,
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          style={
+            Object {
+              "color": "#7C6B53",
+              "fontSize": 15,
+              "paddingEnd": 10,
+            }
+          }
+        >
+          Sandra
+        </Text>
+      </View>
+      <View
+        style={Object {}}
+      >
+        <Image
+          onError={[Function]}
+          source={
+            Object {
+              "testUri": "../../../src/assets/icono-user.png",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "height": 0,
+                "width": 30,
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
