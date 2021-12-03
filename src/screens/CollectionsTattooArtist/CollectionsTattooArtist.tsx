@@ -1,9 +1,9 @@
 import { useNavigation } from "@react-navigation/core";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-import { SafeAreaView, ScrollView, Text, View, Image } from "react-native";
+import { SafeAreaView, ScrollView, Text, View } from "react-native";
 
-import { LoginScreenNavigationProp } from "../../types/navigation.types";
+import { CollectionsTattooArtistScreenNavigationProp } from "../../types/navigation.types";
 
 import styles from "./CollectionsTattooArtist.styles";
 import { generalStyles } from "../../styles/uniteTatto.styles";
@@ -14,9 +14,11 @@ import NavHeader from "../../components/NavHeader/NavHeader";
 import { useCollections } from "../../hooks/useCollections";
 import { ICollection } from "../../types/interfacesComponent";
 import CreateButton from "../../components/CreateButton/CreateButton";
+import RoutesEnum from "../../navigation/routes";
 
 const CollectionsTattooArtist = () => {
-  const navigation = useNavigation<LoginScreenNavigationProp>();
+  const navigation =
+    useNavigation<CollectionsTattooArtistScreenNavigationProp>();
   const { collections, loadCollections } = useCollections();
 
   useEffect(() => {
@@ -24,6 +26,9 @@ const CollectionsTattooArtist = () => {
   }, []);
 
   const textTitle = "MIS COLECCIONES";
+  const functionCreate = () => {
+    navigation.navigate(RoutesEnum.create);
+  };
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
       <ScrollView>
@@ -38,7 +43,7 @@ const CollectionsTattooArtist = () => {
               {collections.map((collection: ICollection) => (
                 <CollectionCard key={collection.id} collection={collection} />
               ))}
-              <CreateButton/>
+              <CreateButton functionCreate={functionCreate} />
             </View>
           ) : (
             <Text>Loading...</Text>
