@@ -1,4 +1,7 @@
-import { loadCollectionsAction } from "../actions/actionCreators";
+import {
+  createCollectionAction,
+  loadCollectionsAction,
+} from "../actions/actionCreators";
 import collectionsReducer from "./collectionsReducer";
 
 describe("Given collectionsReducer reducer", () => {
@@ -33,11 +36,27 @@ describe("Given collectionsReducer reducer", () => {
         },
       ];
       const collections: any = [];
-      const action = loadCollectionsAction(arrayCollections);
+      const action: any = loadCollectionsAction(arrayCollections);
 
       const newCollections = collectionsReducer(collections, action);
 
       expect(newCollections).toEqual(arrayCollections);
+    });
+  });
+
+  describe("When it receives an object and action createCollectionsAction", () => {
+    test("Then it should return a new array whith the new collection", () => {
+      const collection: any = {
+        tattooStyles: "Acuarela",
+        image:
+          "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
+      };
+      const collections: any = [];
+      const action: any = createCollectionAction(collection);
+
+      const newCollections = collectionsReducer(collections, action);
+
+      expect(newCollections).toContain(collection);
     });
   });
 
