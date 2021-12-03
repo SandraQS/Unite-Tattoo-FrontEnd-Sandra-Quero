@@ -7,7 +7,7 @@ const actionTypes = {
   tattooArtistRegistered: "REGISTERED_TATTOOARTIST",
 
   loadCollections: "LOAD_COLLECTIONS",
-  
+  createCollection: "CREATE_COLLECTION",
 };
 
 export default actionTypes;
