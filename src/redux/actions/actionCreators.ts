@@ -19,3 +19,9 @@ export const tattooArtistRegisteredAction = (tattooArtist: object) => ({
   type: actionTypes.tattooArtistRegistered,
   tattooArtist,
 });
+
+export const loadCollectionsAction = (collections: Array<object>) => ({
+  type: actionTypes.loadCollections,
+  collections,
+});
+
