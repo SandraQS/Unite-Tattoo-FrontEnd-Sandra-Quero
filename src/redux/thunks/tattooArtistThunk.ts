@@ -1,10 +1,12 @@
 import axios from "axios";
+import { REACT_APP_URL_API_UNITETATTOO } from "@env";
+
 import { registerTattooArtistAction } from "../actions/actionCreators";
 
 const createTattooArtistThunk =
   (tattooArtist: object) => async (dispatch: any) => {
     const response = await axios.post(
-      "https://proyecto-final-sandra-back.herokuapp.com/uniteTattoo/tattooArtist/register",
+      `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/register`,
       tattooArtist
     );
 
