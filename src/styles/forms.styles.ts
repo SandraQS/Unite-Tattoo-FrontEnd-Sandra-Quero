@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors, fontSize } from "../../styles/uniteTatto.styles";
+import { colors, fontSize } from "./uniteTatto.styles";
 
 export default StyleSheet.create({
   buttonCancel: {

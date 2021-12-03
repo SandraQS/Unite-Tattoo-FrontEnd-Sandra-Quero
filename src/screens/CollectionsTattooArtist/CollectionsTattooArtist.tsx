@@ -23,7 +23,7 @@ const CollectionsTattooArtist = () => {
 
   useEffect(() => {
     loadCollections();
-  }, []);
+  }, [collections]);
 
   const textTitle = "MIS COLECCIONES";
   const functionCreate = () => {

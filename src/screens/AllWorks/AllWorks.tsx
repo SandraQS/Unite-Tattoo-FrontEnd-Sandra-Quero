@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 
 import {
-  FlatList,
   SafeAreaView,
   ScrollView,
-  StyleSheet,
   Text,
   View,
 } from "react-native";
@@ -20,17 +18,17 @@ const AllWorks = () => {
   const { loadAllWorks, works } = useWorks();
   useEffect(() => {
     loadAllWorks();
-  }, [loadAllWorks]);
+  }, [works]);
 
   const textTitle = "TALENTOS";
   const textTitleBold = " DESTACADOS";
+  
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>
           <View>
-
-          <Title text={textTitle} textBold={textTitleBold} />
+            <Title text={textTitle} textBold={textTitleBold} />
           </View>
           {works.length ? (
             <View style={styles.allWorkList}>

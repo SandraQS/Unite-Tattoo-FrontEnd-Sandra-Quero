@@ -15,8 +15,7 @@ import CheckBox from "@react-native-community/checkbox";
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
-import styles from "./Register.styles";
-import { generalStyles } from "../../styles/uniteTatto.styles";
+import { generalStyles, formsStyles } from "../../styles/uniteTatto.styles";
 import { useTattooArtist } from "../../hooks/useTattooArtist";
 import AutoHeightImage from "react-native-auto-height-image";
 import Title from "../../components/Title/Title";
@@ -149,46 +148,48 @@ const Register = () => {
       <StatusBar />
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>
-          <View style={styles.logoContainter}>
+          <View style={formsStyles.logoContainter}>
             <AutoHeightImage
               width={150}
               source={require("../../assets/utoo-logo.png")}
-              style={styles.logo}
+              style={formsStyles.logo}
             />
           </View>
-          <View style={styles.welcomeContainer}>
-            <Text style={styles.tittleH2}>Bienvenid@!</Text>
+          <View style={formsStyles.welcomeContainer}>
+            <Text style={formsStyles.tittleH2}>Bienvenid@!</Text>
             <View>
-              <Text style={styles.text}>
+              <Text style={formsStyles.text}>
                 Has escogido la opción
-                <Text style={styles.textBold}> “tatuador”,</Text> a continuación
-                deberás rellenar un formulario para registrarte y así poder
-                formar parte de nuestra comunidad. Después de eso, podrás entrar
-                en tu perfil como tatuador directamente. Esperamos que tengas
-                una buena experiencia!
+                <Text style={formsStyles.textBold}> “tatuador”,</Text> a
+                continuación deberás rellenar un formulario para registrarte y
+                así poder formar parte de nuestra comunidad. Después de eso,
+                podrás entrar en tu perfil como tatuador directamente. Esperamos
+                que tengas una buena experiencia!
               </Text>
             </View>
             <View>
               <TouchableOpacity
                 onPress={() => {}}
                 activeOpacity={0.6}
-                style={styles.buttonCancel}
+                style={formsStyles.buttonCancel}
               >
                 <AutoHeightImage
                   width={30}
                   source={require("../../assets/icono-rombo-titulo.png")}
                 />
-                <Text style={[styles.text, styles.textCancel]}>Cancelar</Text>
+                <Text style={[formsStyles.text, formsStyles.textCancel]}>
+                  Cancelar
+                </Text>
               </TouchableOpacity>
             </View>
           </View>
 
-          <View style={styles.forms}>
+          <View style={formsStyles.forms}>
             <Title text="DATOS PERSONALES" />
             <View>
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={personalDataTattoArtist.name}
                   // onFocus={}
                   placeholder="Nombre *"
@@ -200,7 +201,7 @@ const Register = () => {
 
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={personalDataTattoArtist.surname1}
                   onChange={onChangeDataPersonal}
                   // onFocus={}
@@ -211,7 +212,7 @@ const Register = () => {
               </View>
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={personalDataTattoArtist.surname2}
                   onChange={onChangeDataPersonal}
                   // onFocus={}
@@ -223,12 +224,12 @@ const Register = () => {
             </View>
           </View>
 
-          <View style={styles.forms}>
+          <View style={formsStyles.forms}>
             <Title text="DATOS DE USUARIO" />
             <View>
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={userDataTattoArtist.userName}
                   // onFocus={}
                   placeholder="Nombre de usuario *"
@@ -240,7 +241,7 @@ const Register = () => {
 
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={userDataTattoArtist.password}
                   onChange={onChangeDataUser}
                   // onFocus={}
@@ -252,7 +253,7 @@ const Register = () => {
               </View>
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={userDataTattoArtist.repeatPassword}
                   onChange={onChangeDataUser}
                   // onFocus={}
@@ -266,7 +267,7 @@ const Register = () => {
               <View>
                 <TextInput
                   keyboardType="email-address"
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={userDataTattoArtist.email}
                   onChange={onChangeDataUser}
                   // onFocus={}
@@ -278,12 +279,12 @@ const Register = () => {
             </View>
           </View>
 
-          <View style={styles.forms}>
+          <View style={formsStyles.forms}>
             <Title text="DATOS PROFESIONALES" />
             <View>
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={professionalDataTattooArtist.studioName}
                   // onFocus={}
                   placeholder="Nombre Estudio (opcional)"
@@ -295,7 +296,7 @@ const Register = () => {
 
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={professionalDataTattooArtist.professionalName}
                   // onFocus={}
                   placeholder="Nombre profesional *"
@@ -308,7 +309,7 @@ const Register = () => {
               <View>
                 <TextInput
                   keyboardType="numeric"
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={professionalDataTattooArtist.phone}
                   // onFocus={}
                   placeholder="Telefono de contacto *"
@@ -321,7 +322,7 @@ const Register = () => {
               <View>
                 <TextInput
                   keyboardType="email-address"
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={professionalDataTattooArtist.contactEmail}
                   // onFocus={}
                   placeholder="Email de contacto *"
@@ -334,7 +335,7 @@ const Register = () => {
 
             <View>
               <TextInput
-                style={styles.input}
+                style={formsStyles.input}
                 value={professionalDataTattooArtist.openingHours}
                 // onFocus={}
                 placeholder="Horario *"
@@ -346,7 +347,7 @@ const Register = () => {
 
             <View>
               <TextInput
-                style={styles.input}
+                style={formsStyles.input}
                 value={professionalDataTattooArtist.direction}
                 // onFocus={}
                 placeholder="Dirección *"
@@ -358,7 +359,7 @@ const Register = () => {
 
             <View>
               <TextInput
-                style={styles.input}
+                style={formsStyles.input}
                 value={professionalDataTattooArtist.tattooStyles}
                 // onFocus={}
                 placeholder="Estilos *"
@@ -380,7 +381,7 @@ const Register = () => {
               onCheckColor={colors.darkBrown}
               tintColor={colors.black}
             />
-            <Text style={styles.text}>
+            <Text style={formsStyles.text}>
               Colaboración con otros estudios / tatuadores?
             </Text>
 

@@ -10,8 +10,11 @@ import {
   TextInput,
 } from "react-native";
 
-import styles from "./Login.styles";
-import { generalStyles, colors } from "../../styles/uniteTatto.styles";
+import {
+  generalStyles,
+  colors,
+  formsStyles,
+} from "../../styles/uniteTatto.styles";
 
 import RoutesEnum from "../../navigation/routes";
 
@@ -51,19 +54,19 @@ export const Login = () => {
     <SafeAreaView style={generalStyles.screenMediumBrown}>
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>
-          <View style={styles.logoContainter}>
+          <View style={formsStyles.logoContainter}>
             <AutoHeightImage
               width={150}
               source={require("../../assets/utoo-logo.png")}
-              style={styles.logo}
+              style={formsStyles.logo}
             />
           </View>
 
-          <View style={styles.forms}>
+          <View style={formsStyles.forms}>
             <View>
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={userData.email}
                   keyboardType="email-address"
                   placeholder="Email *"
@@ -77,7 +80,7 @@ export const Login = () => {
 
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={userData.password}
                   onChangeText={(text) => {
                     onChangeDataUser(text, "password");

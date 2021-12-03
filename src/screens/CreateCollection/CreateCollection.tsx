@@ -9,8 +9,7 @@ import {
   TextInput,
 } from "react-native";
 
-import { generalStyles } from "../../styles/uniteTatto.styles";
-import styles from "./CreateCollection.styles";
+import { generalStyles, formsStyles } from "../../styles/uniteTatto.styles";
 
 // import RoutesEnum from "../../navigation/routes";
 
@@ -52,11 +51,11 @@ export const CreateCollection = () => {
             <Title text={textTitle} />
           </View>
 
-          <View style={styles.forms}>
+          <View style={formsStyles.forms}>
             <View>
               <View>
                 <TextInput
-                  style={styles.input}
+                  style={formsStyles.input}
                   value={collectionData.tattooStyles}
                   placeholder="Estilo"
                   onChangeText={(text) => {
