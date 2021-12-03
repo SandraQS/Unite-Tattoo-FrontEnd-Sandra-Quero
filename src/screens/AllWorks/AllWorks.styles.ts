@@ -6,9 +6,6 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: "space-evenly",
-  },
-  mainContainer: {
-    backgroundColor: colors.white,
+    justifyContent: "space-between",
   },
 });
