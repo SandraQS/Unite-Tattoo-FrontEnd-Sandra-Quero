@@ -40,7 +40,7 @@ export const Login = () => {
   const loginClick = () => {
     tattooArtistLogin(userData);
     setUserData(initialUserData);
-    navigation.navigate(RoutesEnum.collections);
+    navigation.navigate(RoutesEnum.bottomnav);
   };
 
   const goRegister = () => {
