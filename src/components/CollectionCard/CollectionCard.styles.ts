@@ -2,6 +2,12 @@ import { StyleSheet } from "react-native";
 import { colors } from "../../styles/uniteTatto.styles";
 
 export default StyleSheet.create({
+  buttons: {
+    position: "absolute",
+    right: 0,
+    top: 0,
+  },
+
   collectionCard: {
     backgroundColor: colors.lightBrown,
     borderRadius: 20,
@@ -9,6 +15,7 @@ export default StyleSheet.create({
     flexDirection: "column",
     margin: 5,
     padding: 10,
+    position: "relative",
   },
 
   imageCollection: {
@@ -34,7 +41,6 @@ export default StyleSheet.create({
     fontSize: 20,
     fontWeight: "800",
   },
-
   textContainer: {
     flex: 1,
     justifyContent: "flex-end",
