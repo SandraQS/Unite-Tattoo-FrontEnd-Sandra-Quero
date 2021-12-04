@@ -4,11 +4,11 @@ import AutoHeightImage from "react-native-auto-height-image";
 import { NavHeaderProps } from "../../types/components.types";
 
 import styles from "./NavHeader.styles";
-const NavHeader = ({ nameUser }: NavHeaderProps) => {
+const NavHeader = ({ nameUser, goBack }: NavHeaderProps) => {
   return (
     <View style={styles.navContainter}>
       <View style={styles.logoContainter}>
-        <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
+        <TouchableOpacity onPress={goBack} activeOpacity={0.6}>
           <AutoHeightImage
             width={100}
             source={require("../../assets/utoo-logo.png")}
