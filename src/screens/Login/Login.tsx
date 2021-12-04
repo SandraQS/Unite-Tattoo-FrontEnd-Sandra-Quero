@@ -10,25 +10,23 @@ import {
   TextInput,
 } from "react-native";
 
-import {
-  generalStyles,
-  colors,
-  formsStyles,
-} from "../../styles/uniteTatto.styles";
+import { generalStyles, colors } from "../../styles/uniteTatto.styles";
 
 import RoutesEnum from "../../navigation/routes";
+
+import formsStyles from "../../styles/forms.styles";
 
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import AutoHeightImage from "react-native-auto-height-image";
 import { useUserTattooArtist } from "../../hooks/useUserTattooArtist";
 
 export const Login = () => {
-  const { tattooArtistLogin, stateUserTattooArtist } = useUserTattooArtist();
-
   const navigation = useNavigation<LoginScreenNavigationProp>();
+  const { tattooArtistLogin, stateUserTattooArtist } = useUserTattooArtist();
 
   const initialUserData = { email: "", password: "" };
   const [userData, setUserData] = useState(initialUserData);
+
   const isComplete = userData.email === "" || userData.password === "";
 
   const onChangeDataUser = (text: string, nameValue: string) => {
@@ -43,8 +41,23 @@ export const Login = () => {
   const loginClick = () => {
     tattooArtistLogin(userData);
     setUserData(initialUserData);
-    navigation.navigate(RoutesEnum.bottomnav);
   };
+
+  useEffect(() => {
+    if (stateUserTattooArtist.isAuth) {
+      navigation.navigate(RoutesEnum.bottomnav);
+    }
+  }, [stateUserTattooArtist.isAuth]);
+
+  // useEffect(() => {
+  //     if (stateUserTattooArtist.isAuth) {
+  //       setIsAuthenticated(true)
+  //       console.log("LOCO", stateUserTattooArtist.isAuth);
+  //     }else{
+  //       setIsAuthenticated(false)
+  //     }
+  //     navigation.navigate(RoutesEnum.bottomnav);
+  //   }, [stateUserTattooArtist.isAuth]);
 
   const goRegister = () => {
     navigation.navigate(RoutesEnum.register);
