@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import RoutesEnum from "./routes";
@@ -11,12 +11,18 @@ import AllWorks from "../screens/AllWorks/AllWorks";
 import { CreateCollection } from "../screens/CreateCollection/CreateCollection";
 import { Login } from "../screens/Login/Login";
 import { useUserTattooArtist } from "../hooks/useUserTattooArtist";
+import CollectionsTattooArtist from "../screens/CollectionsTattooArtist/CollectionsTattooArtist";
 
 export const MainNavigator = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
-  const { stateUserTattooArtist } = useUserTattooArtist();
+  const { stateUserTattooArtist, tattooArtistRegistered } =
+    useUserTattooArtist();
 
-  return stateUserTattooArtist.isAuth ? (
+  useEffect(() => {
+    tattooArtistRegistered();
+  }, [tattooArtistRegistered, stateUserTattooArtist.isAuth]);
+
+  return !stateUserTattooArtist.isAuth ? (
     <Stack.Navigator initialRouteName={RoutesEnum.uniteTatto}>
       <Stack.Screen name={RoutesEnum.uniteTatto} component={UniteTattoo} />
 
@@ -29,8 +35,8 @@ export const MainNavigator = () => {
     </Stack.Navigator>
   ) : (
     <Stack.Navigator initialRouteName={RoutesEnum.bottomnav}>
-      <Stack.Screen name={RoutesEnum.create} component={CreateCollection} />
       <Stack.Screen name={RoutesEnum.bottomnav} component={BottomNavigator} />
+      <Stack.Screen name={RoutesEnum.create} component={CreateCollection} />
     </Stack.Navigator>
   );
 };
