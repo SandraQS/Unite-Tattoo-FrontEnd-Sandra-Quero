@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given CreateButton component When it is rendered Then it should show match the last snapshot 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 20,
+        "flex": 1,
+        "flexDirection": "column",
+        "margin": 5,
+        "padding": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignContent": "center",
+          "borderRadius": 20,
+          "flex": 5,
+          "height": 200,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Image
+        onError={[Function]}
+        source={
+          Object {
+            "testUri": "../../../src/assets/crear-rombo.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 0,
+              "width": 150,
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

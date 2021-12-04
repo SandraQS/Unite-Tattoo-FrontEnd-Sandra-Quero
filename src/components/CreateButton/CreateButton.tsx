@@ -7,7 +7,11 @@ import style from "./CreateButton.styles";
 
 const CreateButton = ({ functionCreate }: CreateButtonProps) => {
   return (
-    <TouchableOpacity onPress={functionCreate} activeOpacity={0.6}>
+    <TouchableOpacity
+      onPress={functionCreate}
+      activeOpacity={0.6}
+      accessibilityRole="button"
+    >
       <View style={style.card}>
         <View style={style.imageContainer}>
           <AutoHeightImage

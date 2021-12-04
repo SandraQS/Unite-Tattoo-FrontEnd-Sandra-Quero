@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "test-cov": "jest --watchAll --collect-coverage",
+    "test-cov": "jest --collect-coverage",
+    "test-cov-watch": "jest --watchAll --collect-coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky install",
     "react-devtools": "react-devtools"
