@@ -196,7 +196,6 @@ const Register = () => {
                 <TextInput
                   style={formsStyles.input}
                   value={personalDataTattoArtist.name}
-                  // onFocus={}
                   placeholder="Nombre *"
                   onChange={onChangeDataPersonal}
                   testID="name"
@@ -209,7 +208,6 @@ const Register = () => {
                   style={formsStyles.input}
                   value={personalDataTattoArtist.surname1}
                   onChange={onChangeDataPersonal}
-                  // onFocus={}
                   placeholder="Primer apellido *"
                   testID="surname1"
                   maxLength={20}
@@ -220,7 +218,6 @@ const Register = () => {
                   style={formsStyles.input}
                   value={personalDataTattoArtist.surname2}
                   onChange={onChangeDataPersonal}
-                  // onFocus={}
                   placeholder="Segundo apellido *"
                   testID="surname2"
                   maxLength={20}
@@ -236,7 +233,6 @@ const Register = () => {
                 <TextInput
                   style={formsStyles.input}
                   value={userDataTattoArtist.userName}
-                  // onFocus={}
                   placeholder="Nombre de usuario *"
                   onChange={onChangeDataUser}
                   testID="userName"
@@ -249,7 +245,6 @@ const Register = () => {
                   style={formsStyles.input}
                   value={userDataTattoArtist.password}
                   onChange={onChangeDataUser}
-                  // onFocus={}
                   placeholder="Contraseña *"
                   testID="password"
                   secureTextEntry={true}
@@ -261,7 +256,6 @@ const Register = () => {
                   style={formsStyles.input}
                   value={userDataTattoArtist.repeatPassword}
                   onChange={onChangeDataUser}
-                  // onFocus={}
                   placeholder="Repetir la contraseña *"
                   secureTextEntry={true}
                   testID="repeatPassword"
@@ -275,7 +269,6 @@ const Register = () => {
                   style={formsStyles.input}
                   value={userDataTattoArtist.email}
                   onChange={onChangeDataUser}
-                  // onFocus={}
                   placeholder="Email *"
                   testID="email"
                   maxLength={20}
@@ -291,7 +284,6 @@ const Register = () => {
                 <TextInput
                   style={formsStyles.input}
                   value={professionalDataTattooArtist.studioName}
-                  // onFocus={}
                   placeholder="Nombre Estudio (opcional)"
                   onChange={onChangeDataProfessional}
                   testID="studioName"
@@ -303,7 +295,6 @@ const Register = () => {
                 <TextInput
                   style={formsStyles.input}
                   value={professionalDataTattooArtist.professionalName}
-                  // onFocus={}
                   placeholder="Nombre profesional *"
                   onChange={onChangeDataProfessional}
                   testID="professionalName"
@@ -316,7 +307,6 @@ const Register = () => {
                   keyboardType="numeric"
                   style={formsStyles.input}
                   value={professionalDataTattooArtist.phone}
-                  // onFocus={}
                   placeholder="Telefono de contacto *"
                   onChange={onChangeDataProfessional}
                   testID="phone"
@@ -329,7 +319,6 @@ const Register = () => {
                   keyboardType="email-address"
                   style={formsStyles.input}
                   value={professionalDataTattooArtist.contactEmail}
-                  // onFocus={}
                   placeholder="Email de contacto *"
                   onChange={onChangeDataProfessional}
                   testID="contactEmail"
@@ -342,7 +331,6 @@ const Register = () => {
               <TextInput
                 style={formsStyles.input}
                 value={professionalDataTattooArtist.openingHours}
-                // onFocus={}
                 placeholder="Horario *"
                 onChange={onChangeDataProfessional}
                 testID="openingHours"
@@ -354,7 +342,6 @@ const Register = () => {
               <TextInput
                 style={formsStyles.input}
                 value={professionalDataTattooArtist.direction}
-                // onFocus={}
                 placeholder="Dirección *"
                 onChange={onChangeDataProfessional}
                 testID="direction"
@@ -366,7 +353,6 @@ const Register = () => {
               <TextInput
                 style={formsStyles.input}
                 value={professionalDataTattooArtist.tattooStyles}
-                // onFocus={}
                 placeholder="Estilos *"
                 onChange={onChangeDataProfessional}
                 testID="tattooStyles"

@@ -11,10 +11,9 @@ import {
 } from "react-native";
 
 import { generalStyles, colors } from "../../styles/uniteTatto.styles";
+import formsStyles from "../../styles/forms.styles";
 
 import RoutesEnum from "../../navigation/routes";
-
-import formsStyles from "../../styles/forms.styles";
 
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import AutoHeightImage from "react-native-auto-height-image";
@@ -82,7 +81,6 @@ export const Login = () => {
                   onChangeText={(text) => {
                     onChangeDataUser(text, "password");
                   }}
-                  // onFocus={}
                   placeholder="Contraseña *"
                   accessibilityLabel="password"
                   secureTextEntry={true}
