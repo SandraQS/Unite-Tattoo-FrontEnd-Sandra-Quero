@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/core";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Button,
   SafeAreaView,
