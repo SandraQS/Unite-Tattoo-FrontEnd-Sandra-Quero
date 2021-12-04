@@ -9,7 +9,8 @@ import {
   TextInput,
 } from "react-native";
 
-import { generalStyles, formsStyles } from "../../styles/uniteTatto.styles";
+import { generalStyles } from "../../styles/uniteTatto.styles";
+import formsStyles from "../../styles/forms.styles";
 
 // import RoutesEnum from "../../navigation/routes";
 
