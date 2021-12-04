@@ -143,7 +143,7 @@ const Register = () => {
     );
     setSelection(false);
     setNewTattooArtist(initTatooArtisData);
-    navigation.navigate(RoutesEnum.bottomnav);
+    navigation.navigate(RoutesEnum.login);
   };
 
   return (
