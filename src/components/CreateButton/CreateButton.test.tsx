@@ -17,4 +17,12 @@ describe("Given CreateButton component", () => {
       expect(functionCreate).toHaveBeenCalled();
     });
   });
+  describe("When it is rendered", () => {
+    test("Then it should show match the last snapshot", () => {
+      const functionCreate = jest.fn();
+      const screen = render(<CreateButton functionCreate={functionCreate} />);
+
+      expect(screen).toMatchSnapshot();
+    });
+  });
 });
