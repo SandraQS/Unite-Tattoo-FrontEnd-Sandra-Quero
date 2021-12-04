@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import { ICollectionsProps } from "../../types/interfacesComponent";
 import { EditDelete } from "../EditDelete/EditDelete";
 
 import style from "./CollectionCard.styles";
 
-const CollectionCard = ({ collection }: any) => {
+const CollectionCard = ({ collection }: ICollectionsProps) => {
   const [longPress, setLongPress] = useState(false);
   const showButtons = () => {
     setLongPress(!longPress);
@@ -36,7 +37,9 @@ const CollectionCard = ({ collection }: any) => {
           <View style={style.textContainer}>
             <Text style={style.styleTitle}>{collection.tattooStyles}</Text>
           </View>
-          <View style={style.buttons}>{longPress && <EditDelete />}</View>
+          <View style={style.buttons}>
+            {longPress && <EditDelete collection={collection} />}
+          </View>
         </View>
       </View>
     </TouchableOpacity>
