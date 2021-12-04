@@ -46,3 +46,7 @@ export interface ICollection {
   works: Array<string>;
   id: string;
 }
+
+export interface ICollectionsProps {
+  collection: ICollection
+}
