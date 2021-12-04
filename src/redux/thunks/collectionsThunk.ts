@@ -8,9 +8,9 @@ import {
 } from "../actions/actionCreators";
 
 export const collectionsThunk = () => async (dispatch: any) => {
-  const { token } = await getDataObject("userTattooArtist");
-
   try {
+    const { token } = await getDataObject("userTattooArtist");
+    
     const response = await axios.get(
       `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collections`,
       {
@@ -32,9 +32,9 @@ export const collectionsThunk = () => async (dispatch: any) => {
 
 export const createCollectionThunk =
   (collection: object) => async (dispatch: any) => {
-    const { token } = await getDataObject("userTattooArtist");
-
     try {
+      const { token } = await getDataObject("userTattooArtist");
+
       const response = await axios.post(
         `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collection/create`,
         collection,

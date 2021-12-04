@@ -8,7 +8,6 @@ import { tokenStorage } from "../../storage/asyncStorage";
 
 export const tattooArtistLoginTunk =
   (userTattooArtist: object) => async (dispatch: any) => {
-
     try {
       const response = await axios.post(
         `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/login`,
@@ -24,8 +23,7 @@ export const tattooArtistLoginTunk =
 
         await tokenStorage("userTattooArtist", newToken);
       }
-      
-    } catch (error: any) {
-      return error.message;
+    } catch (error) {
+      return error;
     }
   };
