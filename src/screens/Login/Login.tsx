@@ -22,7 +22,8 @@ import { useUserTattooArtist } from "../../hooks/useUserTattooArtist";
 
 export const Login = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
-  const { tattooArtistLogin, stateUserTattooArtist } = useUserTattooArtist();
+  const { tattooArtistLogin, tattooArtistRegistered, stateUserTattooArtist } =
+    useUserTattooArtist();
 
   const initialUserData = { email: "", password: "" };
   const [userData, setUserData] = useState(initialUserData);
@@ -44,20 +45,11 @@ export const Login = () => {
   };
 
   useEffect(() => {
+    tattooArtistRegistered();
     if (stateUserTattooArtist.isAuth) {
       navigation.navigate(RoutesEnum.bottomnav);
     }
-  }, [stateUserTattooArtist.isAuth]);
-
-  // useEffect(() => {
-  //     if (stateUserTattooArtist.isAuth) {
-  //       setIsAuthenticated(true)
-  //       console.log("LOCO", stateUserTattooArtist.isAuth);
-  //     }else{
-  //       setIsAuthenticated(false)
-  //     }
-  //     navigation.navigate(RoutesEnum.bottomnav);
-  //   }, [stateUserTattooArtist.isAuth]);
+  }, [stateUserTattooArtist, tattooArtistRegistered]);
 
   const goRegister = () => {
     navigation.navigate(RoutesEnum.register);
