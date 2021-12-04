@@ -17,6 +17,7 @@ import formsStyles from "../../styles/forms.styles";
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import Title from "../../components/Title/Title";
 import { useCollections } from "../../hooks/useCollections";
+import NavHeader from "../../components/NavHeader/NavHeader";
 
 export const CreateCollection = () => {
   const { createCollection, collections } = useCollections();
@@ -46,6 +47,9 @@ export const CreateCollection = () => {
 
   return (
     <SafeAreaView style={generalStyles.screenLightBrown}>
+       <View style={generalStyles.navHeader}>
+        <NavHeader nameUser="Sandra" goBack={() => {}} />
+      </View>
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>
           <View>

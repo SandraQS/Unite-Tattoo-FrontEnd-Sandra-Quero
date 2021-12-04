@@ -16,7 +16,7 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
     paddingVertical: 10,
   },
 
