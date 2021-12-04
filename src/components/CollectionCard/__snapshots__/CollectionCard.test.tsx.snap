@@ -36,6 +36,7 @@ exports[`Given a CollectionCard component When it is rendered Then it should sho
           "flexDirection": "column",
           "margin": 5,
           "padding": 10,
+          "position": "relative",
         }
       }
     >
@@ -83,6 +84,96 @@ exports[`Given a CollectionCard component When it is rendered Then it should sho
         >
           Acuarela
         </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#A19178",
+                "borderBottomColor": "#DFD8D2",
+                "borderBottomWidth": 2,
+                "borderRadius": 5,
+                "opacity": 1,
+                "width": 80,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#DFD8D2",
+                  "fontSize": 18,
+                  "padding": 5,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Editar
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#A19178",
+                "borderBottomColor": "#DFD8D2",
+                "borderBottomWidth": 2,
+                "borderRadius": 5,
+                "opacity": 1,
+                "width": 80,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#DFD8D2",
+                  "fontSize": 18,
+                  "padding": 5,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Eliminar
+            </Text>
+          </View>
+        </View>
       </View>
     </View>
   </View>
