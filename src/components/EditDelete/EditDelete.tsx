@@ -1,12 +1,18 @@
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
+import { useCollections } from "../../hooks/useCollections";
+import { ICollectionsProps } from "../../types/interfacesComponent";
 
 import styles from "./EditDelete.styles";
 
-export const EditDelete = () => {
-  const editPress = () => {};
+export const EditDelete = ({ collection }: ICollectionsProps) => {
+  const editPress = () => {
+    //Funcion eliditar
+  };
 
-  const deletePress = () => {};
+  const deletePress = () => {
+    //Funcion eliminar
+  };
 
   return (
     <View style={styles.buttonsContain}>
