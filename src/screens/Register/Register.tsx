@@ -15,7 +15,9 @@ import CheckBox from "@react-native-community/checkbox";
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
-import { generalStyles, formsStyles } from "../../styles/uniteTatto.styles";
+import { generalStyles } from "../../styles/uniteTatto.styles";
+import formsStyles from "../../styles/forms.styles"
+
 import { useTattooArtist } from "../../hooks/useTattooArtist";
 import AutoHeightImage from "react-native-auto-height-image";
 import Title from "../../components/Title/Title";
