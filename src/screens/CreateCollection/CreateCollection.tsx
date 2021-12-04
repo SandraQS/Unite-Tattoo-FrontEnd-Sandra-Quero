@@ -1,27 +1,21 @@
 import { useNavigation } from "@react-navigation/core";
 
 import React, { useState } from "react";
-import {
-  Button,
-  SafeAreaView,
-  ScrollView,
-  View,
-  TextInput,
-} from "react-native";
+import { SafeAreaView, ScrollView, View, TextInput } from "react-native";
 
 import { generalStyles } from "../../styles/uniteTatto.styles";
 import formsStyles from "../../styles/forms.styles";
-
-// import RoutesEnum from "../../navigation/routes";
 
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import Title from "../../components/Title/Title";
 import { useCollections } from "../../hooks/useCollections";
 import NavHeader from "../../components/NavHeader/NavHeader";
+import { CreateCollectionScreenNavigationProp } from "../../types/navigation.types";
+import RoutesEnum from "../../navigation/routes";
 
 export const CreateCollection = () => {
-  const { createCollection, collections } = useCollections();
-  // const navigation = useNavigation<LoginScreenNavigationProp>();
+  const { createCollection } = useCollections();
+  const navigation = useNavigation<CreateCollectionScreenNavigationProp>();
 
   const initialCollectionData = { tattooStyles: "" };
   const [collectionData, setCollectionDataData] = useState(
@@ -43,11 +37,12 @@ export const CreateCollection = () => {
   const CreateClick = () => {
     createCollection(collectionData);
     setCollectionDataData(initialCollectionData);
+    navigation.navigate(RoutesEnum.bottomnav);
   };
 
   return (
     <SafeAreaView style={generalStyles.screenLightBrown}>
-       <View style={generalStyles.navHeader}>
+      <View style={generalStyles.navHeader}>
         <NavHeader nameUser="Sandra" goBack={() => {}} />
       </View>
       <ScrollView>

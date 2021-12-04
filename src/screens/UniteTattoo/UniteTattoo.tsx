@@ -50,9 +50,7 @@ const UniteTattoo = () => {
               <TouchableOpacity
                 style={styles.buttonUniteTattoo}
                 activeOpacity={0.7}
-                onPress={() => {
-                  navigation.navigate(RoutesEnum.login);
-                }}
+                onPress={() => {}}
               >
                 <Text style={styles.text}> Cliente </Text>
               </TouchableOpacity>
