@@ -43,8 +43,8 @@ export interface IWork {
 export interface ICollection {
   tattooStyles: string;
   image: string;
-  works: Array<string>;
-  id: string;
+  works?: Array<string>;
+  id?: string;
 }
 
 export interface ICollectionsProps {

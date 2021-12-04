@@ -29,10 +29,13 @@ const CollectionsTattooArtist = () => {
   const functionCreate = () => {
     navigation.navigate(RoutesEnum.create);
   };
+
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
+      <View style={generalStyles.navHeader}>
+        <NavHeader nameUser="Sandra" goBack={() => {}} />
+      </View>
       <ScrollView>
-        <NavHeader nameUser="Sandra" />
         <View style={generalStyles.mainContainerGeneral}>
           <View>
             <Title text={textTitle} />
