@@ -54,25 +54,23 @@ export const createCollectionThunk =
     }
   };
 
-  export const deleteCollectionThunk =
-  () => async (dispatch: any) => {
-    try {
-      const { token } = await getDataObject("userTattooArtist");
-      console.log(token)
-      const id = "HAY QUE SACAR LA ID"
-      const response = await axios.post(
-        `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collection/delete/${id}`,
-        {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        }
-      );
-      if (response.status === 200) {
-        cconsole.log(response.data) 
-        dispatch(deleteCollectionAction("PASAR IDDD"));
+export const deleteCollectionThunk = (id: string) => async (dispatch: any) => {
+  try {
+    const { token } = await getDataObject("userTattooArtist");
+    console.log(token);
+    const response = await axios.post(
+      `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collection/delete/${id}`,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
       }
-    } catch (error) {
-      return error;
+    );
+    if (response.status === 200) {
+      cconsole.log(response.data);
+      dispatch(deleteCollectionAction("PASAR IDDD"));
     }
-  };
+  } catch (error) {
+    return error;
+  }
+};
