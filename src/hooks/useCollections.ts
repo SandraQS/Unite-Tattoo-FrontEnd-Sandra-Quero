@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   collectionsThunk,
   createCollectionThunk,
+  deleteCollectionThunk,
 } from "../redux/thunks/collectionsThunk";
 
 export const useCollections = () => {
@@ -19,9 +20,14 @@ export const useCollections = () => {
   const createCollection = (collection: object) => {
     dispatch(createCollectionThunk(collection));
   };
+
+  const deleteCollection = (id: string) => {
+    dispatch(deleteCollectionThunk(id));
+  };
   return {
     collections,
     loadCollections,
     createCollection,
+    deleteCollection,
   };
 };
