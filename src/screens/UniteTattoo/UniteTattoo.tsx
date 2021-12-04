@@ -41,7 +41,7 @@ const UniteTattoo = () => {
                 style={[styles.buttonUniteTattoo, styles.separator]}
                 activeOpacity={0.7}
                 onPress={() => {
-                  navigation.navigate(RoutesEnum.register);
+                  navigation.navigate(RoutesEnum.login);
                 }}
               >
                 <Text style={styles.text}> Tatuador </Text>

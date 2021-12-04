@@ -1,6 +1,5 @@
 import { useNavigation } from "@react-navigation/core";
-import React, { useEffect, useState } from "react";
-import { colors } from "../../styles/uniteTatto.styles";
+import { RegisterScreenNavigationProp } from "../../types/navigation.types";
 
 import {
   SafeAreaView,
@@ -13,17 +12,18 @@ import {
 } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
-import { LoginScreenNavigationProp } from "../../types/navigation.types";
 
-import { generalStyles } from "../../styles/uniteTatto.styles";
-import formsStyles from "../../styles/forms.styles"
+import React, { useEffect, useState } from "react";
+import { generalStyles, colors } from "../../styles/uniteTatto.styles";
+import formsStyles from "../../styles/forms.styles";
 
 import { useTattooArtist } from "../../hooks/useTattooArtist";
 import AutoHeightImage from "react-native-auto-height-image";
 import Title from "../../components/Title/Title";
+import RoutesEnum from "../../navigation/routes";
 
 const Register = () => {
-  const navigation = useNavigation<LoginScreenNavigationProp>();
+  const navigation = useNavigation<RegisterScreenNavigationProp>();
   const { tattooArtistCreate } = useTattooArtist();
 
   const initTatooArtisData = {
@@ -143,6 +143,7 @@ const Register = () => {
     );
     setSelection(false);
     setNewTattooArtist(initTatooArtisData);
+    navigation.navigate(RoutesEnum.bottomnav);
   };
 
   return (
@@ -171,7 +172,9 @@ const Register = () => {
             </View>
             <View>
               <TouchableOpacity
-                onPress={() => {}}
+                onPress={() => {
+                  navigation.pop();
+                }}
                 activeOpacity={0.6}
                 style={formsStyles.buttonCancel}
               >
