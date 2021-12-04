@@ -1,5 +1,6 @@
 import {
   createCollectionAction,
+  deleteCollectionAction,
   loadCollectionsAction,
 } from "../actions/actionCreators";
 import collectionsReducer from "./collectionsReducer";
@@ -57,6 +58,39 @@ describe("Given collectionsReducer reducer", () => {
       const newCollections = collectionsReducer(collections, action);
 
       expect(newCollections).toContain(collection);
+    });
+  });
+
+  describe("When it receives an id and action deleteCollectionsAction", () => {
+    test("Then it should return a new array whithout the collection with this id", () => {
+      const collection: any = {
+        tattooStyles: "Acuarela",
+        image:
+          "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
+        id: "2",
+      };
+      const collections: any = [
+        {
+          tattooStyles: "Acuarela",
+          image:
+            "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
+          works: [],
+          id: "1",
+        },
+        {
+          tattooStyles: "Fine Line",
+          image:
+            "https://storage.googleapis.com/unite-tattoo.appspot.com/Fine Line-1638105044539-.png",
+          works: [],
+          id: "2",
+        },
+      ];
+      const id: any = "2";
+      const action: any = deleteCollectionAction(id);
+
+      const newCollections = collectionsReducer(collections, action);
+
+      expect(newCollections).not.toContain(collection);
     });
   });
 
