@@ -1,7 +1,10 @@
 import jwtDecode from "jwt-decode";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { tattooArtistLoginAction } from "../redux/actions/actionCreators";
+import {
+  tattooArtistLoginAction,
+  tattooArtistRegisteredAction,
+} from "../redux/actions/actionCreators";
 import { tattooArtistLoginTunk } from "../redux/thunks/userTattooArtistThunk";
 import { getDataObject } from "../storage/asyncStorage";
 
@@ -14,10 +17,15 @@ export const useUserTattooArtist = () => {
   };
 
   const tattooArtistRegistered = useCallback(async () => {
-    const { token } = await getDataObject("userTattooArtist");
-    if (token) {
-      const userData: object = jwtDecode(token.token);
-      dispatch(tattooArtistLoginAction(userData));
+    try {
+      const { token } = await getDataObject("userTattooArtist");
+      if (token) {
+        const userData: object = jwtDecode(token);
+
+        dispatch(tattooArtistRegisteredAction(userData));
+      }
+    } catch (error) {
+      return error;
     }
   }, [dispatch]);
 
