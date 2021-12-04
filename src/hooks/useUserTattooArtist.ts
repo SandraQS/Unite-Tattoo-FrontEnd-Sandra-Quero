@@ -14,10 +14,15 @@ export const useUserTattooArtist = () => {
   };
 
   const tattooArtistRegistered = useCallback(async () => {
-    const { token } = await getDataObject("userTattooArtist");
-    if (token) {
-      const userData: object = jwtDecode(token.token);
-      dispatch(tattooArtistLoginAction(userData));
+    try {
+      const { token } = await getDataObject("userTattooArtist");
+
+      if (token) {
+        const userData: object = jwtDecode(token.token);
+        dispatch(tattooArtistLoginAction(userData));
+      }
+    } catch (error) {
+      return error;
     }
   }, [dispatch]);
 
