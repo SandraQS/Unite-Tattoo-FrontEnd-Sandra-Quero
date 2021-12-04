@@ -16,4 +16,5 @@ export interface IcollectionsActions {
   type: string;
   collections: Array<object>;
   collection: object;
+  id: string;
 }

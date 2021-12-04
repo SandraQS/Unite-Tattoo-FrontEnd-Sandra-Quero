@@ -6,12 +6,14 @@ import { ICollectionsProps } from "../../types/interfacesComponent";
 import styles from "./EditDelete.styles";
 
 export const EditDelete = ({ collection }: ICollectionsProps) => {
+  const { deleteCollection } = useCollections();
+  const { id } = collection;
   const editPress = () => {
     //Funcion eliditar
   };
 
   const deletePress = () => {
-    //Funcion eliminar
+    deleteCollection(id);
   };
 
   return (

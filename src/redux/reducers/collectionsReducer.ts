@@ -13,6 +13,12 @@ const collectionsReducer = (collections = [], action: IcollectionsActions) => {
       newCollections = [...collections, action.collection];
       break;
 
+    case actionTypes.deleteCollection:
+      newCollections = collections.filter((collection: IcollectionsActions) => {
+        collection.id !== action.id;
+      });
+      break;
+
     default:
       newCollections = collections;
   }

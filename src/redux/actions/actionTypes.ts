@@ -8,6 +8,7 @@ const actionTypes = {
 
   loadCollections: "LOAD_COLLECTIONS",
   createCollection: "CREATE_COLLECTION",
+  deleteCollection: "DELETE_COLLECTION"
 };
 
 export default actionTypes;

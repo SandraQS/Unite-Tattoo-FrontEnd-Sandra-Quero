@@ -4,13 +4,14 @@ import { REACT_APP_URL_API_UNITETATTOO } from "@env";
 import { getDataObject } from "../../storage/asyncStorage";
 import {
   createCollectionAction,
+  deleteCollectionAction,
   loadCollectionsAction,
 } from "../actions/actionCreators";
 
 export const collectionsThunk = () => async (dispatch: any) => {
-  const { token } = await getDataObject("userTattooArtist");
-
   try {
+    const { token } = await getDataObject("userTattooArtist");
+
     const response = await axios.get(
       `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collections`,
       {
@@ -26,15 +27,15 @@ export const collectionsThunk = () => async (dispatch: any) => {
       );
     }
   } catch (error) {
-    return;
+    return error;
   }
 };
 
 export const createCollectionThunk =
   (collection: object) => async (dispatch: any) => {
-    const { token } = await getDataObject("userTattooArtist");
-
     try {
+      const { token } = await getDataObject("userTattooArtist");
+
       const response = await axios.post(
         `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collection/create`,
         collection,
@@ -49,6 +50,26 @@ export const createCollectionThunk =
         dispatch(createCollectionAction(newCollection));
       }
     } catch (error) {
-      return;
+      return error;
     }
   };
+
+export const deleteCollectionThunk = (id: string) => async (dispatch: any) => {
+  try {
+    const { token } = await getDataObject("userTattooArtist");
+
+    const response = await axios.delete(
+      `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collection/delete/${id}`,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+    if (response.status === 200) {
+      dispatch(deleteCollectionAction(id));
+    }
+  } catch (error) {
+    return error;
+  }
+};
