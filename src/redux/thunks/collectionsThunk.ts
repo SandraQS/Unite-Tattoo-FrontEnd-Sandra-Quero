@@ -57,8 +57,8 @@ export const createCollectionThunk =
 export const deleteCollectionThunk = (id: string) => async (dispatch: any) => {
   try {
     const { token } = await getDataObject("userTattooArtist");
-    console.log(token);
-    const response = await axios.post(
+
+    const response = await axios.delete(
       `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collection/delete/${id}`,
       {
         headers: {
@@ -67,8 +67,7 @@ export const deleteCollectionThunk = (id: string) => async (dispatch: any) => {
       }
     );
     if (response.status === 200) {
-      cconsole.log(response.data);
-      dispatch(deleteCollectionAction("PASAR IDDD"));
+      dispatch(deleteCollectionAction(id));
     }
   } catch (error) {
     return error;
