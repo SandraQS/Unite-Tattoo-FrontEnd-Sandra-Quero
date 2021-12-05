@@ -1,7 +1,6 @@
 import { render } from "@testing-library/react-native";
 import React from "react";
 import { EditDelete } from "./EditDelete";
-import AsyncStorage from "@react-native-community/async-storage";
 import { getDataObject } from "../../storage/asyncStorage";
 
 jest.mock("@react-native-community/async-storage");
@@ -9,8 +8,6 @@ jest.mock("@react-native-community/async-storage");
 describe("Given EditDelete component", () => {
   describe("When it's rendered", () => {
     test("Then it should show two buttons whith text 'Editar' and 'Eliminar'", () => {
-      AsyncStorage.getItem = jest.fn();
-
       const collection = {
         image:
           "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
