@@ -6,10 +6,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import CollectionsTattooArtist from "../screens/CollectionsTattooArtist/CollectionsTattooArtist";
 import { colors } from "../styles/colors.styles";
 import AutoHeightImage from "react-native-auto-height-image";
-import { TouchableOpacity } from "react-native";
-import Register from "../screens/Register/Register";
 
-//mainnavigator
 export const BottomNavigator = () => {
   const Tab = createBottomTabNavigator<RootStackParamList>();
   return (
