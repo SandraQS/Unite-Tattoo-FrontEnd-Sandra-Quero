@@ -1,6 +1,7 @@
 import {
   createCollectionAction,
   deleteCollectionAction,
+  editCollectionAction,
   loadCollectionsAction,
 } from "../actions/actionCreators";
 import collectionsReducer from "./collectionsReducer";
@@ -91,6 +92,55 @@ describe("Given collectionsReducer reducer", () => {
       const newCollections = collectionsReducer(collections, action);
 
       expect(newCollections).not.toContain(collection);
+    });
+  });
+
+  describe("When it receives an object and action editCollectionAction", () => {
+    test("Then it should return a new array with the collection modified", () => {
+      const collection: any = {
+        tattooStyles: "Titulo Modificado",
+        image:
+          "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
+        works: [],
+        id: "2",
+      };
+      const collections: any = [
+        {
+          tattooStyles: "Acuarela",
+          image:
+            "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
+          works: [],
+          id: "1",
+        },
+        {
+          tattooStyles: "Fine Line",
+          image:
+            "https://storage.googleapis.com/unite-tattoo.appspot.com/Fine Line-1638105044539-.png",
+          works: [],
+          id: "2",
+        },
+      ];
+      const expectedCollection: any = [
+        {
+          tattooStyles: "Acuarela",
+          image:
+            "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
+          works: [],
+          id: "1",
+        },
+        {
+          tattooStyles: "Titulo Modificado",
+          image:
+            "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
+          works: [],
+          id: "2",
+        },
+      ];
+      const action: any = editCollectionAction(collection);
+
+      const newCollections = collectionsReducer(collections, action);
+
+      expect(newCollections).toEqual(expectedCollection);
     });
   });
 

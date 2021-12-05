@@ -14,7 +14,7 @@ import { CreateCollectionScreenNavigationProp } from "../../types/navigation.typ
 import RoutesEnum from "../../navigation/routes";
 
 export const EditCollection = () => {
-  const { collections } = useCollections();
+  const { editCollection } = useCollections();
   const navigation = useNavigation<CreateCollectionScreenNavigationProp>();
 
   ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
@@ -22,7 +22,8 @@ export const EditCollection = () => {
     id: "61a37fc1b0e47a2b50e4635f",
     image:
       "https://storage.googleapis.com/unite-tattoo.appspot.com/Realista-1638438947435-.png",
-    tattooStyles: "Realista",
+    tattooStyles: "Holis",
+    works: [],
   };
   ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
 
@@ -43,7 +44,7 @@ export const EditCollection = () => {
   };
 
   const editClick = () => {
-    // console.log("NUEVO OBJETO", collectionData);
+    editCollection(collectionData);
     navigation.navigate(RoutesEnum.bottomnav);
   };
 

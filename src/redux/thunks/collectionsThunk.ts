@@ -5,8 +5,10 @@ import { getDataObject } from "../../storage/asyncStorage";
 import {
   createCollectionAction,
   deleteCollectionAction,
+  editCollectionAction,
   loadCollectionsAction,
 } from "../actions/actionCreators";
+import { ICollection } from "../../types/interfacesComponent";
 
 export const collectionsThunk = () => async (dispatch: any) => {
   try {
@@ -32,7 +34,7 @@ export const collectionsThunk = () => async (dispatch: any) => {
 };
 
 export const createCollectionThunk =
-  (collection: object) => async (dispatch: any) => {
+  (collection: ICollection) => async (dispatch: any) => {
     try {
       const { token } = await getDataObject("userTattooArtist");
 
@@ -73,3 +75,26 @@ export const deleteCollectionThunk = (id: string) => async (dispatch: any) => {
     return error;
   }
 };
+
+export const editCollectionThunk =
+  (collection: ICollection) => async (dispatch: any) => {
+    try {
+      const { token } = await getDataObject("userTattooArtist");
+
+      const response = await axios.put(
+        `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collection/edit/${collection.id}`,
+        collection,
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      if (response.status === 200) {
+        const newCollection = response.data;
+        dispatch(editCollectionAction(newCollection));
+      }
+    } catch (error) {
+      return error;
+    }
+  };
