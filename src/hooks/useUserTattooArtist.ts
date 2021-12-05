@@ -3,10 +3,11 @@ import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   tattooArtistLoginAction,
+  tattooArtistLogOutAction,
   tattooArtistRegisteredAction,
 } from "../redux/actions/actionCreators";
 import { tattooArtistLoginTunk } from "../redux/thunks/userTattooArtistThunk";
-import { getDataObject } from "../storage/asyncStorage";
+import { getDataObject, removeStorage } from "../storage/asyncStorage";
 
 export const useUserTattooArtist = () => {
   const { stateUserTattooArtist }: any = useSelector((store) => store);
@@ -29,9 +30,22 @@ export const useUserTattooArtist = () => {
     }
   }, [dispatch]);
 
+  const tattooArtistLogOut = useCallback(async () => {
+    try {
+       const userLogout = await removeStorage("userTattooArtist");
+       if(!userLogout){
+         dispatch(tattooArtistLogOutAction());
+       }
+      
+    } catch (error) {
+      return error;
+    }
+  }, [dispatch]);
+
   return {
     stateUserTattooArtist,
     tattooArtistLogin,
     tattooArtistRegistered,
+    tattooArtistLogOut,
   };
 };
