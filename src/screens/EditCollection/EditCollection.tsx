@@ -17,10 +17,19 @@ export const EditCollection = () => {
   const { collections } = useCollections();
   const navigation = useNavigation<CreateCollectionScreenNavigationProp>();
 
-  const initialCollectionData = { tattooStyles: "" };
+  ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
+  const initialCollectionData = {
+    id: "61a37fc1b0e47a2b50e4635f",
+    image:
+      "https://storage.googleapis.com/unite-tattoo.appspot.com/Realista-1638438947435-.png",
+    tattooStyles: "Realista",
+  };
+  ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
+
   const [collectionData, setCollectionDataData] = useState(
     initialCollectionData
   );
+  const [edit, setEdit] = useState(false);
   const isComplete = collectionData.tattooStyles === "";
 
   const textTitle = "EDITAR LA COLECCIÓN";
@@ -35,13 +44,14 @@ export const EditCollection = () => {
   };
 
   const editClick = () => {
+    // console.log("NUEVO OBJETO", collectionData);
     navigation.navigate(RoutesEnum.bottomnav);
   };
 
   return (
     <SafeAreaView style={generalStyles.screenLightBrown}>
       <View style={generalStyles.navHeader}>
-        <NavHeader nameUser="Sandra" goBack={() => {}} />
+        <NavHeader nameUser="Sandra" goBack={() => navigation.pop()} />
       </View>
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>
