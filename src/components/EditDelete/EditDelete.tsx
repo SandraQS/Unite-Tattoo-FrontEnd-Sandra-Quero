@@ -8,7 +8,7 @@ import { CollectionsTattooArtistScreenNavigationProp } from "../../types/navigat
 
 import styles from "./EditDelete.styles";
 
-export const EditDelete = ({ collection }: ICollectionsProps) => {
+export const EditDelete = ({ collection, setLongPress }: ICollectionsProps) => {
   const navigation =
     useNavigation<CollectionsTattooArtistScreenNavigationProp>();
 
@@ -16,10 +16,13 @@ export const EditDelete = ({ collection }: ICollectionsProps) => {
   const { id } = collection;
   const editPress = () => {
     navigation.navigate(RoutesEnum.edit);
+    setLongPress(false)
   };
 
   const deletePress = () => {
     deleteCollection(id);
+    setLongPress(false)
+
   };
 
   return (

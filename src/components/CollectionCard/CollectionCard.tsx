@@ -38,7 +38,7 @@ const CollectionCard = ({ collection }: ICollectionsProps) => {
             <Text style={style.styleTitle}>{collection.tattooStyles}</Text>
           </View>
           <View style={style.buttons}>
-            {longPress && <EditDelete collection={collection} />}
+            {longPress && <EditDelete collection={collection} setLongPress={setLongPress} />}
           </View>
         </View>
       </View>
