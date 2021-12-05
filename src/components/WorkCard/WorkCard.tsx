@@ -6,18 +6,18 @@ import { EditDelete } from "../EditDelete/EditDelete";
 import styles from "./WorkCard.styles";
 
 const WorkCard = ({ work }: IWorkProps) => {
-  const [longPress, setLongPress] = useState(false);
+  // const [longPress, setLongPress] = useState(false);
 
-  const showButtons = () => {
-    setLongPress(!longPress);
-  };
+  // const showButtons = () => {
+  //   setLongPress(!longPress);
+  // };
   // const onPressWork = () => {
   //   if (longPress) {
   //     setLongPress(false);
   // };
   return (
     <TouchableOpacity
-      /* onPress={onPressWork} */ onLongPress={showButtons}
+      /* onPress={onPressWork} */ onLongPress={() => {}}
       activeOpacity={0.6}
     >
       <View style={styles.workContainer}>
@@ -31,9 +31,9 @@ const WorkCard = ({ work }: IWorkProps) => {
         </View>
 
         <View style={styles.buttonsEditDelete}>
-          {longPress && (
+          {/* {longPress && (
             <EditDelete collection={work} setLongPress={setLongPress} />
-          )}
+          )} */}
         </View>
       </View>
     </TouchableOpacity>
