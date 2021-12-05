@@ -14,14 +14,15 @@ import { CreateCollectionScreenNavigationProp } from "../../types/navigation.typ
 import RoutesEnum from "../../navigation/routes";
 
 export const EditCollection = () => {
-  const { collections, editCollection } = useCollections();
+  const { editCollection } = useCollections();
   const navigation = useNavigation<CreateCollectionScreenNavigationProp>();
+
   ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
   const initialCollectionData = {
     id: "61a37fc1b0e47a2b50e4635f",
     image:
       "https://storage.googleapis.com/unite-tattoo.appspot.com/Realista-1638438947435-.png",
-    tattooStyles: "Funciona?",
+    tattooStyles: "Holis",
     works: [],
   };
   ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
@@ -43,9 +44,8 @@ export const EditCollection = () => {
   };
 
   const editClick = () => {
-    editCollection(initialCollectionData);
-    // console.log("NUEVO OBJETO", collectionData);
-    // navigation.navigate(RoutesEnum.bottomnav);
+    editCollection(collectionData);
+    navigation.navigate(RoutesEnum.bottomnav);
   };
 
   return (
