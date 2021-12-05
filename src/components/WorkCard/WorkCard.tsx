@@ -15,7 +15,7 @@ const WorkCard = ({ work }: IWorkProps) => {
     <TouchableOpacity onLongPress={showButtons} activeOpacity={0.6}>
       <View style={styles.workContainer}>
         <View style={styles.imageContainer}>
-          {/* <Image source={{ uri: work.image }} style={styles.imageWork} /> */}
+          <Image source={{ uri: work.image }} style={styles.imageWork} />
         </View>
 
         <View style={styles.textContainer}>
