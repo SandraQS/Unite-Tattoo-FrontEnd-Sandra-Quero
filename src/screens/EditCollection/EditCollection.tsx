@@ -29,7 +29,6 @@ export const EditCollection = () => {
   const [collectionData, setCollectionDataData] = useState(
     initialCollectionData
   );
-  const [edit, setEdit] = useState(false);
   const isComplete = collectionData.tattooStyles === "";
 
   const textTitle = "EDITAR LA COLECCIÓN";
