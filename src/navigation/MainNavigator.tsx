@@ -13,6 +13,7 @@ import { Login } from "../screens/Login/Login";
 import { useUserTattooArtist } from "../hooks/useUserTattooArtist";
 import CollectionsTattooArtist from "../screens/CollectionsTattooArtist/CollectionsTattooArtist";
 import { EditCollection } from "../screens/EditCollection/EditCollection";
+import WorksCollection from "../screens/WorksCollection/WorksCollection";
 
 export const MainNavigator = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -39,6 +40,8 @@ export const MainNavigator = () => {
       <Stack.Screen name={RoutesEnum.bottomnav} component={BottomNavigator} />
       <Stack.Screen name={RoutesEnum.create} component={CreateCollection} />
       <Stack.Screen name={RoutesEnum.edit} component={EditCollection} />
+
+      <Stack.Screen name={RoutesEnum.works} component={WorksCollection} />
     </Stack.Navigator>
   );
 };
