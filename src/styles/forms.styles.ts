@@ -30,6 +30,11 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
 
+  positionButtonCancel: {
+    alignItems: "flex-end",
+    height: 300,
+  },
+
   text: {
     fontSize: fontSize.text,
     textAlign: "center",
@@ -47,7 +52,6 @@ export default StyleSheet.create({
     fontSize: fontSize.tittleH2,
     textAlign: "center",
   },
-
   welcomeContainer: {
     alignContent: "center",
     backgroundColor: colors.lightBrown,
