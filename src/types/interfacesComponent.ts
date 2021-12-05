@@ -48,5 +48,6 @@ export interface ICollection {
 }
 
 export interface ICollectionsProps {
-  collection: ICollection
+  collection: ICollection;
+  setLongPress: any;
 }
