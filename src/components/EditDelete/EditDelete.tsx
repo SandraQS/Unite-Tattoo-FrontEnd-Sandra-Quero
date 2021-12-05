@@ -15,7 +15,7 @@ export const EditDelete = ({ collection }: ICollectionsProps) => {
   const { deleteCollection } = useCollections();
   const { id } = collection;
   const editPress = () => {
-    navigation.navigate(RoutesEnum.create);
+    navigation.navigate(RoutesEnum.edit);
   };
 
   const deletePress = () => {

@@ -10,6 +10,7 @@ enum RoutesEnum {
   tattooartistnav = "TattooArtistNavigator",
 
   create = "CreateCollection",
+  edit = "EditCollection",
 }
 
 export default RoutesEnum;
