@@ -20,6 +20,10 @@ export const tattooArtistRegisteredAction = (tattooArtist: object) => ({
   tattooArtist,
 });
 
+export const tattooArtistLogOutAction = () => ({
+  type: actionTypes.tattooArtistLogOut,
+});
+
 export const loadCollectionsAction = (collections: Array<object>) => ({
   type: actionTypes.loadCollections,
   collections,
