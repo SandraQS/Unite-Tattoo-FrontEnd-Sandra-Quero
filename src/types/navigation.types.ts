@@ -11,6 +11,7 @@ export type RootStackParamList = {
   [RoutesEnum.bottomnav]: undefined;
   [RoutesEnum.tattooartistnav]: undefined;
   [RoutesEnum.create]: undefined;
+  [RoutesEnum.edit]: undefined;
 };
 
 export type UniteTattooScreenRouteProp = RouteProp<
@@ -87,4 +88,13 @@ export type CreateCollectionScreenRouteProp = RouteProp<
 export type CreateCollectionScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   RoutesEnum.create
+>;
+export type EditCollectionScreenRouteProp = RouteProp<
+  RootStackParamList,
+  RoutesEnum.edit
+>;
+
+export type EditCollectionScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  RoutesEnum.edit
 >;
