@@ -1,10 +1,17 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { DevSettings, Text, TouchableOpacity, View } from "react-native";
 import AutoHeightImage from "react-native-auto-height-image";
+import { useUserTattooArtist } from "../../hooks/useUserTattooArtist";
 import { NavHeaderProps } from "../../types/components.types";
 
 import styles from "./NavHeader.styles";
 const NavHeader = ({ nameUser, goBack }: NavHeaderProps) => {
+  const { tattooArtistLogOut } = useUserTattooArtist();
+
+  const clickIcon = () => {
+    tattooArtistLogOut();
+    DevSettings.reload();
+  };
   return (
     <View style={styles.navContainter}>
       <View style={styles.logoContainter}>
@@ -18,7 +25,7 @@ const NavHeader = ({ nameUser, goBack }: NavHeaderProps) => {
 
       <View>
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={clickIcon}
           activeOpacity={0.6}
           style={styles.userContainter}
         >
