@@ -2,6 +2,7 @@ const actionTypes = {
   createTattooArtist: "CREATE_TATTOOARTIST",
 
   loadAllWorks: "LOAD_ALL_WORKS",
+  loadWorksCollection: "LOAD_WORKS_COLLECTION",
 
   tattooArtistLogin: "LOGIN_TATTOOARTIST",
   tattooArtistRegistered: "REGISTERED_TATTOOARTIST",

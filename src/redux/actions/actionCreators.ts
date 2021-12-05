@@ -10,6 +10,11 @@ export const loadAllWorksAction = (works: Array<object>) => ({
   works,
 });
 
+export const loadWorksCollectionAction = (works: Array<object>) => ({
+  type: actionTypes.loadWorksCollection,
+  works,
+});
+
 export const tattooArtistLoginAction = (tattooArtist: object) => ({
   type: actionTypes.tattooArtistLogin,
   tattooArtist,
