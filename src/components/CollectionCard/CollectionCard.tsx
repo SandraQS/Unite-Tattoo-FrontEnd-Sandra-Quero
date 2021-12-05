@@ -1,11 +1,16 @@
+import { useNavigation } from "@react-navigation/core";
 import React, { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import RoutesEnum from "../../navigation/routes";
 import { ICollectionsProps } from "../../types/interfacesComponent";
+import { CollectionsTattooArtistScreenNavigationProp } from "../../types/navigation.types";
 import { EditDelete } from "../EditDelete/EditDelete";
 
 import style from "./CollectionCard.styles";
 
 const CollectionCard = ({ collection }: ICollectionsProps) => {
+  const navigation =
+    useNavigation<CollectionsTattooArtistScreenNavigationProp>();
   const [longPress, setLongPress] = useState(false);
   const showButtons = () => {
     setLongPress(!longPress);
@@ -15,7 +20,7 @@ const CollectionCard = ({ collection }: ICollectionsProps) => {
     if (longPress) {
       setLongPress(false);
     } else {
-      //ir a trabajos
+      navigation.navigate(RoutesEnum.works);
     }
   };
 
@@ -38,7 +43,9 @@ const CollectionCard = ({ collection }: ICollectionsProps) => {
             <Text style={style.styleTitle}>{collection.tattooStyles}</Text>
           </View>
           <View style={style.buttons}>
-            {longPress && <EditDelete collection={collection} setLongPress={setLongPress} />}
+            {longPress && (
+              <EditDelete collection={collection} setLongPress={setLongPress} />
+            )}
           </View>
         </View>
       </View>

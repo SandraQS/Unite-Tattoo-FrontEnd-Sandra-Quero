@@ -10,8 +10,11 @@ import NavHeader from "../../components/NavHeader/NavHeader";
 import WorkCard from "../../components/WorkCard/WorkCard";
 
 import styles from "./WorksCollection.styles";
+import { useNavigation } from "@react-navigation/core";
+import { WorksCollectionScreenNavigationProp } from "../../types/navigation.types";
 
 const WorksCollection = () => {
+  const navigation = useNavigation<WorksCollectionScreenNavigationProp>();
   const { loadAllWorks, works } = useWorks();
   useEffect(() => {
     loadAllWorks();
@@ -23,7 +26,7 @@ const WorksCollection = () => {
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
       <View style={generalStyles.navHeader}>
-        <NavHeader nameUser="" goBack={() => {}} />
+        <NavHeader nameUser="" goBack={() => navigation.pop()} />
       </View>
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>
