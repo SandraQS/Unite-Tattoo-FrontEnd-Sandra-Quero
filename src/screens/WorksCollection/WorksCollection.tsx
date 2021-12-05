@@ -15,9 +15,14 @@ import { WorksCollectionScreenNavigationProp } from "../../types/navigation.type
 
 const WorksCollection = () => {
   const navigation = useNavigation<WorksCollectionScreenNavigationProp>();
-  const { loadAllWorks, works } = useWorks();
+  const { loadWorksCollection, works } = useWorks();
+
+  ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
+  const idCollection = "61a37f78b0e47a2b50e4635b";
+  ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
+
   useEffect(() => {
-    loadAllWorks();
+    loadWorksCollection(idCollection);
   }, [works]);
 
   const textTitle = "COLECCIÓN";
