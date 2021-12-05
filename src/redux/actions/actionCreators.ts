@@ -34,3 +34,8 @@ export const deleteCollectionAction = (id: string) => ({
   type: actionTypes.deleteCollection,
   id,
 });
+
+export const editCollectionAction = (collection: object) => ({
+  type: actionTypes.createCollection,
+  collection,
+});
