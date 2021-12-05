@@ -4,7 +4,9 @@ import {
   collectionsThunk,
   createCollectionThunk,
   deleteCollectionThunk,
+  editCollectionThunk,
 } from "../redux/thunks/collectionsThunk";
+import { ICollection } from "../types/interfacesComponent";
 
 export const useCollections = () => {
   const { collections } = useSelector(({ collections }: any) => ({
@@ -17,17 +19,23 @@ export const useCollections = () => {
     dispatch(collectionsThunk());
   }, [dispatch]);
 
-  const createCollection = (collection: object) => {
+  const createCollection = (collection: ICollection) => {
     dispatch(createCollectionThunk(collection));
   };
 
   const deleteCollection = (id: string) => {
     dispatch(deleteCollectionThunk(id));
   };
+
+  const editCollection = (collection: ICollection) => {
+    dispatch(editCollectionThunk(collection));
+  };
+
   return {
     collections,
     loadCollections,
     createCollection,
     deleteCollection,
+    editCollection,
   };
 };
