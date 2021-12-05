@@ -12,6 +12,7 @@ import { useCollections } from "../../hooks/useCollections";
 import NavHeader from "../../components/NavHeader/NavHeader";
 import { CreateCollectionScreenNavigationProp } from "../../types/navigation.types";
 import RoutesEnum from "../../navigation/routes";
+import { ICollection } from "../../types/interfacesComponent";
 
 export const CreateCollection = () => {
   const { createCollection } = useCollections();
@@ -43,7 +44,7 @@ export const CreateCollection = () => {
   return (
     <SafeAreaView style={generalStyles.screenLightBrown}>
       <View style={generalStyles.navHeader}>
-        <NavHeader nameUser="Sandra" goBack={() => {}} />
+        <NavHeader nameUser="Sandra" goBack={() => navigation.pop()} />
       </View>
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>
