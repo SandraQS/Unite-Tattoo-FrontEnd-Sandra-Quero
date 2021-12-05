@@ -46,8 +46,12 @@ export interface ICollection {
   works?: Array<string>;
   id?: string;
 }
-
 export interface ICollectionsProps {
   collection: ICollection;
-  setLongPress: any;
+  setLongPress?: any;
 }
+export interface IWorkProps {
+  work: IWork;
+  setLongPress?: any;
+}
+
