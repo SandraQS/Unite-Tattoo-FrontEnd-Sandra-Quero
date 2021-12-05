@@ -120,7 +120,6 @@ describe("Given collectionsReducer reducer", () => {
           id: "2",
         },
       ];
-
       const expectedCollection: any = [
         {
           tattooStyles: "Acuarela",
