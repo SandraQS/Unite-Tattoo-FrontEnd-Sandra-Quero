@@ -42,7 +42,7 @@ const CollectionsTattooArtist = () => {
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
       <View style={generalStyles.navHeader}>
-        <NavHeader nameUser="Sandra" goBack={() => {}} />
+        <NavHeader nameUser="Log Out" />
       </View>
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>

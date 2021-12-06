@@ -37,7 +37,7 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
       <View style={generalStyles.navHeader}>
-        <NavHeader nameUser="" goBack={() => navigation.pop()} />
+        <NavHeader nameUser="Log Out" goBack={() => navigation.pop()} />
       </View>
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>
