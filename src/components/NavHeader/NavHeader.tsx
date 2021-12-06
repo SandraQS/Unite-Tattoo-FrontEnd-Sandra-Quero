@@ -1,5 +1,11 @@
 import React from "react";
-import { DevSettings, Text, TouchableOpacity, View } from "react-native";
+import {
+  Button,
+  DevSettings,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import AutoHeightImage from "react-native-auto-height-image";
 import { useUserTattooArtist } from "../../hooks/useUserTattooArtist";
 import { NavHeaderProps } from "../../types/components.types";
@@ -28,6 +34,7 @@ const NavHeader = ({ nameUser, goBack }: NavHeaderProps) => {
           onPress={clickIcon}
           activeOpacity={0.6}
           style={styles.userContainter}
+          accessibilityRole="button"
         >
           <View style={styles.nameUserContainter}>
             <Text style={styles.nameUserText}>{nameUser}</Text>
