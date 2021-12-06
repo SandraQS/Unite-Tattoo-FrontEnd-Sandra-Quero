@@ -40,6 +40,10 @@ export default StyleSheet.create({
     textAlign: "center",
   },
 
+  textArea: {
+    paddingTop: 20,
+  },
+
   textBold: {
     fontWeight: "800",
   },
@@ -47,7 +51,6 @@ export default StyleSheet.create({
   textCancel: {
     marginLeft: 5,
   },
-
   tittleH2: {
     fontSize: fontSize.tittleH2,
     textAlign: "center",
