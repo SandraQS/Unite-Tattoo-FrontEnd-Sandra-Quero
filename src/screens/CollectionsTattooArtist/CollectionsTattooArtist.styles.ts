@@ -8,4 +8,7 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 20,
   },
+  mainContainerGeneral: {
+    marginTop: 130,
+  },
 });
