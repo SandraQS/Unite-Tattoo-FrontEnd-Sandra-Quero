@@ -38,7 +38,7 @@ export const CreateCollection = () => {
   const CreateClick = () => {
     createCollection(collectionData);
     setCollectionDataData(initialCollectionData);
-    navigation.navigate(RoutesEnum.bottomnav);
+    navigation.navigate(RoutesEnum.collections);
   };
 
   return (

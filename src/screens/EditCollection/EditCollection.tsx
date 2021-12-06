@@ -10,22 +10,29 @@ import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import Title from "../../components/Title/Title";
 import { useCollections } from "../../hooks/useCollections";
 import NavHeader from "../../components/NavHeader/NavHeader";
-import { CreateCollectionScreenNavigationProp } from "../../types/navigation.types";
+import {
+  EditCollectionScreenNavigationProp,
+  EditCollectionScreenRouteProp,
+} from "../../types/navigation.types";
 import RoutesEnum from "../../navigation/routes";
 
-export const EditCollection = () => {
-  const { editCollection } = useCollections();
-  const navigation = useNavigation<CreateCollectionScreenNavigationProp>();
+interface IEditCollectionProps {
+  route: EditCollectionScreenRouteProp;
+}
 
-  ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
+export const EditCollection = ({ route }: IEditCollectionProps) => {
+  const { editCollection } = useCollections();
+  const navigation = useNavigation<EditCollectionScreenNavigationProp>();
+  const {
+    params: { collection },
+  } = route;
+
   const initialCollectionData = {
-    id: "61a37fc1b0e47a2b50e4635f",
-    image:
-      "https://storage.googleapis.com/unite-tattoo.appspot.com/Realista-1638438947435-.png",
-    tattooStyles: "Holis",
-    works: [],
+    id: collection.id,
+    image: collection.image,
+    tattooStyles: collection.tattooStyles,
+    works: collection.works,
   };
-  ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
 
   const [collectionData, setCollectionDataData] = useState(
     initialCollectionData
@@ -45,7 +52,7 @@ export const EditCollection = () => {
 
   const editClick = () => {
     editCollection(collectionData);
-    navigation.navigate(RoutesEnum.bottomnav);
+    navigation.navigate(RoutesEnum.collections);
   };
 
   return (
