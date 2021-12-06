@@ -24,13 +24,13 @@ interface IWorksCollectionProps {
 const WorksCollection = ({ route }: IWorksCollectionProps) => {
   const navigation = useNavigation<WorksCollectionScreenNavigationProp>();
   const { loadWorksCollection, works } = useWorks();
-  const {
-    params: { idCollection },
-  } = route;
+  // const {
+  //   params: { idCollection },
+  // } = route;
 
-  console.log("ID", idCollection);
+  // console.log("ID", idCollection);
   ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
-  // const idCollection = "61a37f78b0e47a2b50e4635b";
+  const idCollection = "61a37f78b0e47a2b50e4635b";
   ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
 
   useEffect(() => {
