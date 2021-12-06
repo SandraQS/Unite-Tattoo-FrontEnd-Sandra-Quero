@@ -11,18 +11,32 @@ import WorkCard from "../../components/WorkCard/WorkCard";
 
 import styles from "./WorksCollection.styles";
 import { useNavigation } from "@react-navigation/core";
-import { WorksCollectionScreenNavigationProp } from "../../types/navigation.types";
+import {
+  UniteTattooScreenRouteProp,
+  WorksCollectionScreenNavigationProp,
+  WorksCollectionScreenRouteProp,
+} from "../../types/navigation.types";
 
-const WorksCollection = () => {
+interface IWorksCollectionProps {
+  route: WorksCollectionScreenRouteProp;
+}
+
+const WorksCollection = ({ route }: IWorksCollectionProps) => {
   const navigation = useNavigation<WorksCollectionScreenNavigationProp>();
   const { loadWorksCollection, works } = useWorks();
+  // const {
+  //   params: { idCollection },
+  // } = route;
 
+  // console.log("ID", idCollection);
   ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
   const idCollection = "61a37f78b0e47a2b50e4635b";
   ////==>>>> OJO AQUI HAY QUE PASAR POR EL NAV LOS DATOS DE COLLECTION!!!!!<<<<<=====
 
   useEffect(() => {
-    loadWorksCollection(idCollection);
+    if (idCollection) {
+      loadWorksCollection(idCollection);
+    }
   }, [works]);
 
   const textTitle = "COLECCIÓN";
