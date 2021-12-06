@@ -45,7 +45,12 @@ const CollectionsTattooArtist = () => {
         <NavHeader nameUser="Log Out" />
       </View>
       <ScrollView>
-        <View style={generalStyles.mainContainerGeneral}>
+        <View
+          style={[
+            generalStyles.mainContainerGeneral,
+            styles.mainContainerGeneral,
+          ]}
+        >
           <View>
             <Title text={textTitle} />
           </View>

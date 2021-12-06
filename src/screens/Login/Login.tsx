@@ -72,6 +72,7 @@ export const Login = () => {
                   onChangeText={(text) => {
                     onChangeDataUser(text, "email");
                   }}
+                  autoCapitalize="none"
                   accessibilityLabel="email"
                   maxLength={20}
                 />
