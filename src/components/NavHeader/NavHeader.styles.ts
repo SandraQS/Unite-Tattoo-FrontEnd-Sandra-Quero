@@ -17,6 +17,7 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 20,
+    paddingTop: 50,
     paddingVertical: 10,
   },
 
