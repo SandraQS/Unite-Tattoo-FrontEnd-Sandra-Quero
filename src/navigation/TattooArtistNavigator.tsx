@@ -11,7 +11,12 @@ import WorksCollection from "../screens/WorksCollection/WorksCollection";
 export const TattooArtistNavigator = () => {
   const Stack = createNativeStackNavigator<RootTattooArtistParamList>();
   return (
-    <Stack.Navigator initialRouteName={RoutesEnum.collections}>
+    <Stack.Navigator
+      initialRouteName={RoutesEnum.collections}
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen
         name={RoutesEnum.collections}
         component={CollectionsTattooArtist}

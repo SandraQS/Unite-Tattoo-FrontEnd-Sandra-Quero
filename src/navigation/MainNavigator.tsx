@@ -21,7 +21,12 @@ export const MainNavigator = () => {
   }, [tattooArtistRegistered, stateUserTattooArtist.isAuth]);
 
   return (
-    <Stack.Navigator initialRouteName={RoutesEnum.uniteTatto}>
+    <Stack.Navigator
+      initialRouteName={RoutesEnum.uniteTatto}
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       {!stateUserTattooArtist.isAuth ? (
         <>
           <Stack.Screen name={RoutesEnum.uniteTatto} component={UniteTattoo} />
