@@ -10,6 +10,10 @@ const worksReducer = (works = [], action: ItattooWorksActions) => {
       newWorks = [...action.works];
       break;
 
+   case actionTypes.createWork:
+      newWorks = [...works, action.work];
+      break;
+
     default:
       newWorks = works;
   }
