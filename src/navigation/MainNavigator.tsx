@@ -24,24 +24,31 @@ export const MainNavigator = () => {
     tattooArtistRegistered();
   }, [tattooArtistRegistered, stateUserTattooArtist.isAuth]);
 
-  return !stateUserTattooArtist.isAuth ? (
-    <Stack.Navigator initialRouteName={RoutesEnum.uniteTatto}>
-      <Stack.Screen name={RoutesEnum.uniteTatto} component={UniteTattoo} />
+  return (
+    /* !stateUserTattooArtist.isAuth ? */ <Stack.Navigator
+      initialRouteName={RoutesEnum.uniteTatto}
+    >
+      {!stateUserTattooArtist.isAuth ? (
+        <>
+          <Stack.Screen name={RoutesEnum.uniteTatto} component={UniteTattoo} />
 
-      <Stack.Screen name={RoutesEnum.login} component={Login} />
-      <Stack.Screen name={RoutesEnum.register} component={Register} />
-      <Stack.Screen name={RoutesEnum.allworks} component={AllWorks} />
-      <Stack.Screen name={RoutesEnum.create} component={CreateCollection} />
+          <Stack.Screen name={RoutesEnum.login} component={Login} />
+          <Stack.Screen name={RoutesEnum.register} component={Register} />
+          <Stack.Screen name={RoutesEnum.allworks} component={AllWorks} />
 
-      <Stack.Screen name={RoutesEnum.bottomnav} component={BottomNavigator} />
-    </Stack.Navigator>
-  ) : (
-    <Stack.Navigator initialRouteName={RoutesEnum.bottomnav}>
-      <Stack.Screen name={RoutesEnum.bottomnav} component={BottomNavigator} />
-      <Stack.Screen name={RoutesEnum.create} component={CreateCollection} />
-      <Stack.Screen name={RoutesEnum.edit} component={EditCollection} />
-
-      <Stack.Screen name={RoutesEnum.works} component={WorksCollection} />
+          <Stack.Screen
+            name={RoutesEnum.bottomnav}
+            component={BottomNavigator}
+          />
+        </>
+      ) : (
+        <Stack.Screen name={RoutesEnum.bottomnav} component={BottomNavigator} />
+      )}
     </Stack.Navigator>
   );
+  // ) : (
+  //   <Stack.Navigator initialRouteName={RoutesEnum.bottomnav}>
+  //     <Stack.Screen name={RoutesEnum.bottomnav} component={BottomNavigator} />
+  //   </Stack.Navigator>
+  // );
 };

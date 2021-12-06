@@ -7,12 +7,7 @@ export type RootStackParamList = {
   [RoutesEnum.login]: undefined;
   [RoutesEnum.register]: undefined;
   [RoutesEnum.allworks]: undefined;
-  [RoutesEnum.collections]: undefined;
   [RoutesEnum.bottomnav]: undefined;
-  [RoutesEnum.tattooartistnav]: undefined;
-  [RoutesEnum.create]: undefined;
-  [RoutesEnum.edit]: undefined;
-  [RoutesEnum.works]: { idCollection: string | undefined };
 };
 
 export type UniteTattooScreenRouteProp = RouteProp<
@@ -55,14 +50,6 @@ export type AllWorksScreenNavigationProp = NativeStackNavigationProp<
   RoutesEnum.allworks
 >;
 
-export type CollectionsTattooArtistScreenRouteProp = RouteProp<
-  RootStackParamList,
-  RoutesEnum.collections
->;
-
-export type CollectionsTattooArtistScreenNavigationProp =
-  NativeStackNavigationProp<RootStackParamList, RoutesEnum.collections>;
-
 export type BottomNavigatorScreenRouteProp = RouteProp<
   RootStackParamList,
   RoutesEnum.bottomnav
@@ -73,38 +60,58 @@ export type BottomNavigatorScreenNavigationProp = NativeStackNavigationProp<
   RoutesEnum.bottomnav
 >;
 
+export type RootTabParamList = {
+  [RoutesEnum.tattooartistnav]: undefined;
+};
+
 export type TattooArtistNavigatorScreenRouteProp = RouteProp<
-  RootStackParamList,
+  RootTabParamList,
   RoutesEnum.tattooartistnav
 >;
 
 export type TattooArtistNavigatorScreenNavigationProp =
-  NativeStackNavigationProp<RootStackParamList, RoutesEnum.tattooartistnav>;
+  NativeStackNavigationProp<RootTabParamList, RoutesEnum.tattooartistnav>;
+
+export type RootTattooArtistParamList = {
+  [RoutesEnum.collections]: undefined;
+  [RoutesEnum.create]: undefined;
+  [RoutesEnum.edit]: undefined;
+  [RoutesEnum.works]: { idCollection: string | undefined };
+};
+
+export type CollectionsTattooArtistScreenRouteProp = RouteProp<
+  RootTattooArtistParamList,
+  RoutesEnum.collections
+>;
+
+export type CollectionsTattooArtistScreenNavigationProp =
+  NativeStackNavigationProp<RootTattooArtistParamList, RoutesEnum.collections>;
 
 export type CreateCollectionScreenRouteProp = RouteProp<
-  RootStackParamList,
+  RootTattooArtistParamList,
   RoutesEnum.create
 >;
 
 export type CreateCollectionScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
+  RootTattooArtistParamList,
   RoutesEnum.create
 >;
+
 export type EditCollectionScreenRouteProp = RouteProp<
-  RootStackParamList,
+  RootTattooArtistParamList,
   RoutesEnum.edit
 >;
 
 export type EditCollectionScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
+  RootTattooArtistParamList,
   RoutesEnum.edit
 >;
 export type WorksCollectionScreenRouteProp = RouteProp<
-  RootStackParamList,
+  RootTattooArtistParamList,
   RoutesEnum.works
 >;
 
 export type WorksCollectionScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
+  RootTattooArtistParamList,
   RoutesEnum.works
 >;

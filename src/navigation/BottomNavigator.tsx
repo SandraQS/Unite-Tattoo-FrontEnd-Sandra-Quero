@@ -1,17 +1,17 @@
 import React from "react";
 import RoutesEnum from "./routes";
 
-import { RootStackParamList } from "../types/navigation.types";
+import { RootTabParamList } from "../types/navigation.types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import CollectionsTattooArtist from "../screens/CollectionsTattooArtist/CollectionsTattooArtist";
 import { colors } from "../styles/colors.styles";
 import AutoHeightImage from "react-native-auto-height-image";
+import { TattooArtistNavigator } from "./TattooArtistNavigator";
 
 export const BottomNavigator = () => {
-  const Tab = createBottomTabNavigator<RootStackParamList>();
+  const Tab = createBottomTabNavigator<RootTabParamList>();
   return (
     <Tab.Navigator
-      initialRouteName={RoutesEnum.collections}
+      initialRouteName={RoutesEnum.tattooartistnav}
       screenOptions={{
         tabBarActiveTintColor: colors.darkBrown,
         tabBarInactiveTintColor: colors.lightBrown,
@@ -25,8 +25,8 @@ export const BottomNavigator = () => {
       }}
     >
       <Tab.Screen
-        name={RoutesEnum.collections}
-        component={CollectionsTattooArtist}
+        name={RoutesEnum.tattooartistnav}
+        component={TattooArtistNavigator}
         options={{
           tabBarAccessibilityLabel: "Colecciones",
           title: "Colecciones",

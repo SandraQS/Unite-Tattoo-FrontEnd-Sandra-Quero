@@ -32,7 +32,7 @@ export default StyleSheet.create({
 
   positionButtonCancel: {
     alignItems: "flex-end",
-    height: 300,
+    height: 150,
   },
 
   text: {
