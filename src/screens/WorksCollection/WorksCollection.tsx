@@ -15,6 +15,7 @@ import {
   WorksCollectionScreenNavigationProp,
   WorksCollectionScreenRouteProp,
 } from "../../types/navigation.types";
+import RoutesEnum from "../../navigation/routes";
 interface IWorksCollectionProps {
   route: WorksCollectionScreenRouteProp;
 }
@@ -34,6 +35,9 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
   const textTitle = "COLECCIÓN";
   const textTitleBold = " REALISTA"; //==>> FALTA QUE VENGA DE API
 
+  const goCreateWork =()=>{
+     navigation.navigate(RoutesEnum.creatework);
+  }
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
       <View style={generalStyles.navHeader}>
@@ -45,7 +49,11 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
             <Title text={textTitle} textBold={textTitleBold} />
           </View>
           <View style={styles.buttonAddWork}>
-            <Button title=" + Añadir nuevo trabajo" color={colors.darkBrown} />
+            <Button
+              title=" + Añadir nuevo trabajo"
+              color={colors.darkBrown}
+              onPress={goCreateWork}
+            />
           </View>
           {works.length ? (
             <View style={styles.worksList}>
