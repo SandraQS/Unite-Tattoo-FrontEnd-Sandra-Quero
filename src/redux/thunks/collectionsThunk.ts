@@ -34,7 +34,7 @@ export const collectionsThunk = () => async (dispatch: any) => {
 };
 
 export const createCollectionThunk =
-  (collection: ICollection) => async (dispatch: any) => {
+  (collection: Omit<ICollection, "id">) => async (dispatch: any) => {
     try {
       const { token } = await getDataObject("userTattooArtist");
 

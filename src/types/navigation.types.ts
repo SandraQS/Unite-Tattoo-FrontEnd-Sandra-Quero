@@ -1,6 +1,7 @@
 import { RouteProp } from "@react-navigation/core";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import RoutesEnum from "../navigation/routes";
+import { ICollection } from "./interfacesComponent";
 
 export type RootStackParamList = {
   [RoutesEnum.uniteTatto]: undefined;
@@ -75,8 +76,8 @@ export type TattooArtistNavigatorScreenNavigationProp =
 export type RootTattooArtistParamList = {
   [RoutesEnum.collections]: undefined;
   [RoutesEnum.create]: undefined;
-  [RoutesEnum.edit]: undefined;
-  [RoutesEnum.works]: { idCollection: string | undefined };
+  [RoutesEnum.edit]: { collection: ICollection };
+  [RoutesEnum.works]: { idCollection: string };
 };
 
 export type CollectionsTattooArtistScreenRouteProp = RouteProp<

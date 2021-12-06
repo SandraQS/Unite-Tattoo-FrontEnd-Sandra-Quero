@@ -19,7 +19,7 @@ export const useCollections = () => {
     dispatch(collectionsThunk());
   }, [dispatch]);
 
-  const createCollection = (collection: ICollection) => {
+  const createCollection = (collection: Omit<ICollection, "id">) => {
     dispatch(createCollectionThunk(collection));
   };
 

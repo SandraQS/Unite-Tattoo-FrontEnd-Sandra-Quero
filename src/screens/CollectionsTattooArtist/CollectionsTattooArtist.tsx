@@ -25,10 +25,19 @@ const CollectionsTattooArtist = () => {
     loadCollections();
   }, [collections]);
 
-  const textTitle = "MIS COLECCIONES";
+  const functionGoWorks = (idCollection: string) => {
+    navigation.navigate(RoutesEnum.works, { idCollection: idCollection });
+  };
+
+  const functionGoEdit = (collection: ICollection) => {
+    navigation.navigate(RoutesEnum.edit, { collection: collection });
+  };
+
   const functionCreate = () => {
     navigation.navigate(RoutesEnum.create);
   };
+
+  const textTitle = "MIS COLECCIONES";
 
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
@@ -44,7 +53,12 @@ const CollectionsTattooArtist = () => {
           {collections.length ? (
             <View style={styles.collections}>
               {collections.map((collection: ICollection) => (
-                <CollectionCard key={collection.id} collection={collection} />
+                <CollectionCard
+                  key={collection.id}
+                  collection={collection}
+                  functionGoWorks={functionGoWorks}
+                  functionGoEdit={functionGoEdit}
+                />
               ))}
               <CreateButton functionCreate={functionCreate} />
             </View>

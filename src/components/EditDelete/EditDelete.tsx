@@ -1,28 +1,25 @@
-import { useNavigation } from "@react-navigation/core";
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { useCollections } from "../../hooks/useCollections";
-import RoutesEnum from "../../navigation/routes";
-import { ICollectionsProps } from "../../types/interfacesComponent";
-import { CollectionsTattooArtistScreenNavigationProp } from "../../types/navigation.types";
+import { IEditDeleteProps } from "../../types/interfacesComponent";
 
 import styles from "./EditDelete.styles";
 
-export const EditDelete = ({ collection, setLongPress }: ICollectionsProps) => {
-  const navigation =
-    useNavigation<CollectionsTattooArtistScreenNavigationProp>();
-
+export const EditDelete = ({
+  collection,
+  setLongPress,
+  functionGoEdit,
+}: IEditDeleteProps) => {
   const { deleteCollection } = useCollections();
   const { id } = collection;
   const editPress = () => {
-    navigation.navigate(RoutesEnum.edit);
-    setLongPress(false)
+    functionGoEdit(collection);
+    setLongPress(false);
   };
 
   const deletePress = () => {
     deleteCollection(id);
-    setLongPress(false)
-
+    setLongPress(false);
   };
 
   return (
