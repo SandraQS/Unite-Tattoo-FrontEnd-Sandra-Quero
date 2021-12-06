@@ -19,11 +19,11 @@ export const tattooArtistLoginTunk =
         const userRegistered: any = jwtDecode(token);
         const newToken = { token: token };
 
-        dispatch(tattooArtistLoginAction(userRegistered.idUser));
+        dispatch(tattooArtistLoginAction(userRegistered));
 
         await tokenStorage("userTattooArtist", newToken);
       }
-    } catch (error: any) {
-      return error.message;
+    } catch (error) {
+      return error;
     }
   };

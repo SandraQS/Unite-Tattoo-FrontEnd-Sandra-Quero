@@ -42,7 +42,22 @@ export interface IWork {
 }
 export interface ICollection {
   tattooStyles: string;
-  image: string;
-  works: Array<string>;
+  image?: string;
+  works?: Array<string>;
   id: string;
+}
+export interface ICollectionsProps {
+  collection: ICollection;
+  functionGoWorks: (idCollection: string) => void;
+  functionGoEdit: (collection: ICollection) => void;
+  setLongPress?: any;
+}
+export interface IEditDeleteProps {
+  collection: ICollection;
+  functionGoEdit: (collection: ICollection) => void;
+  setLongPress?: any;
+}
+export interface IWorkProps {
+  work: IWork;
+  setLongPress?: any;
 }

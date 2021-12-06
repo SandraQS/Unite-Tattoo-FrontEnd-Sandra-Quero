@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { fontSize } from "../../styles/uniteTatto.styles";
 
 export default StyleSheet.create({
   collections: {
@@ -7,5 +6,9 @@ export default StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
+    marginTop: 20,
+  },
+  mainContainerGeneral: {
+    marginTop: 130,
   },
 });

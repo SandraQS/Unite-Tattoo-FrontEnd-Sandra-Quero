@@ -5,13 +5,17 @@ import { registerTattooArtistAction } from "../actions/actionCreators";
 
 const createTattooArtistThunk =
   (tattooArtist: object) => async (dispatch: any) => {
-    const response = await axios.post(
-      `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/register`,
-      tattooArtist
-    );
+    try {
+      const response = await axios.post(
+        `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/register`,
+        tattooArtist
+      );
 
-    if (response.status === 201) {
-      dispatch(registerTattooArtistAction(response));
+      if (response.status === 201) {
+        dispatch(registerTattooArtistAction(response));
+      }
+    } catch (error) {
+      return error;
     }
   };
 

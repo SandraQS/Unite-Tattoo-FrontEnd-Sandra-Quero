@@ -9,8 +9,18 @@ describe("Given a CollectionCard component", () => {
         image:
           "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
         tattooStyles: "Acuarela",
+        id: "2",
       };
-      const screen = render(<CollectionCard collection={collection} />);
+      const functionGoWorks = jest.fn();
+      const functionGoEdit = jest.fn();
+
+      const screen = render(
+        <CollectionCard
+          functionGoWorks={functionGoWorks}
+          collection={collection}
+          functionGoEdit={functionGoEdit}
+        />
+      );
 
       expect(screen).toMatchSnapshot();
     });

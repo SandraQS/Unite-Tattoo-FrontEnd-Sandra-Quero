@@ -10,20 +10,36 @@ import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import Title from "../../components/Title/Title";
 import { useCollections } from "../../hooks/useCollections";
 import NavHeader from "../../components/NavHeader/NavHeader";
-import { CreateCollectionScreenNavigationProp } from "../../types/navigation.types";
+import {
+  EditCollectionScreenNavigationProp,
+  EditCollectionScreenRouteProp,
+} from "../../types/navigation.types";
 import RoutesEnum from "../../navigation/routes";
 
-export const CreateCollection = () => {
-  const { createCollection } = useCollections();
-  const navigation = useNavigation<CreateCollectionScreenNavigationProp>();
+interface IEditCollectionProps {
+  route: EditCollectionScreenRouteProp;
+}
 
-  const initialCollectionData = { tattooStyles: "" };
+export const EditCollection = ({ route }: IEditCollectionProps) => {
+  const { editCollection } = useCollections();
+  const navigation = useNavigation<EditCollectionScreenNavigationProp>();
+  const {
+    params: { collection },
+  } = route;
+
+  const initialCollectionData = {
+    id: collection.id,
+    image: collection.image,
+    tattooStyles: collection.tattooStyles,
+    works: collection.works,
+  };
+
   const [collectionData, setCollectionDataData] = useState(
     initialCollectionData
   );
   const isComplete = collectionData.tattooStyles === "";
 
-  const textTitle = "AÑADIR NUEVA COLECCIÓN";
+  const textTitle = "EDITAR LA COLECCIÓN";
 
   const onChangeDataCollection = (text: string, nameValue: string) => {
     setCollectionDataData({
@@ -34,9 +50,8 @@ export const CreateCollection = () => {
     return collectionData;
   };
 
-  const CreateClick = () => {
-    createCollection(collectionData);
-    setCollectionDataData(initialCollectionData);
+  const editClick = () => {
+    editCollection(collectionData);
     navigation.navigate(RoutesEnum.collections);
   };
 
@@ -68,8 +83,8 @@ export const CreateCollection = () => {
 
               {!isComplete && (
                 <GeneralButton
-                  textButton="CREAR COLECCIÓN"
-                  functionOnPress={CreateClick}
+                  textButton="EDITAR COLECCIÓN"
+                  functionOnPress={editClick}
                 />
               )}
             </View>

@@ -36,6 +36,7 @@ exports[`Given a CollectionCard component When it is rendered Then it should sho
           "flexDirection": "column",
           "margin": 5,
           "padding": 10,
+          "position": "relative",
         }
       }
     >
@@ -84,6 +85,15 @@ exports[`Given a CollectionCard component When it is rendered Then it should sho
           Acuarela
         </Text>
       </View>
+      <View
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
     </View>
   </View>
 </View>

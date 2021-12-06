@@ -1,6 +1,9 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadAllWorksThunk } from "../redux/thunks/worksThunks";
+import {
+  loadAllWorksThunk,
+  loadWorksCollectionThunk,
+} from "../redux/thunks/worksThunks";
 
 export const useWorks = () => {
   const { works } = useSelector(({ works }: any) => ({
@@ -11,8 +14,16 @@ export const useWorks = () => {
     dispatch(loadAllWorksThunk());
   }, [dispatch]);
 
+  const loadWorksCollection = useCallback(
+    (idCollection: string) => {
+      dispatch(loadWorksCollectionThunk(idCollection));
+    },
+    [dispatch]
+  );
+
   return {
     works,
     loadAllWorks,
+    loadWorksCollection,
   };
 };

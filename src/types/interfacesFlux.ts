@@ -1,3 +1,5 @@
+import { ICollection } from "./interfacesComponent";
+
 export interface ItattooArtistActions {
   type: string;
   tattooArtist: object;
@@ -14,5 +16,7 @@ export interface IUserDataTattooArtistActions {
 
 export interface IcollectionsActions {
   type: string;
-  collections: Array<object>;
+  collections: Array<ICollection>;
+  collection: ICollection;
+  id: string;
 }

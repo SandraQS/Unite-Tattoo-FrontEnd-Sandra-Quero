@@ -6,6 +6,7 @@ const worksReducer = (works = [], action: ItattooWorksActions) => {
 
   switch (action.type) {
     case actionTypes.loadAllWorks:
+    case actionTypes.loadWorksCollection:
       newWorks = [...action.works];
       break;
 

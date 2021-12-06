@@ -7,13 +7,16 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "test-cov": "jest --watchAll --collect-coverage",
+    "test-cov": "jest --collect-coverage",
+    "test-cov-watch": "jest --watchAll --collect-coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky install",
-    "react-devtools": "react-devtools"
+    "react-devtools": "react-devtools",
+    "test-force": "jest --forceExit",
+    "test-open": "jest --detectOpenHandles"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-async-storage/async-storage": "^1.15.14",
     "@react-native-community/checkbox": "^0.5.9",
     "@react-navigation/bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^6.0.6",

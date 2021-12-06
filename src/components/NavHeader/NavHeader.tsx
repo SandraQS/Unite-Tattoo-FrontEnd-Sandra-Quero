@@ -1,14 +1,27 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import {
+  Button,
+  DevSettings,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import AutoHeightImage from "react-native-auto-height-image";
+import { useUserTattooArtist } from "../../hooks/useUserTattooArtist";
 import { NavHeaderProps } from "../../types/components.types";
 
 import styles from "./NavHeader.styles";
-const NavHeader = ({ nameUser }: NavHeaderProps) => {
+const NavHeader = ({ nameUser, goBack }: NavHeaderProps) => {
+  const { tattooArtistLogOut } = useUserTattooArtist();
+
+  const clickIcon = () => {
+    tattooArtistLogOut();
+    DevSettings.reload();
+  };
   return (
     <View style={styles.navContainter}>
       <View style={styles.logoContainter}>
-        <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
+        <TouchableOpacity onPress={goBack} activeOpacity={0.6}>
           <AutoHeightImage
             width={100}
             source={require("../../assets/utoo-logo.png")}
@@ -18,9 +31,10 @@ const NavHeader = ({ nameUser }: NavHeaderProps) => {
 
       <View>
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={clickIcon}
           activeOpacity={0.6}
           style={styles.userContainter}
+          accessibilityRole="button"
         >
           <View style={styles.nameUserContainter}>
             <Text style={styles.nameUserText}>{nameUser}</Text>

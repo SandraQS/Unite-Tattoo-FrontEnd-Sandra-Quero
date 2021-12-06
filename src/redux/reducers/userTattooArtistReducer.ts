@@ -2,7 +2,8 @@ import { IUserDataTattooArtistActions } from "../../types/interfacesFlux";
 import actionTypes from "../actions/actionTypes";
 
 const userTattooArtistReducer = (
-  stateUserTattooArtist = { isAuth: false, userTattooArtist: {}},
+  // eslint-disable-next-line object-curly-spacing
+  stateUserTattooArtist = { isAuth: false, userTattooArtist: {} },
   action: IUserDataTattooArtistActions
 ) => {
   let newstateUserTattooArtist;
@@ -13,6 +14,12 @@ const userTattooArtistReducer = (
       newstateUserTattooArtist = {
         isAuth: true,
         userTattooArtist: { ...action.tattooArtist },
+      };
+      break;
+    case actionTypes.tattooArtistLogOut:
+      newstateUserTattooArtist = {
+        isAuth: false,
+        userTattooArtist: {},
       };
       break;
 

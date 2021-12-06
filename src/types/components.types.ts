@@ -16,6 +16,7 @@ export type TitlleProps = {
 
 export type NavHeaderProps = {
   nameUser: string;
+  goBack?: () => void;
 };
 
 export type CreateButtonProps = {

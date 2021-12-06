@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors, fontSize } from "../../styles/uniteTatto.styles";
+import { colors, fontSize } from "./uniteTatto.styles";
 
 export default StyleSheet.create({
   buttonCancel: {
@@ -30,6 +30,11 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
 
+  positionButtonCancel: {
+    alignItems: "flex-end",
+    height: 150,
+  },
+
   text: {
     fontSize: fontSize.text,
     textAlign: "center",
@@ -47,7 +52,6 @@ export default StyleSheet.create({
     fontSize: fontSize.tittleH2,
     textAlign: "center",
   },
-
   welcomeContainer: {
     alignContent: "center",
     backgroundColor: colors.lightBrown,
