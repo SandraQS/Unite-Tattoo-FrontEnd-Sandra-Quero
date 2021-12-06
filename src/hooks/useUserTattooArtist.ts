@@ -2,7 +2,6 @@ import jwtDecode from "jwt-decode";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  tattooArtistLoginAction,
   tattooArtistLogOutAction,
   tattooArtistRegisteredAction,
 } from "../redux/actions/actionCreators";
@@ -32,11 +31,10 @@ export const useUserTattooArtist = () => {
 
   const tattooArtistLogOut = useCallback(async () => {
     try {
-       const userLogout = await removeStorage("userTattooArtist");
-       if(!userLogout){
-         dispatch(tattooArtistLogOutAction());
-       }
-      
+      const userLogout = await removeStorage("userTattooArtist");
+      if (!userLogout) {
+        dispatch(tattooArtistLogOutAction());
+      }
     } catch (error) {
       return error;
     }

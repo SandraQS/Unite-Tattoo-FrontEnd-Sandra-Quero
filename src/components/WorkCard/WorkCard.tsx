@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { IWorkProps } from "../../types/interfacesComponent";
-import { EditDelete } from "../EditDelete/EditDelete";
-
 import styles from "./WorkCard.styles";
 
 const WorkCard = ({ work }: IWorkProps) => {

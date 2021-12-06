@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { fontSize, colors } from "../../styles/uniteTatto.styles";
+import { colors } from "../../styles/uniteTatto.styles";
 
 export default StyleSheet.create({
   logoContainter: {},
