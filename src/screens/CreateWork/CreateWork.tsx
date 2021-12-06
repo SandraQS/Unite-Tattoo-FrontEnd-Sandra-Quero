@@ -9,16 +9,27 @@ import formsStyles from "../../styles/forms.styles";
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import Title from "../../components/Title/Title";
 import NavHeader from "../../components/NavHeader/NavHeader";
-import { WorksCollectionScreenNavigationProp } from "../../types/navigation.types";
+import {
+  CreateWorkScreenNavigationProp,
+  CreateWorkScreenRouteProp,
+} from "../../types/navigation.types";
 
-export const CreateWork = () => {
-  const navigation = useNavigation<WorksCollectionScreenNavigationProp>();
+interface ICreateWorkProps {
+  route: CreateWorkScreenRouteProp;
+}
+
+export const CreateWork = ({ route }: ICreateWorkProps) => {
+  const navigation = useNavigation<CreateWorkScreenNavigationProp>();
+
+  const {
+    params: { collection },
+  } = route;
 
   const initialWorkData = {
     tittle: "",
     tattooArtist: "",
     description: "",
-    tattooStyles: "",
+    tattooStyles: `${collection.tattooStyles}`,
   };
   const [workData, setWorkData] = useState(initialWorkData);
   const isComplete =
@@ -39,7 +50,7 @@ export const CreateWork = () => {
   };
 
   const CreateClick = () => {
-    //
+    //CFREAR
   };
 
   return (

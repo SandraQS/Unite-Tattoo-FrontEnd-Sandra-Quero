@@ -1,9 +1,20 @@
 import React, { useEffect } from "react";
 
-import { Button, SafeAreaView, ScrollView, Text, View } from "react-native";
+import {
+  Button,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import Title from "../../components/Title/Title";
 import { useWorks } from "../../hooks/useWorks";
-import { IWork } from "../../types/interfacesComponent";
+import {
+  ICollection,
+  IWork,
+  IWorkProps,
+} from "../../types/interfacesComponent";
 
 import { generalStyles, colors } from "../../styles/uniteTatto.styles";
 import NavHeader from "../../components/NavHeader/NavHeader";
@@ -25,19 +36,20 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
   const { loadWorksCollection, works } = useWorks();
 
   const {
-    params: { idCollection },
+    params: { collection },
   } = route;
 
   useEffect(() => {
-    loadWorksCollection(idCollection);
+    loadWorksCollection(collection.id);
   }, [works]);
 
   const textTitle = "COLECCIÓN";
-  const textTitleBold = " REALISTA"; //==>> FALTA QUE VENGA DE API
+  const textTitleBold = ` ${collection.tattooStyles.toUpperCase()}`; 
 
-  const goCreateWork =()=>{
-     navigation.navigate(RoutesEnum.creatework);
-  }
+  const goCreateWork = () => {
+    navigation.navigate(RoutesEnum.creatework, { collection: collection });
+  };
+
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
       <View style={generalStyles.navHeader}>

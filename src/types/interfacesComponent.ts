@@ -48,7 +48,7 @@ export interface ICollection {
 }
 export interface ICollectionsProps {
   collection: ICollection;
-  functionGoWorks: (idCollection: string) => void;
+  functionGoWorks: (collection: ICollection) => void;
   functionGoEdit: (collection: ICollection) => void;
   setLongPress?: any;
 }
@@ -57,6 +57,7 @@ export interface IEditDeleteProps {
   functionGoEdit: (collection: ICollection) => void;
   setLongPress?: any;
 }
+
 export interface IWorkProps {
   work: IWork;
   setLongPress?: any;
