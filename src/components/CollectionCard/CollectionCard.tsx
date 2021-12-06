@@ -20,7 +20,7 @@ const CollectionCard = ({ collection }: ICollectionsProps) => {
     if (longPress) {
       setLongPress(false);
     } else {
-      navigation.navigate(RoutesEnum.works);
+      navigation.navigate(RoutesEnum.works, { idCollection: collection.id });
     }
   };
 
