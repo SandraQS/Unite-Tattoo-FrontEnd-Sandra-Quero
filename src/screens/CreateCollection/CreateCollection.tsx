@@ -12,7 +12,6 @@ import { useCollections } from "../../hooks/useCollections";
 import NavHeader from "../../components/NavHeader/NavHeader";
 import { CreateCollectionScreenNavigationProp } from "../../types/navigation.types";
 import RoutesEnum from "../../navigation/routes";
-import { ICollection } from "../../types/interfacesComponent";
 
 export const CreateCollection = () => {
   const { createCollection } = useCollections();

@@ -8,12 +8,8 @@ import { BottomNavigator } from "./BottomNavigator";
 import UniteTattoo from "../screens/UniteTattoo/UniteTattoo";
 import Register from "../screens/Register/Register";
 import AllWorks from "../screens/AllWorks/AllWorks";
-import { CreateCollection } from "../screens/CreateCollection/CreateCollection";
 import { Login } from "../screens/Login/Login";
 import { useUserTattooArtist } from "../hooks/useUserTattooArtist";
-import CollectionsTattooArtist from "../screens/CollectionsTattooArtist/CollectionsTattooArtist";
-import { EditCollection } from "../screens/EditCollection/EditCollection";
-import WorksCollection from "../screens/WorksCollection/WorksCollection";
 
 export const MainNavigator = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -25,9 +21,7 @@ export const MainNavigator = () => {
   }, [tattooArtistRegistered, stateUserTattooArtist.isAuth]);
 
   return (
-    /* !stateUserTattooArtist.isAuth ? */ <Stack.Navigator
-      initialRouteName={RoutesEnum.uniteTatto}
-    >
+    <Stack.Navigator initialRouteName={RoutesEnum.uniteTatto}>
       {!stateUserTattooArtist.isAuth ? (
         <>
           <Stack.Screen name={RoutesEnum.uniteTatto} component={UniteTattoo} />
@@ -46,9 +40,4 @@ export const MainNavigator = () => {
       )}
     </Stack.Navigator>
   );
-  // ) : (
-  //   <Stack.Navigator initialRouteName={RoutesEnum.bottomnav}>
-  //     <Stack.Screen name={RoutesEnum.bottomnav} component={BottomNavigator} />
-  //   </Stack.Navigator>
-  // );
 };
