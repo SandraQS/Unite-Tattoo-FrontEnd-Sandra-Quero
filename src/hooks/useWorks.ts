@@ -28,8 +28,8 @@ export const useWorks = () => {
     dispatch(createWorkThunk(work, idCollection));
   };
 
-  const deleteWork = (idWork: string, idCollection: string) => {
-    dispatch(deleteWorkThunk(idWork, idCollection));
+  const deleteWork = (idWork: string) => {
+    dispatch(deleteWorkThunk(idWork));
   };
 
   return {

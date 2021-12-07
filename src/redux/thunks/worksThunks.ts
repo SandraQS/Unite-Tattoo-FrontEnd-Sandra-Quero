@@ -69,24 +69,22 @@ export const createWorkThunk =
     }
   };
 
-export const deleteWorkThunk =
-  (idWork: string, idCollection: string) => async (dispatch: any) => {
-    try {
-      const { token } = await getDataObject("userTattooArtist");
+export const deleteWorkThunk = (idWork: string) => async (dispatch: any) => {
+  try {
+    const { token } = await getDataObject("userTattooArtist");
 
-      const response = await axios.delete(
-        `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/delete/${idCollection}`,
-        {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        }
-      );
-      console.log("RESPONSE", response);
-      if (response.status === 200) {
-        dispatch(deleteWorkAction(idWork));
+    const response = await axios.delete(
+      `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/delete/${idWork}`,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
       }
-    } catch (error) {
-      return error;
+    );
+    if (response.status === 200) {
+      dispatch(deleteWorkAction(idWork));
     }
-  };
+  } catch (error) {
+    return error;
+  }
+};

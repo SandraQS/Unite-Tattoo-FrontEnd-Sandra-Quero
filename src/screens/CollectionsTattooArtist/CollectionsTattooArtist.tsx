@@ -68,7 +68,7 @@ const CollectionsTattooArtist = () => {
               <CreateButton functionCreate={functionCreate} />
             </View>
           ) : (
-            <Text>Loading...</Text>
+            <Text>La página se está cargando...</Text>
           )}
         </View>
       </ScrollView>
