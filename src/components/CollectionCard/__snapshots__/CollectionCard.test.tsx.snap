@@ -2,6 +2,7 @@
 
 exports[`Given a CollectionCard component When it is rendered Then it should show match the last snapshot 1`] = `
 <View
+  accessibilityRole="button"
   accessible={true}
   collapsable={false}
   focusable={true}
