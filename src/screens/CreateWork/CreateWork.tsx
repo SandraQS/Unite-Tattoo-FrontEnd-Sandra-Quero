@@ -1,5 +1,4 @@
 import { useNavigation } from "@react-navigation/core";
-import ImagePicker from "react-native-image-picker";
 
 import React, { useState } from "react";
 import { SafeAreaView, ScrollView, View, TextInput } from "react-native";
@@ -17,6 +16,7 @@ import {
 } from "../../types/navigation.types";
 import { useWorks } from "../../hooks/useWorks";
 import RoutesEnum from "../../navigation/routes";
+import { INewImage } from "../../types/interfacesComponent";
 
 interface ICreateWorkProps {
   route: CreateWorkScreenRouteProp;
@@ -37,9 +37,11 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
     tattooStyles: `${collection.tattooStyles}`,
   };
   const [workData, setWorkData] = useState(initialWorkData);
-  const [urlImage, setUrlImage] = useState([
-    { fileName: "", type: "", uri: "" },
-  ]);
+  const [newImage, setNewImage] = useState<INewImage>({
+    fileName: "",
+    type: "",
+    uri: "",
+  });
 
   const isComplete =
     workData.tittle === "" ||
@@ -66,21 +68,18 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
     workFormData.append("description", workData.description);
     workFormData.append("tattooStyles", collection.tattooStyles);
     workFormData.append("image", {
-      name: urlImage.fileName,
-      type: urlImage.type,
-      uri: urlImage.uri,
+      name: newImage.fileName,
+      type: newImage.type,
+      uri: newImage.uri,
     });
 
     createWork(workFormData, collection.id);
 
-    console.log(urlImage);
-    console.log(workFormData);
-    // setWorkData(initialWorkData);
     navigation.navigate(RoutesEnum.works, { collection: collection });
   };
 
   const chooseFile = () => {
-    const options = {
+    const options: any = {
       title: "Select Image",
       customButtons: [
         {
@@ -95,34 +94,10 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
     };
 
     launchImageLibrary(options, (response: any) => {
-      console.log("Response = ", response);
-
-      if (response.didCancel) {
-        console.log("User cancelled image picker");
-      } else if (response.error) {
-        console.log("ImagePicker Error: ", response.error);
-      } else if (response.customButton) {
-        console.log("User tapped custom button: ", response.customButton);
-        alert(response.customButton);
-      } else {
-        const source = response.assets;
-        // You can also display the image using data:
-        // let source = {
-        //   uri: "data:image/jpeg;base64" + response.data,
-        // };
-        setUrlImage(source[0]);
-      }
+      const source = response.assets;
+      setNewImage(source[0]);
     });
   };
-
-  //  const object = {
-  //    ...source,
-
-  //     name: "mirada.jpg"
-  //     size: 42995
-  //     type: "image/jpeg"
-  //     webkitRelativePath: ""
-  //   }
 
   return (
     <SafeAreaView style={generalStyles.screenLightBrown}>

@@ -47,8 +47,6 @@ export const loadWorksCollectionThunk =
 
 export const createWorkThunk =
   (work: Omit<IWork, "id">, idCollection: string) => async (dispatch: any) => {
-    console.log("WORK", work);
-
     try {
       const { token } = await getDataObject("userTattooArtist");
 
