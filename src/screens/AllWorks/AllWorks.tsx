@@ -14,7 +14,7 @@ const AllWorks = () => {
   const { loadAllWorks, works } = useWorks();
   useEffect(() => {
     loadAllWorks();
-  }, [works]);
+  }, []);
 
   const textTitle = "TALENTOS";
   const textTitleBold = " DESTACADOS";

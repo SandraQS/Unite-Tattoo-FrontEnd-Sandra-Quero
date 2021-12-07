@@ -23,7 +23,7 @@ const CollectionsTattooArtist = () => {
 
   useEffect(() => {
     loadCollections();
-  }, [collections]);
+  }, []);
 
   const functionGoWorks = (collection: ICollection) => {
     navigation.navigate(RoutesEnum.works, { collection: collection });
