@@ -7,6 +7,7 @@ export interface ItattooArtistActions {
 export interface ItattooWorksActions {
   type: string;
   works: Array<object>;
+  work:object
 }
 
 export interface IUserDataTattooArtistActions {

@@ -12,6 +12,8 @@ const actionTypes = {
   createCollection: "CREATE_COLLECTION",
   deleteCollection: "DELETE_COLLECTION",
   editCollection: "EDIT_COLLECTION",
+
+  createWork: "WORK",
 };
 
 export default actionTypes;

@@ -35,9 +35,9 @@ export interface IWork {
   tattooArtist: string;
   description: string;
   tattooStyles: string;
-  likes: number;
-  image: string;
-  collectionWork: Array<string>;
+  likes?: number;
+  image?: string;
+  collectionWork?: Array<string>;
   id: string;
 }
 export interface ICollection {
@@ -48,7 +48,7 @@ export interface ICollection {
 }
 export interface ICollectionsProps {
   collection: ICollection;
-  functionGoWorks: (idCollection: string) => void;
+  functionGoWorks: (collection: ICollection) => void;
   functionGoEdit: (collection: ICollection) => void;
   setLongPress?: any;
 }
@@ -57,7 +57,13 @@ export interface IEditDeleteProps {
   functionGoEdit: (collection: ICollection) => void;
   setLongPress?: any;
 }
+
 export interface IWorkProps {
   work: IWork;
   setLongPress?: any;
+}
+export interface INewImage {
+  fileName: string;
+  type: string;
+  uri: string;
 }

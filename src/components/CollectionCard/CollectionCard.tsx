@@ -19,7 +19,7 @@ const CollectionCard = ({
     if (longPress) {
       setLongPress(false);
     } else {
-      functionGoWorks(collection.id);
+      functionGoWorks(collection);
     }
   };
 

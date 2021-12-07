@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Button, SafeAreaView, ScrollView, Text, View } from "react-native";
 import Title from "../../components/Title/Title";
@@ -15,6 +15,7 @@ import {
   WorksCollectionScreenNavigationProp,
   WorksCollectionScreenRouteProp,
 } from "../../types/navigation.types";
+import RoutesEnum from "../../navigation/routes";
 interface IWorksCollectionProps {
   route: WorksCollectionScreenRouteProp;
 }
@@ -23,16 +24,21 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
   const navigation = useNavigation<WorksCollectionScreenNavigationProp>();
   const { loadWorksCollection, works } = useWorks();
 
+  // const worksReverse = works.reverse();
   const {
-    params: { idCollection },
+    params: { collection },
   } = route;
 
   useEffect(() => {
-    loadWorksCollection(idCollection);
-  }, [works]);
+    loadWorksCollection(collection.id);
+  }, []);
 
   const textTitle = "COLECCIÓN";
-  const textTitleBold = " REALISTA"; //==>> FALTA QUE VENGA DE API
+  const textTitleBold = ` ${collection.tattooStyles.toUpperCase()}`;
+
+  const goCreateWork = () => {
+    navigation.navigate(RoutesEnum.creatework, { collection: collection });
+  };
 
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
@@ -45,7 +51,11 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
             <Title text={textTitle} textBold={textTitleBold} />
           </View>
           <View style={styles.buttonAddWork}>
-            <Button title=" + Añadir nuevo trabajo" color={colors.darkBrown} />
+            <Button
+              title=" + Añadir nuevo trabajo"
+              color={colors.darkBrown}
+              onPress={goCreateWork}
+            />
           </View>
           {works.length ? (
             <View style={styles.worksList}>

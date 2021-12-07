@@ -1,5 +1,8 @@
 import { fireEvent, render } from "@testing-library/react-native";
 import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import configureStore from "../../redux/store";
+import { Provider } from "react-redux";
 import { EditDelete } from "./EditDelete";
 
 describe("Given EditDelete component", () => {
@@ -14,13 +17,18 @@ describe("Given EditDelete component", () => {
       };
       const setLongPress = jest.fn();
       const functionGoEdit = jest.fn();
+      const store = configureStore();
 
       const screen = render(
-        <EditDelete
-          collection={collection}
-          setLongPress={setLongPress}
-          functionGoEdit={functionGoEdit}
-        />
+        <Provider store={store}>
+          <NavigationContainer>
+            <EditDelete
+              collection={collection}
+              setLongPress={setLongPress}
+              functionGoEdit={functionGoEdit}
+            />
+          </NavigationContainer>
+        </Provider>
       );
 
       const editButton = screen.getByText("Editar");
@@ -41,13 +49,18 @@ describe("Given EditDelete component", () => {
       };
       const setLongPress = jest.fn();
       const functionGoEdit = jest.fn();
+      const store = configureStore();
 
       const screen = render(
-        <EditDelete
-          collection={collection}
-          setLongPress={setLongPress}
-          functionGoEdit={functionGoEdit}
-        />
+        <Provider store={store}>
+          <NavigationContainer>
+            <EditDelete
+              collection={collection}
+              setLongPress={setLongPress}
+              functionGoEdit={functionGoEdit}
+            />
+          </NavigationContainer>
+        </Provider>
       );
 
       const editButton = screen.getByText("Editar");

@@ -13,7 +13,7 @@
     "prepare": "husky install",
     "react-devtools": "react-devtools",
     "test-force": "jest --forceExit",
-    "test-open": "jest --detectOpenHandles"
+    "test-force-cov": "jest --collect-coverage --forceExit"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.14",
@@ -32,6 +32,7 @@
     "react-native": "0.66.3",
     "react-native-auto-height-image": "^3.2.4",
     "react-native-dotenv": "^3.3.0",
+    "react-native-image-picker": "^4.4.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
     "react-redux": "^7.2.6",
@@ -72,6 +73,9 @@
     "preset": "react-native",
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/__mocks__/asyncStorageMock.js"
     ],
     "moduleFileExtensions": [
       "ts",

@@ -11,7 +11,8 @@ enum RoutesEnum {
 
   create = "CreateCollection",
   edit = "EditCollection",
-  
+  creatework = "CreateWork",
+
   works = "WorksCollection",
 }
 
