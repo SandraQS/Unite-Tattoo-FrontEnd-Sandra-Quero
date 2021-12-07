@@ -37,7 +37,9 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
     tattooStyles: `${collection.tattooStyles}`,
   };
   const [workData, setWorkData] = useState(initialWorkData);
-  const [urlImage, setUrlImage] = useState([{}]);
+  const [urlImage, setUrlImage] = useState([
+    { fileName: "", type: "", uri: "" },
+  ]);
 
   const isComplete =
     workData.tittle === "" ||
@@ -63,7 +65,11 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
     workFormData.append("tattooArtist", workData.tattooArtist);
     workFormData.append("description", workData.description);
     workFormData.append("tattooStyles", collection.tattooStyles);
-    workFormData.append("image", urlImage);
+    workFormData.append("image", {
+      name: urlImage.fileName,
+      type: urlImage.type,
+      uri: urlImage.uri,
+    });
 
     createWork(workFormData, collection.id);
 
