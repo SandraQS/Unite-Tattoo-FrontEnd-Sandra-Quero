@@ -49,13 +49,13 @@ export const createWorkThunk =
   (work: Omit<IWork, "id">, idCollection: string) => async (dispatch: any) => {
     try {
       const { token } = await getDataObject("userTattooArtist");
-
       const response = await axios.post(
         `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/create/${idCollection}`,
         work,
         {
           headers: {
             Authorization: "Bearer " + token,
+            "Content-Type": "multipart/form-data",
           },
         }
       );

@@ -62,3 +62,8 @@ export interface IWorkProps {
   work: IWork;
   setLongPress?: any;
 }
+export interface INewImage {
+  fileName: string;
+  type: string;
+  uri: string;
+}
