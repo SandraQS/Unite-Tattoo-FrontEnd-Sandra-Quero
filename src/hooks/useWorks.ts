@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   createWorkThunk,
+  deleteWorkThunk,
   loadAllWorksThunk,
   loadWorksCollectionThunk,
 } from "../redux/thunks/worksThunks";
@@ -23,8 +24,12 @@ export const useWorks = () => {
     [dispatch]
   );
 
-  const createWork = (work: any, idCollection: string) => {
+  const createWork = (work: IWork, idCollection: string) => {
     dispatch(createWorkThunk(work, idCollection));
+  };
+
+  const deleteWork = (idWork: string, idCollection: string) => {
+    dispatch(deleteWorkThunk(idWork, idCollection));
   };
 
   return {
@@ -32,5 +37,6 @@ export const useWorks = () => {
     loadAllWorks,
     loadWorksCollection,
     createWork,
+    deleteWork,
   };
 };

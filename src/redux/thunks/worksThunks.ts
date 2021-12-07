@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
   createWorkAction,
+  deleteWorkAction,
   loadAllWorksAction,
   loadWorksCollectionAction,
 } from "../actions/actionCreators";
@@ -62,6 +63,28 @@ export const createWorkThunk =
       if (response.status === 201) {
         const newWork = response.data;
         dispatch(createWorkAction(newWork));
+      }
+    } catch (error) {
+      return error;
+    }
+  };
+
+export const deleteWorkThunk =
+  (idWork: string, idCollection: string) => async (dispatch: any) => {
+    try {
+      const { token } = await getDataObject("userTattooArtist");
+
+      const response = await axios.delete(
+        `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/delete/${idCollection}`,
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      console.log("RESPONSE", response);
+      if (response.status === 200) {
+        dispatch(deleteWorkAction(idWork));
       }
     } catch (error) {
       return error;
