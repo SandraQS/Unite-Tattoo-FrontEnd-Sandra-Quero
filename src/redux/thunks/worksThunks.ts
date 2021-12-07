@@ -82,7 +82,6 @@ export const deleteWorkThunk =
           },
         }
       );
-      console.log("RESPONSE", response);
       if (response.status === 200) {
         dispatch(deleteWorkAction(idWork));
       }

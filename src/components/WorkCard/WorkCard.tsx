@@ -1,21 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { IWorkProps } from "../../types/interfacesComponent";
+import { EditDelete } from "../EditDelete/EditDelete";
 import styles from "./WorkCard.styles";
 
 const WorkCard = ({ work }: IWorkProps) => {
-  // const [longPress, setLongPress] = useState(false);
+  const [longPress, setLongPress] = useState(false);
 
-  // const showButtons = () => {
-  //   setLongPress(!longPress);
-  // };
-  // const onPressWork = () => {
-  //   if (longPress) {
-  //     setLongPress(false);
-  // };
+  const showButtons = () => {
+    setLongPress(!longPress);
+  };
+  const onPressWork = () => {
+    // if (longPress) {
+    //   setLongPress(false);
+    // }
+    console.log("ID WORK", work.id);
+  };
+
   return (
     <TouchableOpacity
-      /* onPress={onPressWork} */ onLongPress={() => {}}
+      onPress={onPressWork}
+      onLongPress={showButtons}
       activeOpacity={0.6}
     >
       <View style={styles.workContainer}>
@@ -29,9 +34,15 @@ const WorkCard = ({ work }: IWorkProps) => {
         </View>
 
         <View style={styles.buttonsEditDelete}>
-          {/* {longPress && (
-            <EditDelete collection={work} setLongPress={setLongPress} />
-          )} */}
+          {longPress && (
+            <EditDelete
+              collection={work}
+              setLongPress={setLongPress}
+              functionGoEdit={() => {}}
+              // pressDelete={deleteWork}
+              // pressEdit={()=>{}}
+            />
+          )}
         </View>
       </View>
     </TouchableOpacity>

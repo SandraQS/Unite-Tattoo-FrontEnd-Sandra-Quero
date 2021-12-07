@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { Button, SafeAreaView, ScrollView, Text, View } from "react-native";
 import Title from "../../components/Title/Title";
@@ -24,7 +24,6 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
   const navigation = useNavigation<WorksCollectionScreenNavigationProp>();
   const { loadWorksCollection, works } = useWorks();
 
-  // const worksReverse = works.reverse();
   const {
     params: { collection },
   } = route;

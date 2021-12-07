@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { useCollections } from "../../hooks/useCollections";
+import { useWorks } from "../../hooks/useWorks";
 import { IEditDeleteProps } from "../../types/interfacesComponent";
 
 import styles from "./EditDelete.styles";
@@ -11,6 +12,8 @@ export const EditDelete = ({
   functionGoEdit,
 }: IEditDeleteProps) => {
   const { deleteCollection } = useCollections();
+  const { deleteWork } = useWorks();
+
   const { id } = collection;
   const editPress = () => {
     functionGoEdit(collection);
@@ -18,7 +21,8 @@ export const EditDelete = ({
   };
 
   const deletePress = () => {
-    deleteCollection(id);
+    deleteWork("61a3b9ca4cc19250ca826626", id);
+    // deleteCollection(id);
     setLongPress(false);
   };
 
