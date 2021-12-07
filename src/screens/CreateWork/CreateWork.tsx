@@ -1,7 +1,9 @@
 import { useNavigation } from "@react-navigation/core";
+import ImagePicker from "react-native-image-picker";
 
 import React, { useState } from "react";
 import { SafeAreaView, ScrollView, View, TextInput } from "react-native";
+import { launchImageLibrary } from "react-native-image-picker";
 
 import { generalStyles } from "../../styles/uniteTatto.styles";
 import formsStyles from "../../styles/forms.styles";
@@ -35,6 +37,8 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
     tattooStyles: `${collection.tattooStyles}`,
   };
   const [workData, setWorkData] = useState(initialWorkData);
+  const [urlImage, setUrlImage] = useState([{}]);
+
   const isComplete =
     workData.tittle === "" ||
     workData.tattooArtist === "" ||
@@ -52,11 +56,67 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
     return workData;
   };
 
+  const workFormData = new FormData();
+
   const CreateClick = () => {
-    createWork(workData, collection.id);
-    setWorkData(initialWorkData);
+    workFormData.append("tittle", workData.tittle);
+    workFormData.append("tattooArtist", workData.tattooArtist);
+    workFormData.append("description", workData.description);
+    workFormData.append("tattooStyles", collection.tattooStyles);
+    workFormData.append("image", urlImage);
+
+    createWork(workFormData, collection.id);
+
+    console.log(urlImage);
+    console.log(workFormData);
+    // setWorkData(initialWorkData);
     navigation.navigate(RoutesEnum.works, { collection: collection });
   };
+
+  const chooseFile = () => {
+    const options = {
+      title: "Select Image",
+      customButtons: [
+        {
+          name: "customOptionKey",
+          title: "Choose Photo from Custom Option",
+        },
+      ],
+      storageOptions: {
+        skipBackup: true,
+        path: "images",
+      },
+    };
+
+    launchImageLibrary(options, (response: any) => {
+      console.log("Response = ", response);
+
+      if (response.didCancel) {
+        console.log("User cancelled image picker");
+      } else if (response.error) {
+        console.log("ImagePicker Error: ", response.error);
+      } else if (response.customButton) {
+        console.log("User tapped custom button: ", response.customButton);
+        alert(response.customButton);
+      } else {
+        const source = response.assets;
+        // You can also display the image using data:
+        // let source = {
+        //   uri: "data:image/jpeg;base64" + response.data,
+        // };
+        setUrlImage(source[0]);
+      }
+    });
+  };
+
+  //  const object = {
+  //    ...source,
+
+  //     name: "mirada.jpg"
+  //     size: 42995
+  //     type: "image/jpeg"
+  //     webkitRelativePath: ""
+  //   }
 
   return (
     <SafeAreaView style={generalStyles.screenLightBrown}>
@@ -127,7 +187,7 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
 
               <GeneralButton
                 textButton="SUBIR IMAGEN"
-                functionOnPress={() => {}}
+                functionOnPress={chooseFile}
               />
 
               {!isComplete && (

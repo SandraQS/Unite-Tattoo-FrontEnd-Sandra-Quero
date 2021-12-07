@@ -47,6 +47,8 @@ export const loadWorksCollectionThunk =
 
 export const createWorkThunk =
   (work: Omit<IWork, "id">, idCollection: string) => async (dispatch: any) => {
+    console.log("WORK", work);
+
     try {
       const { token } = await getDataObject("userTattooArtist");
 
@@ -63,7 +65,7 @@ export const createWorkThunk =
         const newWork = response.data;
         dispatch(createWorkAction(newWork));
       }
-    } catch (error) {
-      return error;
+    } catch ({ message }) {
+      console.log("ERROR", message);
     }
   };

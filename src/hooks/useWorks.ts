@@ -23,8 +23,8 @@ export const useWorks = () => {
     [dispatch]
   );
 
-  const createWork = (collection: Omit<IWork, "id">, idCollection: string) => {
-    dispatch(createWorkThunk(collection, idCollection));
+  const createWork = (work: any, idCollection: string) => {
+    dispatch(createWorkThunk(work, idCollection));
   };
 
   return {
