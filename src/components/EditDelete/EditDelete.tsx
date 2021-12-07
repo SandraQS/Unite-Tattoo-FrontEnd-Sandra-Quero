@@ -5,20 +5,13 @@ import { IEditDeleteProps } from "../../types/interfacesComponent";
 import styles from "./EditDelete.styles";
 
 export const EditDelete = ({
-  object,
-  setLongPress,
   functionGoEdit,
   pressDelete,
 }: IEditDeleteProps) => {
-  const editPress = () => {
-    functionGoEdit(object);
-    setLongPress(false);
-  };
-
   return (
     <View style={styles.buttonsContain}>
       <TouchableOpacity
-        onPress={editPress}
+        onPress={functionGoEdit}
         activeOpacity={0.6}
         style={styles.button}
       >

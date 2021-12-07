@@ -53,9 +53,7 @@ export interface ICollectionsProps {
   setLongPress?: any;
 }
 export interface IEditDeleteProps {
-  object: ICollection | IWork;
-  functionGoEdit: (collection: ICollection) => void;
-  setLongPress?: any;
+  functionGoEdit: () => void;
   pressDelete: () => void;
 }
 

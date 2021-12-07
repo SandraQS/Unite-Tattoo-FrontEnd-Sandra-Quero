@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/core";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { SafeAreaView, ScrollView, View, TextInput } from "react-native";
 
 import { generalStyles } from "../../styles/uniteTatto.styles";

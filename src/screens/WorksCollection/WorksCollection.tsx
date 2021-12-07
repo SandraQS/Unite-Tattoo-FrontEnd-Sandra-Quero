@@ -30,7 +30,7 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
 
   useEffect(() => {
     loadWorksCollection(collection.id);
-  }, []);
+  }, [works]);
 
   const textTitle = "COLECCIÓN";
   const textTitleBold = ` ${collection.tattooStyles.toUpperCase()}`;
@@ -58,7 +58,7 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
           </View>
           {works.length ? (
             <View style={styles.worksList}>
-              {works.map((work: IWork) => (
+              {works.reverse().map((work: IWork) => (
                 <WorkCard key={work.id} work={work} collection={collection} />
               ))}
             </View>
