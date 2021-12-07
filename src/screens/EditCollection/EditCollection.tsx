@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/core";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SafeAreaView, ScrollView, View, TextInput } from "react-native";
 
 import { generalStyles } from "../../styles/uniteTatto.styles";
@@ -21,7 +21,7 @@ interface IEditCollectionProps {
 }
 
 export const EditCollection = ({ route }: IEditCollectionProps) => {
-  const { editCollection } = useCollections();
+  const { editCollection, editedCollection } = useCollections();
   const navigation = useNavigation<EditCollectionScreenNavigationProp>();
   const {
     params: { collection },
@@ -52,6 +52,7 @@ export const EditCollection = ({ route }: IEditCollectionProps) => {
 
   const editClick = () => {
     editCollection(collectionData);
+    editedCollection(collectionData);
     navigation.navigate(RoutesEnum.collections);
   };
 

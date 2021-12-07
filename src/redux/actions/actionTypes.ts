@@ -14,6 +14,8 @@ const actionTypes = {
   editCollection: "EDIT_COLLECTION",
 
   createWork: "WORK",
+
+  editedCollection: "EDITED_COLLECTION"
 };
 
 export default actionTypes;

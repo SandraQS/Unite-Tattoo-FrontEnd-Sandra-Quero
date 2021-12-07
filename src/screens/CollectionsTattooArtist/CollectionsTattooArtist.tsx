@@ -19,11 +19,11 @@ import RoutesEnum from "../../navigation/routes";
 const CollectionsTattooArtist = () => {
   const navigation =
     useNavigation<CollectionsTattooArtistScreenNavigationProp>();
-  const { collections, loadCollections } = useCollections();
+  const { collections, loadCollections, edited } = useCollections();
 
   useEffect(() => {
     loadCollections();
-  }, []);
+  }, [edited]);
 
   const functionGoWorks = (collection: ICollection) => {
     navigation.navigate(RoutesEnum.works, { collection: collection });
