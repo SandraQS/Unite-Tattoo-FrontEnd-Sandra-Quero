@@ -1,20 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import {
-  Button,
-  SafeAreaView,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Button, SafeAreaView, ScrollView, Text, View } from "react-native";
 import Title from "../../components/Title/Title";
 import { useWorks } from "../../hooks/useWorks";
-import {
-  ICollection,
-  IWork,
-  IWorkProps,
-} from "../../types/interfacesComponent";
+import { IWork } from "../../types/interfacesComponent";
 
 import { generalStyles, colors } from "../../styles/uniteTatto.styles";
 import NavHeader from "../../components/NavHeader/NavHeader";
@@ -35,6 +24,7 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
   const navigation = useNavigation<WorksCollectionScreenNavigationProp>();
   const { loadWorksCollection, works } = useWorks();
 
+  // const worksReverse = works.reverse();
   const {
     params: { collection },
   } = route;
@@ -44,7 +34,7 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
   }, [works]);
 
   const textTitle = "COLECCIÓN";
-  const textTitleBold = ` ${collection.tattooStyles.toUpperCase()}`; 
+  const textTitleBold = ` ${collection.tattooStyles.toUpperCase()}`;
 
   const goCreateWork = () => {
     navigation.navigate(RoutesEnum.creatework, { collection: collection });

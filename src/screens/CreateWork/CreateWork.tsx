@@ -13,12 +13,15 @@ import {
   CreateWorkScreenNavigationProp,
   CreateWorkScreenRouteProp,
 } from "../../types/navigation.types";
+import { useWorks } from "../../hooks/useWorks";
+import RoutesEnum from "../../navigation/routes";
 
 interface ICreateWorkProps {
   route: CreateWorkScreenRouteProp;
 }
 
 export const CreateWork = ({ route }: ICreateWorkProps) => {
+  const { createWork } = useWorks();
   const navigation = useNavigation<CreateWorkScreenNavigationProp>();
 
   const {
@@ -50,7 +53,9 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
   };
 
   const CreateClick = () => {
-    //CFREAR
+    createWork(workData, collection.id);
+    setWorkData(initialWorkData);
+    navigation.navigate(RoutesEnum.works, { collection: collection });
   };
 
   return (
