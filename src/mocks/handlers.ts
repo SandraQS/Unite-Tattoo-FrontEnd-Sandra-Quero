@@ -56,7 +56,7 @@ const collections = [
 
 export const handlers = [
   rest.get(
-    "https://proyecto-final-sandra-back.herokuapp.com/uniteTattoo/client/homhttps://sandra-quero-unite-tattoo.herokuapp.com/uniteTattoo/tattooArtist/collections",
+    "https://sandra-quero-unite-tattoo.herokuapp.com/uniteTattoo/tattooArtist/collections",
     async (req, res, ctx) => {
       const response = res(ctx.status(200), ctx.json(collections));
       return response;
