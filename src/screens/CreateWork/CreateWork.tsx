@@ -79,7 +79,7 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
   };
 
   const chooseFile = () => {
-    const options: any = {
+    const options = {
       title: "Select Image",
       customButtons: [
         {
