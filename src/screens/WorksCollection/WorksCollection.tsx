@@ -31,7 +31,7 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
 
   useEffect(() => {
     loadWorksCollection(collection.id);
-  }, [works]);
+  }, []);
 
   const textTitle = "COLECCIÓN";
   const textTitleBold = ` ${collection.tattooStyles.toUpperCase()}`;
