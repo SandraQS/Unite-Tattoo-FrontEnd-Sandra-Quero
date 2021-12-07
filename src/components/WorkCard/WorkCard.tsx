@@ -21,6 +21,11 @@ const WorkCard = ({ work, collection }: IWorkProps) => {
     setLongPress(false);
   };
 
+  const editPress = () => {
+    ///FUNCION EDITAR WORK
+    setLongPress(false);
+  };
+
   return (
     <TouchableOpacity
       onPress={onPressWork}
@@ -40,12 +45,7 @@ const WorkCard = ({ work, collection }: IWorkProps) => {
 
         <View style={styles.buttonsEditDelete}>
           {longPress && (
-            <EditDelete
-              object={collection}
-              setLongPress={setLongPress}
-              functionGoEdit={() => {}}
-              pressDelete={deletePress}
-            />
+            <EditDelete functionGoEdit={editPress} pressDelete={deletePress} />
           )}
         </View>
       </View>
