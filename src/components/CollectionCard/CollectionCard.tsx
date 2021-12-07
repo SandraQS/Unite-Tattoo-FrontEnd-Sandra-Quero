@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import { useCollections } from "../../hooks/useCollections";
 import { ICollectionsProps } from "../../types/interfacesComponent";
 import { EditDelete } from "../EditDelete/EditDelete";
 
@@ -11,6 +12,7 @@ const CollectionCard = ({
   functionGoEdit,
 }: ICollectionsProps) => {
   const [longPress, setLongPress] = useState(false);
+  const { deleteCollection } = useCollections();
   const showButtons = () => {
     setLongPress(!longPress);
   };
@@ -21,6 +23,16 @@ const CollectionCard = ({
     } else {
       functionGoWorks(collection);
     }
+  };
+
+  const deletePress = () => {
+    deleteCollection(collection.id);
+    setLongPress(false);
+  };
+
+  const editPress = () => {
+    functionGoEdit(collection);
+    setLongPress(false);
   };
 
   return (
@@ -44,9 +56,8 @@ const CollectionCard = ({
           <View style={style.buttons}>
             {longPress && (
               <EditDelete
-                collection={collection}
-                setLongPress={setLongPress}
-                functionGoEdit={functionGoEdit}
+                functionGoEdit={editPress}
+                pressDelete={deletePress}
               />
             )}
           </View>
