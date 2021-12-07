@@ -47,17 +47,15 @@ export const loadWorksCollectionThunk =
 
 export const createWorkThunk =
   (work: Omit<IWork, "id">, idCollection: string) => async (dispatch: any) => {
-    console.log("WORK", work);
-
     try {
       const { token } = await getDataObject("userTattooArtist");
-
       const response = await axios.post(
         `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/create/${idCollection}`,
         work,
         {
           headers: {
             Authorization: "Bearer " + token,
+            "Content-Type": "multipart/form-data",
           },
         }
       );
@@ -65,7 +63,7 @@ export const createWorkThunk =
         const newWork = response.data;
         dispatch(createWorkAction(newWork));
       }
-    } catch ({ message }) {
-      console.log("ERROR", message);
+    } catch (error) {
+      return error;
     }
   };
