@@ -35,9 +35,9 @@ export interface IWork {
   tattooArtist: string;
   description: string;
   tattooStyles: string;
-  likes: number;
-  image: string;
-  collectionWork: Array<string>;
+  likes?: number;
+  image?: string;
+  collectionWork?: Array<string>;
   id: string;
 }
 export interface ICollection {
