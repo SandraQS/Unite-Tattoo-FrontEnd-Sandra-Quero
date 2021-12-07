@@ -54,6 +54,11 @@ export const createWorkAction = (work: object) => ({
   work,
 });
 
+export const deleteWorkAction = (id: string) => ({
+  type: actionTypes.deleteWork,
+  id,
+});
+
 export const editedCollectionAction = (collection: object) => ({
   type: actionTypes.editedCollection,
   collection,
