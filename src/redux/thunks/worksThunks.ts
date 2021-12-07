@@ -58,6 +58,7 @@ export const createWorkThunk =
         {
           headers: {
             Authorization: "Bearer " + token,
+            "Content-Type": "multipart/form-data",
           },
         }
       );
@@ -65,7 +66,7 @@ export const createWorkThunk =
         const newWork = response.data;
         dispatch(createWorkAction(newWork));
       }
-    } catch ({ message }) {
-      console.log("ERROR", message);
+    } catch (error) {
+      return error;
     }
   };
