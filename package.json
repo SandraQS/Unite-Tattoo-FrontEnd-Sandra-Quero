@@ -73,6 +73,9 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)"
     ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/__mocks__/asyncStorageMock.js"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
