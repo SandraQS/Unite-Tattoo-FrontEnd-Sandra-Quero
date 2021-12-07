@@ -80,7 +80,6 @@ export const editCollectionThunk =
   (collection: ICollection) => async (dispatch: any) => {
     try {
       const { token } = await getDataObject("userTattooArtist");
-
       const response = await axios.put(
         `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collection/edit/${collection.id}`,
         collection,

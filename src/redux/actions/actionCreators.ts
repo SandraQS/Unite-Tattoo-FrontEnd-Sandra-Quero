@@ -53,3 +53,8 @@ export const createWorkAction = (work: object) => ({
   type: actionTypes.createWork,
   work,
 });
+
+export const editedCollectionAction = (collection: object) => ({
+  type: actionTypes.editedCollection,
+  collection,
+});
