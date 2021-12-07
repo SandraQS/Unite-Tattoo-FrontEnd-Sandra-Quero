@@ -59,11 +59,11 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
           {works.length ? (
             <View style={styles.worksList}>
               {works.map((work: IWork) => (
-                <WorkCard key={work.id} work={work} />
+                <WorkCard key={work.id} work={work} collection={collection} />
               ))}
             </View>
           ) : (
-            <Text>Loading...</Text>
+            <Text>La página se está cargando...</Text>
           )}
         </View>
       </ScrollView>

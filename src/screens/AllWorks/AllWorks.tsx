@@ -36,7 +36,7 @@ const AllWorks = () => {
               ))}
             </View>
           ) : (
-            <Text>Loading...</Text>
+            <Text>La página se está cargando...</Text>
           )}
         </View>
       </ScrollView>
