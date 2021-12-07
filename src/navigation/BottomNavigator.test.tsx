@@ -1,7 +1,7 @@
-import { NavigationContainer } from "@react-navigation/native";
-import configureStore from "../redux/store";
 import { render } from "@testing-library/react-native";
 import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import configureStore from "../redux/store";
 import { Provider } from "react-redux";
 import { BottomNavigator } from "./BottomNavigator";
 import AsyncStorage from "@react-native-async-storage/async-storage";
