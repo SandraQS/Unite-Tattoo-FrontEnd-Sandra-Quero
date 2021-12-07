@@ -10,6 +10,7 @@ exports[`Given a NavHeader component When it is rendered Then it should show mat
       "flexDirection": "row",
       "justifyContent": "space-between",
       "paddingHorizontal": 20,
+      "paddingTop": 50,
       "paddingVertical": 10,
     }
   }
@@ -56,6 +57,7 @@ exports[`Given a NavHeader component When it is rendered Then it should show mat
   </View>
   <View>
     <View
+      accessibilityRole="button"
       accessible={true}
       collapsable={false}
       focusable={true}

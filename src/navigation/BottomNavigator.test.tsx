@@ -1,9 +1,9 @@
+import { render } from "@testing-library/react-native";
 import React from "react";
-import { fireEvent, render } from "@testing-library/react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import configureStore from "../../redux/store";
+import configureStore from "../redux/store";
 import { Provider } from "react-redux";
-import NavHeader from "./NavHeader";
+import { BottomNavigator } from "./BottomNavigator";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const mockReturnValues: any = {
@@ -37,41 +37,19 @@ jest.mock("@react-native-async-storage/async-storage", () => ({
   }),
 }));
 
-describe("Given a NavHeader component", () => {
+describe("Given BottomNavigator navigation", () => {
   describe("When it is rendered", () => {
     test("Then it should show match the last snapshot", () => {
-      const nameUser = "Sandra";
       const store = configureStore();
-
       const screen = render(
         <Provider store={store}>
           <NavigationContainer>
-            <NavHeader nameUser={nameUser} />
+            <BottomNavigator />
           </NavigationContainer>
         </Provider>
       );
 
       expect(screen).toMatchSnapshot();
-    });
-  });
-
-  describe("When it is click at logo", () => {
-    test("Then it should call the receives function", () => {
-      const nameUser = "Log Out";
-      const goBack = jest.fn();
-      const store = configureStore();
-      const screen = render(
-        <Provider store={store}>
-          <NavigationContainer>
-            <NavHeader nameUser={nameUser} />
-          </NavigationContainer>
-        </Provider>
-      );
-
-      const button = screen.getByRole("button");
-
-      fireEvent.press(button);
-      expect(goBack).toHaveBeenCalled();
     });
   });
 });
