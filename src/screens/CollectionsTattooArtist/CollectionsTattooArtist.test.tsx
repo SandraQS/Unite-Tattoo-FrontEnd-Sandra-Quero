@@ -41,7 +41,7 @@ describe("Given CollectionsTattoArtist screen", () => {
       );
 
       await waitFor(() => {
-        const cardCollection = screen.queryByTestId("collectionCardButton");
+        const cardCollection = screen.queryAllByTestId("collectionCardButton");
         const titleWork = screen.queryByText("MIS COLECCIONES");
         const tattoStyle = screen.queryByText("Acuarela");
 
@@ -50,57 +50,5 @@ describe("Given CollectionsTattoArtist screen", () => {
         expect(tattoStyle).not.toBeNull();
       });
     });
-
-    // //////==>>>>> REVISARRR!!!!!<<<<<====
-    // test("NO FUNCIONAAAAA", async () => {
-    //   const store = configureStore();
-    //   const collection: any = {
-    //     tattooStyles: "Fine Line",
-    //     image:
-    //       "https://storage.googleapis.com/unite-tattoo.appspot.com/Fine Line-1638105044539-.png",
-    //     works: [
-    //       {
-    //         tittle: "Lobo",
-    //         tattooArtist: "Javi Wolff",
-    //         description: "Otro tatoo artist",
-    //         tattooStyles: "Realista",
-    //         likes: 0,
-    //         image:
-    //           "https://logiabarcelona.com/wp-content/uploads/2019/05/tatuaje_espalda_color_flor_cara_mujer_logia_barcelona_lincoln_lima.jpg",
-    //         collectionWork: "61a37fd5b0e47a2b50e46363",
-    //         id: "61ad1c16e0ac2f441146c6bc",
-    //       },
-    //     ],
-    //     id: "61a37fd5b0e47a2b50e46363",
-    //   };
-    //   const functionGoWorks: any = jest.fn();
-    //   const functionGoEdit: any = jest.fn();
-
-    //   const screen = render(
-    //     <Provider store={store}>
-    //       <NavigationContainer>
-    //         <CollectionCard
-    //           key={collection.id}
-    //           collection={collection}
-    //           functionGoWorks={functionGoWorks}
-    //           functionGoEdit={functionGoEdit}
-    //         />
-    //       </NavigationContainer>
-    //     </Provider>
-    //   );
-
-    //   const cardCollection = await screen.getByRole("button");
-    //   const onPressCollection = jest.fn();
-    //   fireEvent.press(cardCollection);
-
-    //   expect(cardCollection).not.toBeNull();
-    //   expect(onPressCollection).toHaveBeenCalled();
-
-    //   const titleWork = await screen.getByText("Lobo");
-    //   const tattoStyle = await screen.getByText("Realista");
-
-    //   expect(titleWork).not.toBeNull();
-    //   expect(tattoStyle).not.toBeNull();
-    // });
   });
 });
