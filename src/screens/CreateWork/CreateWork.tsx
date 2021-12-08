@@ -63,17 +63,25 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
   const workFormData = new FormData();
 
   const CreateClick = () => {
-    workFormData.append("tittle", workData.tittle);
-    workFormData.append("tattooArtist", workData.tattooArtist);
-    workFormData.append("description", workData.description);
-    workFormData.append("tattooStyles", collection.tattooStyles);
-    workFormData.append("image", {
-      name: newImage.fileName,
-      type: newImage.type,
-      uri: newImage.uri,
-    });
-
-    createWork(workFormData, collection.id);
+    if (
+      newImage.fileName !== "" ||
+      newImage.type !== "" ||
+      newImage.uri !== ""
+    ) {
+      workFormData.append("tittle", workData.tittle);
+      workFormData.append("tattooArtist", workData.tattooArtist);
+      workFormData.append("description", workData.description);
+      workFormData.append("tattooStyles", collection.tattooStyles);
+      workFormData.append("image", {
+        name: newImage.fileName,
+        type: newImage.type,
+        uri: newImage.uri,
+      });
+      createWork(workFormData, collection.id);
+    } else {
+      console.log(workData);
+      createWork(workData, collection.id);
+    }
 
     navigation.navigate(RoutesEnum.works, { collection: collection });
   };
