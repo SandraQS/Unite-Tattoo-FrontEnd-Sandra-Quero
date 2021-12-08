@@ -14,6 +14,7 @@ enum RoutesEnum {
   creatework = "CreateWork",
 
   works = "WorksCollection",
+  editwork = "EditWork",
 }
 
 export default RoutesEnum;

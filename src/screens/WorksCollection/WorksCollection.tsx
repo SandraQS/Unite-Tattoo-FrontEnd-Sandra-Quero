@@ -38,6 +38,9 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
   const goCreateWork = () => {
     navigation.navigate(RoutesEnum.creatework, { collection: collection });
   };
+  const goEditWork = (work: IWork) => {
+    navigation.navigate(RoutesEnum.editwork, { work: work });
+  };
 
   return (
     <SafeAreaView style={generalStyles.screenWhite}>

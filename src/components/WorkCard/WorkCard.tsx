@@ -7,7 +7,7 @@ import styles from "./WorkCard.styles";
 
 const WorkCard = ({ work, collection }: IWorkProps) => {
   const [longPress, setLongPress] = useState(false);
-  const { deleteWork } = useWorks();
+  const { deleteWork, editWork } = useWorks();
 
   const showButtons = () => {
     setLongPress(!longPress);
@@ -22,7 +22,7 @@ const WorkCard = ({ work, collection }: IWorkProps) => {
   };
 
   const editPress = () => {
-    ///FUNCION EDITAR WORK
+    editWork(work);
     setLongPress(false);
   };
 
