@@ -47,8 +47,11 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
     workData.tittle === "" ||
     workData.tattooArtist === "" ||
     workData.description === "" ||
-    workData.tattooStyles === "";
-
+    workData.tattooStyles === "" ||
+    newImage.fileName === "" ||
+    newImage.type === "" ||
+    newImage.uri === "";
+    
   const textTitle = "AÑADIR NUEVO PROYECTO";
 
   const onChangeDataWork = (text: string, nameValue: string) => {
@@ -63,11 +66,7 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
   const workFormData = new FormData();
 
   const CreateClick = () => {
-    if (
-      newImage.fileName !== "" ||
-      newImage.type !== "" ||
-      newImage.uri !== ""
-    ) {
+    
       workFormData.append("tittle", workData.tittle);
       workFormData.append("tattooArtist", workData.tattooArtist);
       workFormData.append("description", workData.description);
@@ -78,10 +77,6 @@ export const CreateWork = ({ route }: ICreateWorkProps) => {
         uri: newImage.uri,
       });
       createWork(workFormData, collection.id);
-    } else {
-      console.log(workData);
-      createWork(workData, collection.id);
-    }
 
     navigation.navigate(RoutesEnum.works, { collection: collection });
   };
