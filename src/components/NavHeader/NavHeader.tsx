@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Button,
-  DevSettings,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { DevSettings, Text, TouchableOpacity, View } from "react-native";
 import AutoHeightImage from "react-native-auto-height-image";
 import { useUserTattooArtist } from "../../hooks/useUserTattooArtist";
 import { NavHeaderProps } from "../../types/components.types";
