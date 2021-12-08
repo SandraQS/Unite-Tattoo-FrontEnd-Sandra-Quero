@@ -90,7 +90,7 @@ export const deleteWorkThunk = (idWork: string) => async (dispatch: any) => {
   }
 };
 
-export const editCollectionThunk = (work: IWork) => async (dispatch: any) => {
+export const editWorkThunk = (work: IWork) => async (dispatch: any) => {
   try {
     const { token } = await getDataObject("userTattooArtist");
     const response = await axios.put(
