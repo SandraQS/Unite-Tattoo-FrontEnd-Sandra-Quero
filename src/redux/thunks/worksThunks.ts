@@ -48,7 +48,7 @@ export const loadWorksCollectionThunk =
   };
 
 export const createWorkThunk =
-  (work: Omit<IWork, "id">, idCollection: string) => async (dispatch: any) => {
+  (work: Omit<IWork, "id"> | FormData, idCollection: string) => async (dispatch: any) => {
     try {
       const { token } = await getDataObject("userTattooArtist");
       const response = await axios.post(

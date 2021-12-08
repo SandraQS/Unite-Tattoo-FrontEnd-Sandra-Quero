@@ -44,16 +44,22 @@ export const CreateCollection = () => {
   const collectionFormData = new FormData();
 
   const CreateClick = () => {
-    collectionFormData.append("tattooStyles", collectionData.tattooStyles);
-    collectionFormData.append("image", {
-      name: newImage.fileName,
-      type: newImage.type,
-      uri: newImage.uri,
-    });
-
-    createCollection(collectionFormData);
+    if (
+      newImage.fileName !== "" ||
+      newImage.type !== "" ||
+      newImage.uri !== ""
+    ) {
+      collectionFormData.append("tattooStyles", collectionData.tattooStyles);
+      collectionFormData.append("image", {
+        name: newImage.fileName,
+        type: newImage.type,
+        uri: newImage.uri,
+      });
+      createCollection(collectionFormData);
+    } else {
+      createCollection(collectionData);
+    }
     setCollectionDataData(initialCollectionData);
-
     navigation.navigate(RoutesEnum.collections);
   };
 
@@ -73,8 +79,10 @@ export const CreateCollection = () => {
     };
 
     launchImageLibrary(options, (response: any) => {
-      const source = response.assets;
-      setNewImage(source[0]);
+      if (response.assets) {
+        const source = response.assets;
+        setNewImage(source[0]);
+      }
     });
   };
 
