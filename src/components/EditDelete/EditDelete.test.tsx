@@ -4,10 +4,33 @@ import { NavigationContainer } from "@react-navigation/native";
 import configureStore from "../../redux/store";
 import { Provider } from "react-redux";
 import { EditDelete } from "./EditDelete";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { server } from "../../mocks/server";
+jest.mock("@react-native-async-storage/async-storage", () => ({
+  setItem: jest.fn(),
+  getItem: jest.fn(),
+  removeItem: jest.fn(),
+}));
+
+beforeAll(() => {
+  server.listen({
+    onUnhandledRequest: "warn",
+  });
+});
+
+afterEach(() => {
+  server.resetHandlers();
+});
+
+afterAll(() => {
+  server.close();
+});
 
 describe("Given EditDelete component", () => {
   describe("When it's rendered", () => {
     test("Then it should show two buttons whith text 'Editar' and 'Eliminar'", () => {
+      const store = configureStore();
+      //   AsyncStorage.getItem = jest.fn().mockResolvedValue({ token: "algo" });
       const collection = {
         image:
           "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
@@ -15,17 +38,15 @@ describe("Given EditDelete component", () => {
         works: [],
         id: "1",
       };
-      const setLongPress = jest.fn();
+      const deletePress = jest.fn();
       const functionGoEdit = jest.fn();
-      const store = configureStore();
 
       const screen = render(
         <Provider store={store}>
           <NavigationContainer>
             <EditDelete
-              collection={collection}
-              setLongPress={setLongPress}
               functionGoEdit={functionGoEdit}
+              pressDelete={deletePress}
             />
           </NavigationContainer>
         </Provider>
@@ -40,6 +61,8 @@ describe("Given EditDelete component", () => {
   });
   describe("When it is clicked at button edit", () => {
     test("Then it should call the functionGoEdit function", () => {
+      const store = configureStore();
+      AsyncStorage.getItem = jest.fn().mockResolvedValue({ token: "algo" });
       const collection = {
         image:
           "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
@@ -47,17 +70,15 @@ describe("Given EditDelete component", () => {
         works: [],
         id: "1",
       };
-      const setLongPress = jest.fn();
+      const deletePress = jest.fn();
       const functionGoEdit = jest.fn();
-      const store = configureStore();
 
       const screen = render(
         <Provider store={store}>
           <NavigationContainer>
             <EditDelete
-              collection={collection}
-              setLongPress={setLongPress}
               functionGoEdit={functionGoEdit}
+              pressDelete={deletePress}
             />
           </NavigationContainer>
         </Provider>
