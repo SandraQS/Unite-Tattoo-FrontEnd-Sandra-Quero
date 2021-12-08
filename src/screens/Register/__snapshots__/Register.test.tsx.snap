@@ -1,0 +1,691 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a Register component When it is rendered Then it should show match the last snapshot 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#A19178",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "marginTop": 80,
+            "padding": 20,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Image
+            onError={[Function]}
+            source={
+              Object {
+                "testUri": "../../../src/assets/utoo-logo.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "height": 0,
+                  "width": 150,
+                },
+                Object {
+                  "margin": 20,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignContent": "center",
+              "backgroundColor": "#DFD8D2",
+              "flex": 1,
+              "padding": 30,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 25,
+                "textAlign": "center",
+              }
+            }
+          >
+            Bienvenid@!
+          </Text>
+          <View>
+            <Text
+              style={
+                Object {
+                  "fontSize": 18,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Has escogido la opción
+              <Text
+                style={
+                  Object {
+                    "fontWeight": "800",
+                  }
+                }
+              >
+                 “tatuador”,
+              </Text>
+               a continuación deberás rellenar un formulario para registrarte y así poder formar parte de nuestra comunidad. Después de eso, podrás entrar en tu perfil como tatuador directamente. Esperamos que tengas una buena experiencia!
+            </Text>
+          </View>
+          <View>
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "opacity": 0.5,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <Image
+                onError={[Function]}
+                source={
+                  Object {
+                    "testUri": "../../../src/assets/icono-rombo-titulo.png",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 0,
+                      "width": 30,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                      "textAlign": "center",
+                    },
+                    Object {
+                      "marginLeft": 5,
+                    },
+                  ]
+                }
+              >
+                Cancelar
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "marginTop": 30,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginVertical": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Image
+                onError={[Function]}
+                source={
+                  Object {
+                    "testUri": "../../../src/assets/icono-rombo-titulo.png",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 0,
+                      "width": 50,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "flex": 3,
+                  "left": 30,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#141414",
+                    "fontSize": 20,
+                  }
+                }
+              >
+                DATOS PERSONALES
+                <Text
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                />
+              </Text>
+            </View>
+          </View>
+          <View>
+            <View>
+              <TextInput
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Nombre *"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="name"
+                value=""
+              />
+            </View>
+            <View>
+              <TextInput
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Primer apellido *"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="surname1"
+                value=""
+              />
+            </View>
+            <View>
+              <TextInput
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Segundo apellido *"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="surname2"
+                value=""
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "marginTop": 30,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginVertical": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Image
+                onError={[Function]}
+                source={
+                  Object {
+                    "testUri": "../../../src/assets/icono-rombo-titulo.png",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 0,
+                      "width": 50,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "flex": 3,
+                  "left": 30,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#141414",
+                    "fontSize": 20,
+                  }
+                }
+              >
+                DATOS DE USUARIO
+                <Text
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                />
+              </Text>
+            </View>
+          </View>
+          <View>
+            <View>
+              <TextInput
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Nombre de usuario *"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="userName"
+                value=""
+              />
+            </View>
+            <View>
+              <TextInput
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Contraseña *"
+                secureTextEntry={true}
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="password"
+                value=""
+              />
+            </View>
+            <View>
+              <TextInput
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Repetir la contraseña *"
+                secureTextEntry={true}
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="repeatPassword"
+                value=""
+              />
+            </View>
+            <View>
+              <TextInput
+                keyboardType="email-address"
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Email *"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="email"
+                value=""
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "marginTop": 30,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginVertical": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Image
+                onError={[Function]}
+                source={
+                  Object {
+                    "testUri": "../../../src/assets/icono-rombo-titulo.png",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 0,
+                      "width": 50,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "flex": 3,
+                  "left": 30,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#141414",
+                    "fontSize": 20,
+                  }
+                }
+              >
+                DATOS PROFESIONALES
+                <Text
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                />
+              </Text>
+            </View>
+          </View>
+          <View>
+            <View>
+              <TextInput
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Nombre Estudio (opcional)"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="studioName"
+                value=""
+              />
+            </View>
+            <View>
+              <TextInput
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Nombre profesional *"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="professionalName"
+                value=""
+              />
+            </View>
+            <View>
+              <TextInput
+                keyboardType="numeric"
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Telefono de contacto *"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="phone"
+                value=""
+              />
+            </View>
+            <View>
+              <TextInput
+                keyboardType="email-address"
+                maxLength={20}
+                onChange={[Function]}
+                placeholder="Email de contacto *"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                testID="contactEmail"
+                value=""
+              />
+            </View>
+          </View>
+          <View>
+            <TextInput
+              maxLength={20}
+              onChange={[Function]}
+              placeholder="Horario *"
+              style={
+                Object {
+                  "borderBottomColor": "#141414",
+                  "borderBottomWidth": 1,
+                  "padding": 20,
+                }
+              }
+              testID="openingHours"
+              value=""
+            />
+          </View>
+          <View>
+            <TextInput
+              maxLength={20}
+              onChange={[Function]}
+              placeholder="Dirección *"
+              style={
+                Object {
+                  "borderBottomColor": "#141414",
+                  "borderBottomWidth": 1,
+                  "padding": 20,
+                }
+              }
+              testID="direction"
+              value=""
+            />
+          </View>
+          <View>
+            <TextInput
+              maxLength={20}
+              onChange={[Function]}
+              placeholder="Estilos *"
+              style={
+                Object {
+                  "borderBottomColor": "#141414",
+                  "borderBottomWidth": 1,
+                  "padding": 20,
+                }
+              }
+              testID="tattooStyles"
+              value=""
+            />
+          </View>
+        </View>
+        <View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": false,
+              }
+            }
+            accessible={true}
+            pointerEvents="auto"
+          >
+            <RNCCheckbox
+              boxType="square"
+              forwardedRef={null}
+              onCheckColor="#7C6B53"
+              onTintColor="#7C6B53"
+              onValueChange={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "height": 32,
+                    "width": 32,
+                  },
+                  undefined,
+                ]
+              }
+              testID="colaboration"
+              tintColor="#141414"
+              value={false}
+            />
+          </View>
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "textAlign": "center",
+              }
+            }
+          >
+            Colaboración con otros estudios / tatuadores?
+          </Text>
+          <View>
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "black",
+                  "borderWidth": 1,
+                  "marginBottom": 20,
+                  "marginTop": 20,
+                  "opacity": 1,
+                  "padding": 20,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "black",
+                    "fontSize": 18,
+                    "fontWeight": "900",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                REGISTRARME COMO TATUADOR
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
