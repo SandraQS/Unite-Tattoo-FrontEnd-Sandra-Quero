@@ -8,6 +8,7 @@ export interface ItattooWorksActions {
   type: string;
   works: Array<object>;
   work: IWork;
+  id: string;
 }
 
 export interface IUserDataTattooArtistActions {
