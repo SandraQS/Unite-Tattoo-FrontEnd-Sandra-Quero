@@ -5,7 +5,7 @@ import { IWorkProps } from "../../types/interfacesComponent";
 import { EditDelete } from "../EditDelete/EditDelete";
 import styles from "./WorkCard.styles";
 
-const WorkCard = ({ work, collection }: IWorkProps) => {
+const WorkCard = ({ work }: IWorkProps) => {
   const [longPress, setLongPress] = useState(false);
   const { deleteWork } = useWorks();
 
