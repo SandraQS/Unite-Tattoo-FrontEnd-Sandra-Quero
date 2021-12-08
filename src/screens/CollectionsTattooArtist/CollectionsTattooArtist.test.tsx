@@ -5,10 +5,16 @@ import configureStore from "../../redux/store";
 import { Provider } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
 import CollectionsTattooArtist from "./CollectionsTattooArtist";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+jest.mock("@react-native-async-storage/async-storage", () => ({
+  setItem: jest.fn(),
+  getItem: jest.fn(),
+  removeItem: jest.fn(),
+}));
 
 beforeAll(() => {
   server.listen({
-    onUnhandledRequest:"warn"
+    onUnhandledRequest: "warn",
   });
 });
 
@@ -24,6 +30,7 @@ describe("Given CollectionsTattoArtist screen", () => {
   describe("When it's rendered", () => {
     test("Then it should show a button card, with titlte of tattoo artist style", async () => {
       const store = configureStore();
+      AsyncStorage.getItem = jest.fn().mockResolvedValue({ token: "algo" });
 
       const screen = render(
         <Provider store={store}>
@@ -34,12 +41,9 @@ describe("Given CollectionsTattoArtist screen", () => {
       );
 
       await waitFor(() => {
-        const cardCollection = screen.queryByRole("button");
+        const cardCollection = screen.queryByTestId("collectionCardButton");
         const titleWork = screen.queryByText("MIS COLECCIONES");
         const tattoStyle = screen.queryByText("Acuarela");
-
-        // screen.debug();
-        // console.log("HOOOOLAAAAAA");
 
         expect(cardCollection).not.toBeNull();
         expect(titleWork).not.toBeNull();

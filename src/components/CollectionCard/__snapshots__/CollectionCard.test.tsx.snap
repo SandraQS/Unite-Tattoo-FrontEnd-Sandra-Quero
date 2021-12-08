@@ -19,6 +19,7 @@ exports[`Given a CollectionCard component When it is rendered Then it should sho
       "opacity": 1,
     }
   }
+  testID="collectionCardButton"
 >
   <View
     style={

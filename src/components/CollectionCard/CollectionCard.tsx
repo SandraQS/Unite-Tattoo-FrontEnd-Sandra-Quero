@@ -41,6 +41,7 @@ const CollectionCard = ({
       onLongPress={showButtons}
       activeOpacity={0.6}
       accessibilityRole="button"
+      testID="collectionCardButton"
     >
       <View style={style.mainContainerCard}>
         <View style={style.collectionCard}>
