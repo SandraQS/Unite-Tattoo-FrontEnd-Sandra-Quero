@@ -1,10 +1,11 @@
 import { rest } from "msw";
+import { REACT_APP_URL_API_UNITETATTOO } from "@env";
 
 const works = [
   {
     tittle: "Pajaritos",
     tattooArtist: "Javi Wolf",
-    description: "LoremmAfdsfas",
+    description: "descripción",
     tattooStyles: "Acuarela",
     likes: 0,
     image:
@@ -25,7 +26,7 @@ const works = [
   },
 ];
 
-const collections = {
+const user = {
   tattooArtistUser: {
     personalDataTattoArtist: {
       name: "Sandra",
@@ -49,35 +50,31 @@ const collections = {
     },
     collections: [
       {
-        tattooStyles: "Acuarela",
+        tattooStyles: "Realista",
         image:
-          "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638104950642-.png",
+          "https://storage.googleapis.com/unite-tattoo.appspot.com/Realista-1638921273323-.png",
         works: [
           {
-            tittle: "Lobo",
-            tattooArtist: "Javi Wolff",
+            tittle: "Lobos - Espalda",
+            tattooArtist: "Bruno",
             description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed felis magna, volutpat eget nulla in, consequat laoreet nisl. Integer faucibus elit sapien, sit amet volutpat libero congue non. Ut est erat, feugiat in feugiat sit amet, interdum at risus. Cras fringilla congue ipsum, vel vulputate diam fermentum vel. Mauris accumsan neque eget nisl consequat suscipit. Fusce aliquet mi quis mi condimentum egestas. Nunc gravida tempor commodo. Morbi gravida lectus quis augue faucibus ultricies. Fusce mi dui, interdum vitae scelerisque et, cursus id nisi.",
-            tattooStyles: "Acuarela",
-            likes: 0,
-            image:
-              "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638119881947-.png",
-            collectionWork: "61a37f78b0e47a2b50e4635b",
-            id: "61a3b9ca4cc19250ca826626",
-          },
-          {
-            tittle: "Lobo2",
-            tattooArtist: "Javi Wolff",
-            description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed felis magna, volutpat eget nulla in, consequat laoreet nisl. Integer faucibus elit sapien, sit amet volutpat libero congue non. Ut est erat, feugiat in feugiat sit amet, interdum at risus. Cras fringilla congue ipsum, vel vulputate diam fermentum vel. Mauris accumsan neque eget nisl consequat suscipit. Fusce aliquet mi quis mi condimentum egestas. Nunc gravida tempor commodo. Morbi gravida lectus quis augue faucibus ultricies. Fusce mi dui, interdum vitae scelerisque et, cursus id nisi.",
+              "Después de un largo tiempo pude terminar esta espalda, una más para la colección 😁👌🏼👌🏼\n➕After quite a long time I was able to finish this back piece, another one!!\n\n▪️TATTOOING IN @circatattoobcn BARCELONA, SPAIN.\n\n@radiantcolorsink\n@bepantholtattoo\n@tsunami_tattoo_needles",
             tattooStyles: "Realista",
             likes: 0,
             image:
-              "https://storage.googleapis.com/unite-tattoo.appspot.com/Realista-1638438947435-.png",
-            collectionWork: "61a37f78b0e47a2b50e4635b",
-            id: "61a89824ae8722adc47358c1",
+              "https://storage.googleapis.com/unite-tattoo.appspot.com/Realista-1638924401230-.png",
+            collectionWork: "61aff43a77a75540f78b8449",
+            id: "61b0007377a75540f78b8cc3",
           },
         ],
+        id: "61aff43a77a75540f78b8449",
+      },
+      {
+        tattooStyles: "Acuarela",
+        image:
+          "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638923893558-.png",
+        works: [],
+        id: "61affe7677a75540f78b8569",
       },
     ],
     appointmentSchedule: [],
@@ -90,9 +87,17 @@ const collections = {
 
 export const handlers = [
   rest.get(
-    "https://sandra-quero-unite-tattoo.herokuapp.com/uniteTattoo/tattooArtist/collections",
+    `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collections`,
     async (req, res, ctx) => {
-           const response = res(ctx.status(200), ctx.json(collections));
+      const response = res(ctx.status(200), ctx.json(user));
+      return response;
+    }
+  ),
+
+  rest.get(
+    `${REACT_APP_URL_API_UNITETATTOO}/client/home`,
+    async (req, res, ctx) => {
+      const response = res(ctx.status(200), ctx.json(works));
       return response;
     }
   ),
