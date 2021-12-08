@@ -32,11 +32,11 @@ describe("Given CreateCollection screen", () => {
     test("Then it should show a button card, with titlte of tattoo artist style", async () => {
       const store = configureStore();
       AsyncStorage.getItem = jest.fn().mockResolvedValue({ token: "algo" });
-      //       function FormDataMock() {
-      //     this.append = jest.fn()
-      // }
-      //       const FormData = FormDataMock
-      //       const collectionFormData = new FormData()
+      (global as any).FormData = jest.fn().mockReturnValue({
+        append: jest.fn(),
+      });
+
+      const collectionFormData = new FormData();
 
       const screen = render(
         <Provider store={store}>
