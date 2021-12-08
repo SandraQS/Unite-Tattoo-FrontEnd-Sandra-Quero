@@ -1,10 +1,15 @@
 import { render } from "@testing-library/react-native";
 import React from "react";
 import WorkCard from "./WorkCard";
+import configureStore from "../../redux/store";
+import { Provider } from "react-redux";
+import { NavigationContainer } from "@react-navigation/native";
 
 describe("Given a WorkCard component", () => {
   describe("When it is rendered", () => {
     test("Then it should show match the last snapshot", () => {
+      const store = configureStore();
+
       const work: any = {
         tittle: "Lobo",
         tattooArtist: "Javi Wolff",
@@ -38,7 +43,11 @@ describe("Given a WorkCard component", () => {
       };
 
       const screen = render(
-        <WorkCard key={work.id} work={work} collection={collection} />
+        <Provider store={store}>
+          <NavigationContainer>
+            <WorkCard key={work.id} work={work} collection={collection} />
+          </NavigationContainer>
+        </Provider>
       );
 
       expect(screen).toMatchSnapshot();
