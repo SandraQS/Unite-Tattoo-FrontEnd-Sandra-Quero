@@ -101,4 +101,43 @@ export const handlers = [
       return response;
     }
   ),
+
+  rest.post(
+    `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collection/create`,
+    async (req, res, ctx) => {
+      const response = res(
+        ctx.status(200),
+        ctx.json([
+          {
+            tattooStyles: "Realista",
+            image:
+              "https://storage.googleapis.com/unite-tattoo.appspot.com/Realista-1638921273323-.png",
+            works: [
+              {
+                tittle: "Lobos - Espalda",
+                tattooArtist: "Bruno",
+                description:
+                  "Después de un largo tiempo pude terminar esta espalda, una más para la colección 😁👌🏼👌🏼\n➕After quite a long time I was able to finish this back piece, another one!!\n\n▪️TATTOOING IN @circatattoobcn BARCELONA, SPAIN.\n\n@radiantcolorsink\n@bepantholtattoo\n@tsunami_tattoo_needles",
+                tattooStyles: "Realista",
+                likes: 0,
+                image:
+                  "https://storage.googleapis.com/unite-tattoo.appspot.com/Realista-1638924401230-.png",
+                collectionWork: "61aff43a77a75540f78b8449",
+                id: "61b0007377a75540f78b8cc3",
+              },
+            ],
+            id: "61aff43a77a75540f78b8449",
+          },
+          {
+            tattooStyles: "Acuarela",
+            image:
+              "https://storage.googleapis.com/unite-tattoo.appspot.com/Acuarela-1638923893558-.png",
+            works: [],
+            id: "61affe7677a75540f78b8569",
+          },
+        ])
+      );
+      return response;
+    }
+  ),
 ];
