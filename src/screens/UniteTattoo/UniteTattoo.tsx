@@ -50,7 +50,6 @@ const UniteTattoo = () => {
               <TouchableOpacity
                 style={styles.buttonUniteTattoo}
                 activeOpacity={0.7}
-                onPress={() => {}}
               >
                 <Text style={styles.text}> Cliente </Text>
               </TouchableOpacity>
