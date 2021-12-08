@@ -19,6 +19,12 @@ const worksReducer = (works = [], action: ItattooWorksActions) => {
       newWorks = works.filter((work: IWork) => work.id !== work.id);
       break;
 
+    case actionTypes.editWork:
+      newWorks = works.map((work: IWork) =>
+        work.id === action.work.id ? { ...action.work } : work
+      );
+      break;
+
     default:
       newWorks = works;
   }

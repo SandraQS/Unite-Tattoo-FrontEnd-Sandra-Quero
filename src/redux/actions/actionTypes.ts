@@ -15,6 +15,7 @@ const actionTypes = {
 
   createWork: "WORK",
   deleteWork: "DELETE_WORK",
+  editWork: "EDIT_WORK",
 
   editedCollection: "EDITED_COLLECTION",
 };

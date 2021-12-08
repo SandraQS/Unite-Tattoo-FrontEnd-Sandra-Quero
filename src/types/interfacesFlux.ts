@@ -1,4 +1,4 @@
-import { ICollection } from "./interfacesComponent";
+import { ICollection, IWork } from "./interfacesComponent";
 
 export interface ItattooArtistActions {
   type: string;
@@ -7,7 +7,7 @@ export interface ItattooArtistActions {
 export interface ItattooWorksActions {
   type: string;
   works: Array<object>;
-  work:object
+  work: IWork;
 }
 
 export interface IUserDataTattooArtistActions {
