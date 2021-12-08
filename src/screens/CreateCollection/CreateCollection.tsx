@@ -55,10 +55,8 @@ export const CreateCollection = () => {
         type: newImage.type,
         uri: newImage.uri,
       });
-      console.log("ENVIAMSO FORM DATA", collectionFormData);
       createCollection(collectionFormData);
     } else {
-      console.log("ENVIAMSO FORM NORMAL", collectionData);
       createCollection(collectionData);
     }
     setCollectionDataData(initialCollectionData);
