@@ -5,11 +5,6 @@ export const registerTattooArtistAction = (tattooArtist: object) => ({
   tattooArtist,
 });
 
-export const loadAllWorksAction = (works: Array<object>) => ({
-  type: actionTypes.loadAllWorks,
-  works,
-});
-
 export const loadWorksCollectionAction = (works: Array<object>) => ({
   type: actionTypes.loadWorksCollection,
   works,
@@ -49,7 +44,27 @@ export const editCollectionAction = (collection: object) => ({
   collection,
 });
 
+export const editedCollectionAction = (collection: object) => ({
+  type: actionTypes.editedCollection,
+  collection,
+});
+
+export const loadAllWorksAction = (works: Array<object>) => ({
+  type: actionTypes.loadAllWorks,
+  works,
+});
+
 export const createWorkAction = (work: object) => ({
   type: actionTypes.createWork,
+  work,
+});
+
+export const deleteWorkAction = (id: string) => ({
+  type: actionTypes.deleteWork,
+  id,
+});
+
+export const editWorkAction = (work: object) => ({
+  type: actionTypes.editWork,
   work,
 });

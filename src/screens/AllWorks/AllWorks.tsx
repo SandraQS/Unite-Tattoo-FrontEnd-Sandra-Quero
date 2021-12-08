@@ -9,9 +9,13 @@ import { IWork } from "../../types/interfacesComponent";
 import { generalStyles } from "../../styles/uniteTatto.styles";
 import styles from "./AllWorks.styles";
 import NavHeader from "../../components/NavHeader/NavHeader";
+import { useNavigation } from "@react-navigation/core";
+import { AllWorksScreenNavigationProp } from "../../types/navigation.types";
 
 const AllWorks = () => {
   const { loadAllWorks, works } = useWorks();
+  const navigation = useNavigation<AllWorksScreenNavigationProp>();
+
   useEffect(() => {
     loadAllWorks();
   }, []);
@@ -22,7 +26,7 @@ const AllWorks = () => {
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
       <View style={generalStyles.navHeader}>
-        <NavHeader nameUser="" goBack={() => {}} />
+        <NavHeader nameUser="" goBack={() => navigation.pop()} />
       </View>
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>
@@ -36,7 +40,7 @@ const AllWorks = () => {
               ))}
             </View>
           ) : (
-            <Text>Loading...</Text>
+            <Text>La página se está cargando...</Text>
           )}
         </View>
       </ScrollView>

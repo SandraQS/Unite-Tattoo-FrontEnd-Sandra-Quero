@@ -53,14 +53,14 @@ export interface ICollectionsProps {
   setLongPress?: any;
 }
 export interface IEditDeleteProps {
-  collection: ICollection;
-  functionGoEdit: (collection: ICollection) => void;
-  setLongPress?: any;
+  functionGoEdit: () => void;
+  pressDelete: () => void;
 }
 
 export interface IWorkProps {
   work: IWork;
   setLongPress?: any;
+  collection: ICollection;
 }
 export interface INewImage {
   fileName: string;

@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/core";
 
 import React, { useState } from "react";
 import { SafeAreaView, ScrollView, View, TextInput } from "react-native";
+import { launchImageLibrary } from "react-native-image-picker";
 
 import { generalStyles } from "../../styles/uniteTatto.styles";
 import formsStyles from "../../styles/forms.styles";
@@ -12,6 +13,7 @@ import { useCollections } from "../../hooks/useCollections";
 import NavHeader from "../../components/NavHeader/NavHeader";
 import { CreateCollectionScreenNavigationProp } from "../../types/navigation.types";
 import RoutesEnum from "../../navigation/routes";
+import { INewImage } from "../../types/interfacesComponent";
 
 export const CreateCollection = () => {
   const { createCollection } = useCollections();
@@ -21,6 +23,11 @@ export const CreateCollection = () => {
   const [collectionData, setCollectionDataData] = useState(
     initialCollectionData
   );
+  const [newImage, setNewImage] = useState<INewImage>({
+    fileName: "",
+    type: "",
+    uri: "",
+  });
   const isComplete = collectionData.tattooStyles === "";
 
   const textTitle = "AÑADIR NUEVA COLECCIÓN";
@@ -34,10 +41,41 @@ export const CreateCollection = () => {
     return collectionData;
   };
 
+  const collectionFormData = new FormData();
+
   const CreateClick = () => {
-    createCollection(collectionData);
+    collectionFormData.append("tattooStyles", collectionData.tattooStyles);
+    collectionFormData.append("image", {
+      name: newImage.fileName,
+      type: newImage.type,
+      uri: newImage.uri,
+    });
+
+    createCollection(collectionFormData);
     setCollectionDataData(initialCollectionData);
+
     navigation.navigate(RoutesEnum.collections);
+  };
+
+  const chooseFile = () => {
+    const options = {
+      title: "Select Image",
+      customButtons: [
+        {
+          name: "customOptionKey",
+          title: "Choose Photo from Custom Option",
+        },
+      ],
+      storageOptions: {
+        skipBackup: true,
+        path: "images",
+      },
+    };
+
+    launchImageLibrary(options, (response: any) => {
+      const source = response.assets;
+      setNewImage(source[0]);
+    });
   };
 
   return (
@@ -65,6 +103,11 @@ export const CreateCollection = () => {
                   maxLength={12}
                 />
               </View>
+
+              <GeneralButton
+                textButton="SUBIR IMAGEN"
+                functionOnPress={chooseFile}
+              />
 
               {!isComplete && (
                 <GeneralButton

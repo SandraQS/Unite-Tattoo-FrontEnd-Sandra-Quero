@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { Button, SafeAreaView, ScrollView, Text, View } from "react-native";
 import Title from "../../components/Title/Title";
@@ -24,14 +24,13 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
   const navigation = useNavigation<WorksCollectionScreenNavigationProp>();
   const { loadWorksCollection, works } = useWorks();
 
-  // const worksReverse = works.reverse();
   const {
     params: { collection },
   } = route;
 
   useEffect(() => {
     loadWorksCollection(collection.id);
-  }, []);
+  }, [works]);
 
   const textTitle = "COLECCIÓN";
   const textTitleBold = ` ${collection.tattooStyles.toUpperCase()}`;
@@ -59,12 +58,12 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
           </View>
           {works.length ? (
             <View style={styles.worksList}>
-              {works.map((work: IWork) => (
-                <WorkCard key={work.id} work={work} />
+              {works.reverse().map((work: IWork) => (
+                <WorkCard key={work.id} work={work} collection={collection} />
               ))}
             </View>
           ) : (
-            <Text>Loading...</Text>
+            <Text>La página se está cargando...</Text>
           )}
         </View>
       </ScrollView>

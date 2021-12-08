@@ -1,3 +1,4 @@
+import { IWork } from "../../types/interfacesComponent";
 import { ItattooWorksActions } from "../../types/interfacesFlux";
 import actionTypes from "../actions/actionTypes";
 
@@ -10,8 +11,18 @@ const worksReducer = (works = [], action: ItattooWorksActions) => {
       newWorks = [...action.works];
       break;
 
-   case actionTypes.createWork:
+    case actionTypes.createWork:
       newWorks = [...works, action.work];
+      break;
+
+    case actionTypes.deleteWork:
+      newWorks = works.filter((work: IWork) => action.id !== work.id);
+      break;
+
+    case actionTypes.editWork:
+      newWorks = works.map((work: IWork) =>
+        work.id === action.work.id ? { ...action.work } : work
+      );
       break;
 
     default:

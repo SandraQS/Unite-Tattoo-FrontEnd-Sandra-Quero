@@ -1,6 +1,8 @@
 import axios from "axios";
 import {
   createWorkAction,
+  deleteWorkAction,
+  editWorkAction,
   loadAllWorksAction,
   loadWorksCollectionAction,
 } from "../actions/actionCreators";
@@ -67,3 +69,44 @@ export const createWorkThunk =
       return error;
     }
   };
+
+export const deleteWorkThunk = (idWork: string) => async (dispatch: any) => {
+  try {
+    const { token } = await getDataObject("userTattooArtist");
+
+    const response = await axios.delete(
+      `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/delete/${idWork}`,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+    if (response.status === 200) {
+      dispatch(deleteWorkAction(idWork));
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+export const editWorkThunk = (work: IWork) => async (dispatch: any) => {
+  try {
+    const { token } = await getDataObject("userTattooArtist");
+    const response = await axios.put(
+      `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/edit/${work.id}`,
+      work,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+    if (response.status === 200) {
+      const newWork = response.data;
+      dispatch(editWorkAction(newWork));
+    }
+  } catch (error) {
+    return error;
+  }
+};

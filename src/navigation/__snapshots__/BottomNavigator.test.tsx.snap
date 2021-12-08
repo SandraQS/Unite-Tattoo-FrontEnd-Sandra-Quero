@@ -347,7 +347,7 @@ exports[`Given BottomNavigator navigation When it is rendered Then it should sho
                             </View>
                           </View>
                           <Text>
-                            Loading...
+                            La página se está cargando...
                           </Text>
                         </View>
                       </View>
