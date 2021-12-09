@@ -1,8 +1,10 @@
 import { useNavigation } from "@react-navigation/core";
-
 import React, { useState } from "react";
 import { SafeAreaView, ScrollView, View, TextInput } from "react-native";
-import { launchImageLibrary } from "react-native-image-picker";
+import {
+  ImagePickerResponse,
+  launchImageLibrary,
+} from "react-native-image-picker";
 
 import { generalStyles } from "../../styles/uniteTatto.styles";
 import formsStyles from "../../styles/forms.styles";
@@ -11,8 +13,9 @@ import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import Title from "../../components/Title/Title";
 import { useCollections } from "../../hooks/useCollections";
 import NavHeader from "../../components/NavHeader/NavHeader";
-import { CreateCollectionScreenNavigationProp } from "../../types/navigation.types";
 import RoutesEnum from "../../navigation/routes";
+
+import { CreateCollectionScreenNavigationProp } from "../../types/navigation.types";
 import { INewImage } from "../../types/interfacesComponent";
 
 export const CreateCollection = () => {
@@ -28,8 +31,8 @@ export const CreateCollection = () => {
     type: "",
     uri: "",
   });
-  const isComplete = collectionData.tattooStyles === "";
 
+  const isComplete = collectionData.tattooStyles === "";
   const textTitle = "AÑADIR NUEVA COLECCIÓN";
 
   const onChangeDataCollection = (text: string, nameValue: string) => {
@@ -78,7 +81,7 @@ export const CreateCollection = () => {
       },
     };
 
-    launchImageLibrary(options, (response: any) => {
+    launchImageLibrary(options, (response: ImagePickerResponse) => {
       if (response.assets) {
         const source = response.assets;
         setNewImage(source[0]);
