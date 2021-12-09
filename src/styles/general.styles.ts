@@ -19,6 +19,7 @@ export default StyleSheet.create({
   },
 
   mainContainerGeneral: {
+        marginBottom: 100,
     marginTop: 80,
     padding: 20,
   },
