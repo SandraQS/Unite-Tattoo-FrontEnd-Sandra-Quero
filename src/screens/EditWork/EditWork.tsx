@@ -13,28 +13,30 @@ import NavHeader from "../../components/NavHeader/NavHeader";
 import {
   CreateWorkScreenNavigationProp,
   CreateWorkScreenRouteProp,
+  EditWorkScreenRouteProp,
 } from "../../types/navigation.types";
 import { useWorks } from "../../hooks/useWorks";
 import RoutesEnum from "../../navigation/routes";
 import { INewImage } from "../../types/interfacesComponent";
 
-interface ICreateWorkProps {
-  route: CreateWorkScreenRouteProp;
+interface IEditorkProps {
+  route: EditWorkScreenRouteProp;
 }
 
-export const EditWork = ({ route }: ICreateWorkProps) => {
-  const { createWork } = useWorks();
+export const EditWork = ({ route }: IEditorkProps) => {
+  const { editWork } = useWorks();
   const navigation = useNavigation<CreateWorkScreenNavigationProp>();
 
   const {
-    params: { collection },
+    params: { work, collection },
   } = route;
 
   const initialWorkData = {
-    tittle: collection.tittle,
-    tattooArtist: collection.tattooArtist,
-    description: collection.description,
-    tattooStyles: `${collection.tattooStyles}`,
+    ...work,
+    tittle: work.tittle,
+    tattooArtist: work.tattooArtist,
+    description: work.description,
+    tattooStyles: work.tattooStyles,
   };
   const [workData, setWorkData] = useState(initialWorkData);
   const [newImage, setNewImage] = useState<INewImage>({
@@ -56,18 +58,28 @@ export const EditWork = ({ route }: ICreateWorkProps) => {
 
   const workFormData = new FormData();
 
-  const CreateClick = () => {
-    workFormData.append("tittle", workData.tittle);
-    workFormData.append("tattooArtist", workData.tattooArtist);
-    workFormData.append("description", workData.description);
-    workFormData.append("tattooStyles", collection.tattooStyles);
-    workFormData.append("image", {
-      name: newImage.fileName,
-      type: newImage.type,
-      uri: newImage.uri,
-    });
-
-    createWork(workFormData, collection.id);
+  const editClick = () => {
+    if (
+      newImage.fileName === "" ||
+      newImage.type === "" ||
+      newImage.uri === ""
+    ) {
+      console.log("WORK", workData);
+      console.log("ID", work.id);
+      editWork(workData, work.id);
+    } else {
+      workFormData.append("tittle", workData.tittle);
+      workFormData.append("tattooArtist", workData.tattooArtist);
+      workFormData.append("description", workData.description);
+      workFormData.append("tattooStyles", workData.tattooStyles);
+      workFormData.append("image", {
+        name: newImage.fileName,
+        type: newImage.type,
+        uri: newImage.uri,
+      });
+      console.log("HOLA", workFormData);
+      editWork(workFormData, work.id);
+    }
 
     navigation.navigate(RoutesEnum.works, { collection: collection });
   };
@@ -165,12 +177,10 @@ export const EditWork = ({ route }: ICreateWorkProps) => {
                 functionOnPress={chooseFile}
               />
 
-              {!isComplete && (
-                <GeneralButton
-                  textButton="CREAR PROYECTO"
-                  functionOnPress={CreateClick}
-                />
-              )}
+              <GeneralButton
+                textButton="EDITAR PROYECTO"
+                functionOnPress={editClick}
+              />
             </View>
           </View>
         </View>
