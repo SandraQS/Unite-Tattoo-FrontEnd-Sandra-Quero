@@ -96,7 +96,6 @@ export const editWorkThunk =
   (work: IWork | any, idWork: string) => async (dispatch: any) => {
     try {
       const { token } = await getDataObject("userTattooArtist");
-      console.log("WORK WORK", work);
       const response = await axios.put(
         `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/edit/${idWork}`,
         work,
@@ -107,7 +106,6 @@ export const editWorkThunk =
           },
         }
       );
-      console.log("RESPONSE", response);
       if (response.status === 202) {
         const newWork = response.data;
         dispatch(editWorkAction(newWork));

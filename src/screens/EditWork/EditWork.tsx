@@ -11,8 +11,7 @@ import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import Title from "../../components/Title/Title";
 import NavHeader from "../../components/NavHeader/NavHeader";
 import {
-  CreateWorkScreenNavigationProp,
-  CreateWorkScreenRouteProp,
+  EditWorkScreenNavigationProp,
   EditWorkScreenRouteProp,
 } from "../../types/navigation.types";
 import { useWorks } from "../../hooks/useWorks";
@@ -25,7 +24,7 @@ interface IEditorkProps {
 
 export const EditWork = ({ route }: IEditorkProps) => {
   const { editWork } = useWorks();
-  const navigation = useNavigation<CreateWorkScreenNavigationProp>();
+  const navigation = useNavigation<EditWorkScreenNavigationProp>();
 
   const {
     params: { work, collection },
@@ -64,8 +63,6 @@ export const EditWork = ({ route }: IEditorkProps) => {
       newImage.type === "" ||
       newImage.uri === ""
     ) {
-      console.log("WORK", workData);
-      console.log("ID", work.id);
       editWork(workData, work.id);
     } else {
       workFormData.append("tittle", workData.tittle);
@@ -77,7 +74,6 @@ export const EditWork = ({ route }: IEditorkProps) => {
         type: newImage.type,
         uri: newImage.uri,
       });
-      console.log("HOLA", workFormData);
       editWork(workFormData, work.id);
     }
 

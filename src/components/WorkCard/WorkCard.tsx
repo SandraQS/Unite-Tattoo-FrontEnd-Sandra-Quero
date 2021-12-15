@@ -7,7 +7,7 @@ import styles from "./WorkCard.styles";
 
 const WorkCard = ({ work, goEditWork }: IWorkProps) => {
   const [longPress, setLongPress] = useState(false);
-  const { deleteWork, editWork } = useWorks();
+  const { deleteWork } = useWorks();
 
   const showButtons = () => {
     setLongPress(!longPress);
