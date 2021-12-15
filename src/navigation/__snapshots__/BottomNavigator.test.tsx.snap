@@ -269,6 +269,7 @@ exports[`Given BottomNavigator navigation When it is rendered Then it should sho
                           style={
                             Array [
                               Object {
+                                "marginBottom": 100,
                                 "marginTop": 80,
                                 "padding": 20,
                               },
