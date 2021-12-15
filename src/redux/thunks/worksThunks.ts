@@ -10,6 +10,7 @@ import {
 import { REACT_APP_URL_API_UNITETATTOO } from "@env";
 import { getDataObject } from "../../storage/asyncStorage";
 import { IWork } from "../../types/interfacesComponent";
+import { response } from "msw";
 
 export const loadAllWorksThunk = () => async (dispatch: any) => {
   try {
@@ -48,7 +49,8 @@ export const loadWorksCollectionThunk =
   };
 
 export const createWorkThunk =
-  (work: Omit<IWork, "id"> | FormData, idCollection: string) => async (dispatch: any) => {
+  (work: Omit<IWork, "id"> | FormData, idCollection: string) =>
+  async (dispatch: any) => {
     try {
       const { token } = await getDataObject("userTattooArtist");
       const response = await axios.post(
@@ -90,23 +92,27 @@ export const deleteWorkThunk = (idWork: string) => async (dispatch: any) => {
   }
 };
 
-export const editWorkThunk = (work: IWork) => async (dispatch: any) => {
-  try {
-    const { token } = await getDataObject("userTattooArtist");
-    const response = await axios.put(
-      `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/edit/${work.id}`,
-      work,
-      {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
+export const editWorkThunk =
+  (work: IWork | any, idWork: string) => async (dispatch: any) => {
+    try {
+      const { token } = await getDataObject("userTattooArtist");
+      console.log("WORK WORK", work);
+      const response = await axios.put(
+        `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/edit/${idWork}`,
+        work,
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("RESPONSE", response);
+      if (response.status === 202) {
+        const newWork = response.data;
+        dispatch(editWorkAction(newWork));
       }
-    );
-    if (response.status === 200) {
-      const newWork = response.data;
-      dispatch(editWorkAction(newWork));
+    } catch (error) {
+      return error;
     }
-  } catch (error) {
-    return error;
-  }
-};
+  };
