@@ -33,8 +33,8 @@ export const useWorks = () => {
     dispatch(deleteWorkThunk(idWork));
   };
 
-  const editWork = (work: IWork) => {
-    dispatch(editWorkThunk(work));
+  const editWork = (work: IWork | FormData, idWork: string) => {
+    dispatch(editWorkThunk(work, idWork));
   };
 
   return {

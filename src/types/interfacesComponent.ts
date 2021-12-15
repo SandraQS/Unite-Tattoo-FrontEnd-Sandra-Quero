@@ -61,6 +61,7 @@ export interface IWorkProps {
   work: IWork;
   setLongPress?: any;
   collection: ICollection;
+  goEditWork: (work: IWork) => void;
 }
 export interface INewImage {
   fileName: string;

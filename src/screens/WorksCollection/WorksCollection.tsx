@@ -38,6 +38,12 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
   const goCreateWork = () => {
     navigation.navigate(RoutesEnum.creatework, { collection: collection });
   };
+  const goEditWork = (work: IWork) => {
+    navigation.navigate(RoutesEnum.editwork, {
+      work: work,
+      collection: collection,
+    });
+  };
 
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
@@ -59,7 +65,12 @@ const WorksCollection = ({ route }: IWorksCollectionProps) => {
           {works.length ? (
             <View style={styles.worksList}>
               {works.reverse().map((work: IWork) => (
-                <WorkCard key={work.id} work={work} collection={collection} />
+                <WorkCard
+                  key={work.id}
+                  work={work}
+                  collection={collection}
+                  goEditWork={goEditWork}
+                />
               ))}
             </View>
           ) : (
