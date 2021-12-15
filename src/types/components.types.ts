@@ -22,3 +22,7 @@ export type NavHeaderProps = {
 export type CreateButtonProps = {
   functionCreate: () => void;
 };
+
+export type ImagePickerResponse = {
+  assets: object;
+};

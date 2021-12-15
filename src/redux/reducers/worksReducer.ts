@@ -16,7 +16,7 @@ const worksReducer = (works = [], action: ItattooWorksActions) => {
       break;
 
     case actionTypes.deleteWork:
-      newWorks = works.filter((work: IWork) => work.id !== work.id);
+      newWorks = works.filter((work: IWork) => action.id !== work.id);
       break;
 
     case actionTypes.editWork:

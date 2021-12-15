@@ -77,9 +77,8 @@ export type RootTattooArtistParamList = {
   [RoutesEnum.collections]: undefined;
   [RoutesEnum.create]: undefined;
   [RoutesEnum.edit]: { collection: ICollection };
-  [RoutesEnum.works]: {collection: ICollection};
-  [RoutesEnum.creatework]: {collection: ICollection};
-
+  [RoutesEnum.works]: { collection: ICollection };
+  [RoutesEnum.creatework]: { collection: ICollection };
 };
 
 export type CollectionsTattooArtistScreenRouteProp = RouteProp<

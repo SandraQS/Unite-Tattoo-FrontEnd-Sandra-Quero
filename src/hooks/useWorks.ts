@@ -25,7 +25,7 @@ export const useWorks = () => {
     [dispatch]
   );
 
-  const createWork = (work: IWork, idCollection: string) => {
+  const createWork = (work: IWork | FormData, idCollection: string) => {
     dispatch(createWorkThunk(work, idCollection));
   };
 

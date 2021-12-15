@@ -13,7 +13,6 @@ import { ICollection } from "../../types/interfacesComponent";
 export const collectionsThunk = () => async (dispatch: any) => {
   try {
     const { token } = await getDataObject("userTattooArtist");
-
     const response = await axios.get(
       `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collections`,
       {
@@ -34,7 +33,7 @@ export const collectionsThunk = () => async (dispatch: any) => {
 };
 
 export const createCollectionThunk =
-  (collection: Omit<ICollection, "id">) => async (dispatch: any) => {
+  (collection: Omit<ICollection, "id"> | FormData) => async (dispatch: any) => {
     try {
       const { token } = await getDataObject("userTattooArtist");
 
