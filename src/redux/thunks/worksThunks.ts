@@ -96,13 +96,13 @@ export const editWorkThunk =
   (work: IWork | any, idWork: string) => async (dispatch: any) => {
     try {
       const { token } = await getDataObject("userTattooArtist");
+
       const response = await axios.put(
         `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/work/edit/${idWork}`,
         work,
         {
           headers: {
             Authorization: "Bearer " + token,
-            "Content-Type": "multipart/form-data",
           },
         }
       );
