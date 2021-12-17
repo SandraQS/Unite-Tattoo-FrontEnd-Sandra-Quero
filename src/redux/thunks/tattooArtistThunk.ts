@@ -1,9 +1,13 @@
 import axios from "axios";
 import { REACT_APP_URL_API_UNITETATTOO } from "@env";
 
-import { registerTattooArtistAction } from "../actions/actionCreators";
+import {
+  registerTattooArtistAction,
+  tattooArtistPorfileAction,
+} from "../actions/actionCreators";
+import { getDataObject } from "../../storage/asyncStorage";
 
-const createTattooArtistThunk =
+export const createTattooArtistThunk =
   (tattooArtist: object) => async (dispatch: any) => {
     try {
       const response = await axios.post(
@@ -19,4 +23,23 @@ const createTattooArtistThunk =
     }
   };
 
-export default createTattooArtistThunk;
+export const tattooArtistPorfileThunk = () => async (dispatch: any) => {
+  try {
+    const { token } = await getDataObject("userTattooArtist");
+
+    const response = await axios.get(
+      `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/porfile`,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+
+    if (response.status === 200) {
+      dispatch(tattooArtistPorfileAction(response.data));
+    }
+  } catch (error) {
+    return error;
+  }
+};

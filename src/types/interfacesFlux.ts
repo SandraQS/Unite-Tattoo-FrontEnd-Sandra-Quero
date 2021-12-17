@@ -3,6 +3,7 @@ import { ICollection, IWork } from "./interfacesComponent";
 export interface ItattooArtistActions {
   type: string;
   tattooArtist: object;
+  userPorfile: object;
 }
 export interface ItattooWorksActions {
   type: string;

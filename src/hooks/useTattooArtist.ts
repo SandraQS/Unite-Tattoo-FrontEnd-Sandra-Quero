@@ -1,17 +1,27 @@
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import createTattooArtistThunk from "../redux/thunks/tattooArtistThunk";
+import {
+  createTattooArtistThunk,
+  tattooArtistPorfileThunk,
+} from "../redux/thunks/tattooArtistThunk";
 
 export const useTattooArtist = () => {
-  const tattooArtist: any = useSelector(({ store: tattooArtist }: any) => ({
-    store: tattooArtist,
+  const { tattooArtist } = useSelector(({ tattooArtist }: any) => ({
+    tattooArtist,
   }));
   const dispatch = useDispatch();
 
   const tattooArtistCreate = (userTattooArtist: any) => {
     dispatch(createTattooArtistThunk(userTattooArtist));
   };
+
+  const tattooArtistPorfile = useCallback(() => {
+    dispatch(tattooArtistPorfileThunk());
+  }, [dispatch]);
+
   return {
     tattooArtist,
     tattooArtistCreate,
+    tattooArtistPorfile,
   };
 };

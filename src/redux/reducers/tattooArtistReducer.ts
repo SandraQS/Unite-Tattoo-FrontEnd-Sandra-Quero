@@ -12,6 +12,10 @@ const tattooArtistReducer = (
       newTattooArtist = { ...action.tattooArtist };
       break;
 
+    case actionTypes.tattooArtistPorfile:
+      newTattooArtist = { ...action.userPorfile };
+      break;
+
     default:
       newTattooArtist = tattooArtist;
   }

@@ -44,7 +44,7 @@ export const EditWork = ({ route }: IEditorkProps) => {
     uri: "",
   });
 
-  const textTitle = "AÑADIR NUEVO PROYECTO";
+  const textTitle = "EDITAR PROYECTO";
 
   const onChangeDataWork = (text: string, nameValue: string) => {
     setWorkData({
