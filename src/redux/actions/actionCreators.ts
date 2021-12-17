@@ -5,9 +5,9 @@ export const registerTattooArtistAction = (tattooArtist: object) => ({
   tattooArtist,
 });
 
-export const loadWorksCollectionAction = (works: Array<object>) => ({
-  type: actionTypes.loadWorksCollection,
-  works,
+export const tattooArtistPorfileAction = (userPorfile: object) => ({
+  type: actionTypes.tattooArtistPorfile,
+  userPorfile,
 });
 
 export const tattooArtistLoginAction = (tattooArtist: object) => ({
@@ -51,6 +51,11 @@ export const editedCollectionAction = (collection: object) => ({
 
 export const loadAllWorksAction = (works: Array<object>) => ({
   type: actionTypes.loadAllWorks,
+  works,
+});
+
+export const loadWorksCollectionAction = (works: Array<object>) => ({
+  type: actionTypes.loadWorksCollection,
   works,
 });
 

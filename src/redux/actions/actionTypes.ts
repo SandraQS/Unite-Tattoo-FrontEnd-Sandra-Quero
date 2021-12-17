@@ -7,6 +7,7 @@ const actionTypes = {
   tattooArtistLogin: "LOGIN_TATTOOARTIST",
   tattooArtistRegistered: "REGISTERED_TATTOOARTIST",
   tattooArtistLogOut: "LOGOUT_TATTOOARTIST",
+  tattooArtistPorfile: "PORFILE_TATTOOARTIST",
 
   loadCollections: "LOAD_COLLECTIONS",
   createCollection: "CREATE_COLLECTION",
