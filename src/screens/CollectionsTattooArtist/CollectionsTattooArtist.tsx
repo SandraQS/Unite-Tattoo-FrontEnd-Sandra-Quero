@@ -15,21 +15,15 @@ import { useCollections } from "../../hooks/useCollections";
 import { ICollection } from "../../types/interfacesComponent";
 import CreateButton from "../../components/CreateButton/CreateButton";
 import RoutesEnum from "../../navigation/routes";
-import { useTattooArtist } from "../../hooks/useTattooArtist";
 
 const CollectionsTattooArtist = () => {
   const navigation =
     useNavigation<CollectionsTattooArtistScreenNavigationProp>();
   const { collections, loadCollections, edited } = useCollections();
-  const { tattooArtist, tattooArtistPorfile } = useTattooArtist();
 
   useEffect(() => {
     loadCollections();
   }, [edited]);
-
-  useEffect(() => {
-    tattooArtistPorfile();
-  }, []);
 
   const functionGoWorks = (collection: ICollection) => {
     navigation.navigate(RoutesEnum.works, { collection: collection });
@@ -48,13 +42,7 @@ const CollectionsTattooArtist = () => {
   return (
     <SafeAreaView style={generalStyles.screenWhite}>
       <View style={generalStyles.navHeader}>
-        <NavHeader
-          nameUser={
-            tattooArtist.personalDataTattoArtist
-              ? tattooArtist.personalDataTattoArtist.name
-              : "Log Out"
-          }
-        />
+        <NavHeader client={false} />
       </View>
       <ScrollView>
         <View
