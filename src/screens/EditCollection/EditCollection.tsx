@@ -59,7 +59,7 @@ export const EditCollection = ({ route }: IEditCollectionProps) => {
   return (
     <SafeAreaView style={generalStyles.screenLightBrown}>
       <View style={generalStyles.navHeader}>
-        <NavHeader nameUser="Log Out" goBack={() => navigation.pop()} />
+        <NavHeader client={false} goBack={() => navigation.pop()} />
       </View>
       <ScrollView>
         <View style={generalStyles.mainContainerGeneral}>

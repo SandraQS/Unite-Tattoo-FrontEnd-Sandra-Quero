@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { DevSettings, Text, TouchableOpacity, View } from "react-native";
 import AutoHeightImage from "react-native-auto-height-image";
+import { useTattooArtist } from "../../hooks/useTattooArtist";
 import { useUserTattooArtist } from "../../hooks/useUserTattooArtist";
 import { NavHeaderProps } from "../../types/components.types";
 
 import styles from "./NavHeader.styles";
-const NavHeader = ({ nameUser, goBack }: NavHeaderProps) => {
+const NavHeader = ({ client, goBack }: NavHeaderProps) => {
   const { tattooArtistLogOut } = useUserTattooArtist();
+  const { tattooArtist, tattooArtistPorfile } = useTattooArtist();
+
+  useEffect(() => {
+    tattooArtistPorfile();
+  }, []);
 
   const clickIcon = () => {
     tattooArtistLogOut();
@@ -31,7 +37,13 @@ const NavHeader = ({ nameUser, goBack }: NavHeaderProps) => {
           accessibilityRole="button"
         >
           <View style={styles.nameUserContainter}>
-            <Text style={styles.nameUserText}>{nameUser}</Text>
+            <Text style={styles.nameUserText}>
+              {!client
+                ? tattooArtist.personalDataTattoArtist
+                  ? tattooArtist.personalDataTattoArtist.name
+                  : "Salir"
+                : "Salir"}
+            </Text>
           </View>
 
           <View style={styles.logoContainter}>

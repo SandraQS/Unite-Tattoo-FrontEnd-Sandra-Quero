@@ -89,7 +89,7 @@ exports[`Given a NavHeader component When it is rendered Then it should show mat
             }
           }
         >
-          Sandra
+          Log Out
         </Text>
       </View>
       <View
