@@ -38,7 +38,7 @@ export default StyleSheet.create({
   },
 
   nameContainer: {
-    bottom: 50,
+    bottom: 65,
     left: 150,
     position: "absolute",
   },
@@ -50,5 +50,20 @@ export default StyleSheet.create({
   },
   secondName: {
     fontWeight: "300",
+  },
+
+  tattooStyle: {
+    borderColor: colors.black,
+    borderWidth: 2,
+    marginHorizontal: 5,
+    padding: 5,
+    textAlign: "center",
+    textTransform: "uppercase",
+  },
+
+  tattooStyleContainer: {
+    flex: 1,
+    flexDirection: "row",
+    paddingHorizontal: 20,
   },
 });

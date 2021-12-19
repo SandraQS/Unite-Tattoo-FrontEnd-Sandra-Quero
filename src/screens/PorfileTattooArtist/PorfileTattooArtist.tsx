@@ -37,7 +37,6 @@ export const PorfileTattooArtist = () => {
               style={styles.imageAmbient}
             />
           </View>
-
           <View>
             <ImageBackground
               source={require("../../assets/marco-rombo.png")}
@@ -53,7 +52,6 @@ export const PorfileTattooArtist = () => {
               </View>
             </ImageBackground>
           </View>
-
           <View style={styles.nameContainer}>
             <Text style={styles.nameTattooArtist}>
               {tattooArtist.personalDataTattoArtist.name}
@@ -62,6 +60,18 @@ export const PorfileTattooArtist = () => {
               {tattooArtist.personalDataTattoArtist.surname1}
             </Text>
           </View>
+
+          {tattooArtist.professionalDataTattooArtist.tattooStyles.length && (
+            <View style={styles.tattooStyleContainer}>
+              {tattooArtist.professionalDataTattooArtist.tattooStyles.map(
+                (style: string, index: string) => (
+                  <Text key={index} style={styles.tattooStyle}>
+                    {style}
+                  </Text>
+                )
+              )}
+            </View>
+          )}
         </View>
 
         <View style={generalStyles.mainContainerGeneral}>
