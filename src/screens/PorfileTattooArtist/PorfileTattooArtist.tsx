@@ -30,34 +30,41 @@ export const PorfileTattooArtist = () => {
         <NavHeader client={false} goBack={() => navigation.pop()} />
       </View>
       <ScrollView>
-        <View>
-          <Image
-            source={{ uri: tattooArtist.imageAmbient }}
-            style={styles.imageAmbient}
-          />
-        </View>
+        <View style={styles.headerPorfile}>
+          <View>
+            <Image
+              source={{ uri: tattooArtist.imageAmbient }}
+              style={styles.imageAmbient}
+            />
+          </View>
 
-        <View>
-          <ImageBackground
-            source={require("../../assets/marco-rombo.png")}
-            resizeMode="contain"
-            style={styles.imageBackground}
-          >
-            <View style={styles.imagePorfileContainer}>
-              <Image
-                source={{ uri: tattooArtist.profileImage }}
-                style={styles.imagePorfile}
-                resizeMode="cover"
-              />
-            </View>
-          </ImageBackground>
+          <View>
+            <ImageBackground
+              source={require("../../assets/marco-rombo.png")}
+              resizeMode="contain"
+              style={styles.imageBackground}
+            >
+              <View style={styles.imagePorfileContainer}>
+                <Image
+                  source={{ uri: tattooArtist.profileImage }}
+                  style={styles.imagePorfile}
+                  resizeMode="cover"
+                />
+              </View>
+            </ImageBackground>
+          </View>
+
+          <View style={styles.nameContainer}>
+            <Text style={styles.nameTattooArtist}>
+              {tattooArtist.personalDataTattoArtist.name}
+            </Text>
+            <Text style={[styles.nameTattooArtist, styles.secondName]}>
+              {tattooArtist.personalDataTattoArtist.surname1}
+            </Text>
+          </View>
         </View>
 
         <View style={generalStyles.mainContainerGeneral}>
-          <View>
-            <Text>{`${tattooArtist.personalDataTattoArtist.name} ${tattooArtist.personalDataTattoArtist.surname1}`}</Text>
-          </View>
-
           <View>
             <Title text="HORARIO" />
             <Text>{`${tattooArtist.professionalDataTattooArtist.openingHours}`}</Text>

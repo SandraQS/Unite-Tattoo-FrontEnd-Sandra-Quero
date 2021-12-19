@@ -2,6 +2,9 @@ import { StyleSheet } from "react-native";
 import { colors } from "../../styles/uniteTatto.styles";
 
 export default StyleSheet.create({
+  headerPorfile: {
+    position: "relative",
+  },
   imageAmbient: {
     height: 250,
     opacity: 0.5,
@@ -14,6 +17,7 @@ export default StyleSheet.create({
     top: -90,
     width: 150,
   },
+
   imagePorfile: {
     height: 120,
     left: -20,
@@ -22,6 +26,7 @@ export default StyleSheet.create({
     transform: [{ rotateY: "0deg" }, { rotateZ: "-45deg" }],
     width: 120,
   },
+
   imagePorfileContainer: {
     bottom: 19,
     height: 82,
@@ -30,5 +35,20 @@ export default StyleSheet.create({
     position: "absolute",
     transform: [{ rotateY: "25deg" }, { rotateZ: "45deg" }],
     width: 82,
+  },
+
+  nameContainer: {
+    bottom: 50,
+    left: 150,
+    position: "absolute",
+  },
+
+  nameTattooArtist: {
+    fontSize: 35,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+  },
+  secondName: {
+    fontWeight: "300",
   },
 });
