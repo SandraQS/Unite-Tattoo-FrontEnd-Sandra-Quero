@@ -9,6 +9,7 @@ import { EditCollection } from "../screens/EditCollection/EditCollection";
 import WorksCollection from "../screens/WorksCollection/WorksCollection";
 import { CreateWork } from "../screens/CreateWork/CreateWork";
 import { EditWork } from "../screens/EditWork/EditWork";
+import { PorfileTattooArtist } from "../screens/PorfileTattooArtist/PorfileTattooArtist";
 
 export const TattooArtistNavigator = () => {
   const Stack = createNativeStackNavigator<RootTattooArtistParamList>();
@@ -28,6 +29,7 @@ export const TattooArtistNavigator = () => {
       <Stack.Screen name={RoutesEnum.works} component={WorksCollection} />
       <Stack.Screen name={RoutesEnum.creatework} component={CreateWork} />
       <Stack.Screen name={RoutesEnum.editwork} component={EditWork} />
+      <Stack.Screen name={RoutesEnum.porfile} component={PorfileTattooArtist} />
     </Stack.Navigator>
   );
 };
