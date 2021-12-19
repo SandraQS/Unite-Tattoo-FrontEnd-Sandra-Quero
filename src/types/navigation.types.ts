@@ -80,6 +80,7 @@ export type RootTattooArtistParamList = {
   [RoutesEnum.works]: { collection: ICollection };
   [RoutesEnum.creatework]: { collection: ICollection };
   [RoutesEnum.editwork]: { work: IWork; collection: ICollection };
+  [RoutesEnum.porfile]: undefined;
 };
 
 export type CollectionsTattooArtistScreenRouteProp = RouteProp<
@@ -135,4 +136,13 @@ export type EditWorkScreenRouteProp = RouteProp<
 export type EditWorkScreenNavigationProp = NativeStackNavigationProp<
   RootTattooArtistParamList,
   RoutesEnum.editwork
+>;
+export type PorfileTattooArtistkScreenRouteProp = RouteProp<
+  RootTattooArtistParamList,
+  RoutesEnum.porfile
+>;
+
+export type PorfileTattooArtistScreenNavigationProp = NativeStackNavigationProp<
+  RootTattooArtistParamList,
+  RoutesEnum.porfile
 >;

@@ -15,6 +15,8 @@ enum RoutesEnum {
 
   works = "WorksCollection",
   editwork = "EditWork",
+
+  porfile = "PorfileTattooArtist",
 }
 
 export default RoutesEnum;
