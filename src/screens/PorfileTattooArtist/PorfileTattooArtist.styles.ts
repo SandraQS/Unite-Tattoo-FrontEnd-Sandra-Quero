@@ -5,6 +5,7 @@ export default StyleSheet.create({
   headerPorfile: {
     position: "relative",
   },
+
   imageAmbient: {
     height: 250,
     opacity: 0.5,
@@ -37,6 +38,10 @@ export default StyleSheet.create({
     width: 82,
   },
 
+  mainContainer: {
+    marginTop: 20,
+  },
+
   nameContainer: {
     bottom: 65,
     left: 150,
@@ -48,6 +53,7 @@ export default StyleSheet.create({
     fontWeight: "bold",
     textTransform: "uppercase",
   },
+
   secondName: {
     fontWeight: "300",
   },
@@ -65,5 +71,16 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     paddingHorizontal: 20,
+  },
+
+  textContainer: {
+    flex: 1,
+    flexDirection: "row",
+  },
+
+  texts: {
+    color: colors.darkGrey,
+    marginBottom: 20,
+    marginLeft: 40,
   },
 });
