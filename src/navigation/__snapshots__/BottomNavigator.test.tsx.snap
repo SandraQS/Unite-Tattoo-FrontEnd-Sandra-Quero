@@ -235,7 +235,7 @@ exports[`Given BottomNavigator navigation When it is rendered Then it should sho
                                   }
                                 }
                               >
-                                Log Out
+                                Salir
                               </Text>
                             </View>
                             <View

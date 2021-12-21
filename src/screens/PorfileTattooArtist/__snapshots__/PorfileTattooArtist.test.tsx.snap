@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Give PorfileTattooArtist screen When it's rendered Then it should show match with the last snapsot 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#DFD8D2",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "borderBottomColor": "#7C6B53",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+          "paddingTop": 50,
+          "paddingVertical": 10,
+        }
+      }
+    >
+      <View
+        style={Object {}}
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Image
+            onError={[Function]}
+            source={
+              Object {
+                "testUri": "../../../src/assets/utoo-logo.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "height": 0,
+                  "width": 100,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View>
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={Object {}}
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#7C6B53",
+                  "fontSize": 15,
+                  "paddingEnd": 10,
+                }
+              }
+            >
+              Salir
+            </Text>
+          </View>
+          <View
+            style={Object {}}
+          >
+            <Image
+              onError={[Function]}
+              source={
+                Object {
+                  "testUri": "../../../src/assets/icono-user.png",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "height": 0,
+                    "width": 30,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <View>
+          <Image
+            source={
+              Object {
+                "uri": undefined,
+              }
+            }
+            style={
+              Object {
+                "height": 250,
+                "opacity": 0.5,
+                "width": "100%",
+              }
+            }
+          />
+        </View>
+        <View>
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Object {
+                "height": 150,
+                "position": "relative",
+                "top": -90,
+                "width": 150,
+              }
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                Object {
+                  "testUri": "../../../src/assets/marco-rombo.png",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": 150,
+                    "width": 150,
+                  },
+                  undefined,
+                ]
+              }
+            />
+            <View
+              style={
+                Object {
+                  "bottom": 19,
+                  "height": 82,
+                  "left": 34,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "transform": Array [
+                    Object {
+                      "rotateY": "25deg",
+                    },
+                    Object {
+                      "rotateZ": "45deg",
+                    },
+                  ],
+                  "width": 82,
+                }
+              }
+            >
+              <Image
+                resizeMode="cover"
+                source={
+                  Object {
+                    "uri": undefined,
+                  }
+                }
+                style={
+                  Object {
+                    "height": 120,
+                    "left": -20,
+                    "position": "absolute",
+                    "top": -20,
+                    "transform": Array [
+                      Object {
+                        "rotateY": "0deg",
+                      },
+                      Object {
+                        "rotateZ": "-45deg",
+                      },
+                    ],
+                    "width": 120,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;

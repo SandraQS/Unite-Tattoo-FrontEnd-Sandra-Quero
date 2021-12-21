@@ -1,0 +1,387 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given EditWork screen When it's rendered Then it should show match with the last snapshot 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#DFD8D2",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "borderBottomColor": "#7C6B53",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+          "paddingTop": 50,
+          "paddingVertical": 10,
+        }
+      }
+    >
+      <View
+        style={Object {}}
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Image
+            onError={[Function]}
+            source={
+              Object {
+                "testUri": "../../../src/assets/utoo-logo.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "height": 0,
+                  "width": 100,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View>
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={Object {}}
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#7C6B53",
+                  "fontSize": 15,
+                  "paddingEnd": 10,
+                }
+              }
+            >
+              Salir
+            </Text>
+          </View>
+          <View
+            style={Object {}}
+          >
+            <Image
+              onError={[Function]}
+              source={
+                Object {
+                  "testUri": "../../../src/assets/icono-user.png",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "height": 0,
+                    "width": 30,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "marginBottom": 100,
+            "marginTop": 80,
+            "padding": 20,
+          }
+        }
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginVertical": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Image
+                onError={[Function]}
+                source={
+                  Object {
+                    "testUri": "../../../src/assets/icono-rombo-titulo.png",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 0,
+                      "width": 50,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "flex": 3,
+                  "left": 30,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#141414",
+                    "fontSize": 20,
+                  }
+                }
+              >
+                EDITAR PROYECTO
+                <Text
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                />
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "marginTop": 30,
+            }
+          }
+        >
+          <View>
+            <View>
+              <TextInput
+                accessibilityLabel="tittle"
+                maxLength={20}
+                onChangeText={[Function]}
+                placeholder="Titulo"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                value="Lobos - Espalda"
+              />
+            </View>
+            <View>
+              <TextInput
+                accessibilityLabel="tattooArtist"
+                maxLength={12}
+                onChangeText={[Function]}
+                placeholder="Nombre tatuador"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                value="Bruno"
+              />
+            </View>
+            <View>
+              <TextInput
+                accessibilityLabel="description"
+                maxLength={650}
+                multiline={true}
+                numberOfLines={10}
+                onChangeText={[Function]}
+                placeholder="Descripción"
+                style={
+                  Array [
+                    Object {
+                      "borderBottomColor": "#141414",
+                      "borderBottomWidth": 1,
+                      "padding": 20,
+                    },
+                    Object {
+                      "paddingTop": 20,
+                    },
+                  ]
+                }
+                value="Después de un largo tiempo pude terminar esta espalda, una más para la colección 😁👌🏼👌🏼
+➕After quite a long time I was able to finish this back piece, another one!!
+
+▪️TATTOOING IN @circatattoobcn BARCELONA, SPAIN.
+
+@radiantcolorsink
+@bepantholtattoo
+@tsunami_tattoo_needles"
+              />
+            </View>
+            <View>
+              <TextInput
+                accessibilityLabel="tattooStyles"
+                maxLength={20}
+                onChangeText={[Function]}
+                placeholder="Estilo"
+                style={
+                  Object {
+                    "borderBottomColor": "#141414",
+                    "borderBottomWidth": 1,
+                    "padding": 20,
+                  }
+                }
+                value="Realista"
+              />
+            </View>
+            <View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "borderColor": "black",
+                    "borderWidth": 1,
+                    "marginBottom": 20,
+                    "marginTop": 20,
+                    "opacity": 1,
+                    "padding": 20,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontSize": 18,
+                      "fontWeight": "900",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  SUBIR IMAGEN
+                </Text>
+              </View>
+            </View>
+            <View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "borderColor": "black",
+                    "borderWidth": 1,
+                    "marginBottom": 20,
+                    "marginTop": 20,
+                    "opacity": 1,
+                    "padding": 20,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontSize": 18,
+                      "fontWeight": "900",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  EDITAR PROYECTO
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
