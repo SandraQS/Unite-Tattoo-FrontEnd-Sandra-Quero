@@ -16,15 +16,15 @@ describe("Given a CollectionCard component", () => {
       };
       const functionGoWorks = jest.fn();
       const functionGoEdit = jest.fn();
-       const store = configureStore();
+      const store = configureStore();
       const screen = render(
         <Provider store={store}>
           <NavigationContainer>
-          <CollectionCard
-          functionGoWorks={functionGoWorks}
-          collection={collection}
-          functionGoEdit={functionGoEdit}
-        />
+            <CollectionCard
+              functionGoWorks={functionGoWorks}
+              collection={collection}
+              functionGoEdit={functionGoEdit}
+            />
           </NavigationContainer>
         </Provider>
       );

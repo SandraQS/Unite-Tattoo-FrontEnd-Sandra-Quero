@@ -1,5 +1,6 @@
 import {
   tattooArtistLoginAction,
+  tattooArtistLogOutAction,
   tattooArtistRegisteredAction,
 } from "../actions/actionCreators";
 import userTattooArtistReducer from "./userTattooArtistReducer";
@@ -11,7 +12,7 @@ describe("Given stateUserTattooArtist reducer", () => {
         email: "email@gmail.com",
         password: "hola",
       };
-      
+
       // eslint-disable-next-line object-curly-spacing
       const stateUserTattooArtist = { isAuth: false, userTattooArtist: {} };
       const newstateUserTattooArtist = {
@@ -52,6 +53,45 @@ describe("Given stateUserTattooArtist reducer", () => {
       );
 
       expect(newTattooArtist).toEqual(newstateUserTattooArtist);
+    });
+  });
+
+  describe("When it receives an action tattooArtistLogOutAction", () => {
+    test("Then it should return a isAuth in false and useTattoArtist empty", () => {
+      const tattooArtist: any = {
+        isAuth: true,
+        userTattooArtist: {
+          personalDataTattoArtist: {
+            name: "Gisela",
+            surname1: "Quero",
+            surname2: "Sánchez",
+          },
+          userDataTattoArtist: {
+            userName: "ShivaShana",
+            password: "hola",
+            email: "email@gmail.com",
+          },
+          professionalDataTattooArtist: {
+            studioName: "GQS",
+            professionalName: "GQS",
+            phone: 666666666,
+            contactEmail: "otroemail@gmail.com",
+            openingHours: "de 9.00 a 18.00h",
+            direction: "C/hola, nº13",
+            colaboration: "false",
+          },
+        },
+      };
+
+      const expectTattooArtist: any = {
+        isAuth: false,
+        userTattooArtist: {},
+      };
+      const action: any = tattooArtistLogOutAction();
+
+      const newTattooArtist = userTattooArtistReducer(tattooArtist, action);
+
+      expect(newTattooArtist).toEqual(expectTattooArtist);
     });
   });
 

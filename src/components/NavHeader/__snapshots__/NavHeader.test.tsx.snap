@@ -89,7 +89,7 @@ exports[`Given a NavHeader component When it is rendered Then it should show mat
             }
           }
         >
-          Log Out
+          Salir
         </Text>
       </View>
       <View

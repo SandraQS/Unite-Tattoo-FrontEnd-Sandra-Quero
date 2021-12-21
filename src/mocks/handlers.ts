@@ -85,6 +85,36 @@ const user = {
   },
 };
 
+const tattooArtist = {
+    personalDataTattoArtist:{
+      name: "Javi",
+      surname1: "Medina",
+      surname2: "Mura",
+    },
+    userDataTattoArtist: {
+      userName: "JaviWolf",
+      password: "$2b$10$xSQxQwiUxflQNhqwd1m.QOj0oYb8uvXqAX1tgocSDU8/5hMnHycUG",
+      email: "Javiwolf@gmail.com",
+    },
+    professionalDataTattooArtist: {
+      studioName: "",
+      professionalName: "Javi Wolf",
+      phone: 632647389,
+      contactEmail: "Javiwolf@gmail.com",
+      openingHours: "9.00h a 18.00h",
+      direction: "C/Echegaray,10",
+      tattooStyles: ["Acuarela, scketch"],
+      colaboration: "false",
+    },
+    collections: ["61b12d43136733d875284d16", "61b12d6e136733d875284d23"],
+    appointmentSchedule: [],
+    imageAmbient:
+      "https://cdn.pixabay.com/photo/2017/07/11/17/03/tattoo-artist-2494298_1280.jpg",
+    profileImage:
+      "https://cdn.pixabay.com/photo/2016/04/01/10/11/avatar-1299805_1280.png",
+    id: "61b12ce3136733d875284d0f",
+  };
+
 export const handlers = [
   rest.get(
     `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/collections`,
@@ -98,6 +128,14 @@ export const handlers = [
     `${REACT_APP_URL_API_UNITETATTOO}/client/home`,
     async (req, res, ctx) => {
       const response = res(ctx.status(200), ctx.json(works));
+      return response;
+    }
+  ),
+
+  rest.get(
+    `${REACT_APP_URL_API_UNITETATTOO}/tattooArtist/porfile`,
+    async (req, res, ctx) => {
+      const response = res(ctx.status(200), ctx.json(tattooArtist));
       return response;
     }
   ),

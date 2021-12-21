@@ -52,70 +52,74 @@ export const PorfileTattooArtist = () => {
               </View>
             </ImageBackground>
           </View>
-
-          <View style={styles.nameContainer}>
-            <Text style={styles.nameTattooArtist}>
-              {tattooArtist.personalDataTattoArtist.name}
-            </Text>
-            <Text style={[styles.nameTattooArtist, styles.secondName]}>
-              {tattooArtist.personalDataTattoArtist.surname1}
-            </Text>
-          </View>
-
-          {tattooArtist.professionalDataTattooArtist.tattooStyles.length && (
-            <View style={styles.tattooStyleContainer}>
-              {tattooArtist.professionalDataTattooArtist.tattooStyles.map(
-                (style: string, index: string) => (
-                  <Text key={index} style={styles.tattooStyle}>
-                    {style}
-                  </Text>
-                )
-              )}
+          {tattooArtist.personalDataTattoArtist && (
+            <View style={styles.nameContainer}>
+              <Text style={styles.nameTattooArtist}>
+                {tattooArtist.personalDataTattoArtist.name}
+              </Text>
+              <Text style={[styles.nameTattooArtist, styles.secondName]}>
+                {tattooArtist.personalDataTattoArtist.surname1}
+              </Text>
             </View>
           )}
+
+          {tattooArtist.tattooStyles &&
+            tattooArtist.professionalDataTattooArtist.tattooStyles.length && (
+              <View style={styles.tattooStyleContainer}>
+                {tattooArtist.professionalDataTattooArtist.tattooStyles.map(
+                  (style: string, index: string) => (
+                    <Text key={index} style={styles.tattooStyle}>
+                      {style}
+                    </Text>
+                  )
+                )}
+              </View>
+            )}
         </View>
 
-        <View
-          style={[generalStyles.mainContainerGeneral, styles.mainContainer]}
-        >
-          <View>
-            <Title text="HORARIO" />
-            <Text
-              style={styles.texts}
-            >{`${tattooArtist.professionalDataTattooArtist.openingHours}`}</Text>
-          </View>
-
-          <View>
-            <Title text="DIRECCIÓN" />
-            <Text
-              style={styles.texts}
-            >{`${tattooArtist.professionalDataTattooArtist.direction}`}</Text>
-          </View>
-
-          <View>
-            <Title text="ABIERTO A COLABORACIONES" />
-            <Text style={styles.texts}>
-              {tattooArtist.professionalDataTattooArtist.colaboration
-                ? "Sí"
-                : "No"}
-            </Text>
-          </View>
-
-          <View style={styles.textContainer}>
+        {tattooArtist.professionalDataTattooArtist && (
+          <View
+            style={[generalStyles.mainContainerGeneral, styles.mainContainer]}
+          >
             <View>
-              <Title text="EMAIL" />
+              <Title text="HORARIO" />
               <Text
                 style={styles.texts}
-              >{`${tattooArtist.professionalDataTattooArtist.contactEmail}`}</Text>
+              >{`${tattooArtist.professionalDataTattooArtist.openingHours}`}</Text>
             </View>
+
             <View>
-              <Title text="TELÉFONO" />
+              <Title text="DIRECCIÓN" />
               <Text
                 style={styles.texts}
-              >{`${tattooArtist.professionalDataTattooArtist.phone}`}</Text>
+              >{`${tattooArtist.professionalDataTattooArtist.direction}`}</Text>
+            </View>
+
+            <View>
+              <Title text="ABIERTO A COLABORACIONES" />
+              <Text style={styles.texts}>
+                {tattooArtist.professionalDataTattooArtist.colaboration
+                  ? "Sí"
+                  : "No"}
+              </Text>
+            </View>
+
+            <View style={styles.textContainer}>
+              <View>
+                <Title text="EMAIL" />
+                <Text
+                  style={styles.texts}
+                >{`${tattooArtist.professionalDataTattooArtist.contactEmail}`}</Text>
+              </View>
+              <View>
+                <Title text="TELÉFONO" />
+                <Text
+                  style={styles.texts}
+                >{`${tattooArtist.professionalDataTattooArtist.phone}`}</Text>
+              </View>
             </View>
           </View>
-        </View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
